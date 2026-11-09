@@ -1,0 +1,22 @@
+{
+  "name": "thebetterhealth-kid-emr",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The Better Kids Clinic EMR - web app (emr/kid), serverless API (api/kid) and Firebase rules.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "setup": "npm install && npm --prefix emr/kid install && python -m pip install -r emr/kid/requirements.txt",
+    "dev": "npm --prefix emr/kid run dev --",
+    "build": "npm --prefix emr/kid run build",
+    "preview": "npm --prefix emr/kid run preview",
+    "catalog:dry-run": "node tools/medication-catalog/import-catalog.cjs secrets/firebase-service-account.json",
+    "catalog:apply": "node tools/medication-catalog/import-catalog.cjs secrets/firebase-service-account.json --apply",
+    "firebase:deploy-rules": "npx firebase-tools deploy --only firestore:rules,storage,database"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.10.0"
+  }
+}

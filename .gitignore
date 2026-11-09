@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vercel/
+.env
+.env.*
+!.env.example
+secrets/
+*.log
+__pycache__/
+.DS_Store
+Thumbs.db
+tools/medication-catalog/medication-backup-*.json

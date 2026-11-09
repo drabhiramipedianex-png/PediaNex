@@ -1,0 +1,5245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Prescription | The Better Kids Clinic EMR</title>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="manifest" href="/emr/kid/site.webmanifest" />
+  <meta name="description" content="Prescription page for The Better Kids Clinic EMR, supporting clinic workflows and patient care operations at The Better Health Clinic." />
+  <link rel="canonical" href="https://www.thebetterhealth.clinic/emr/kid/prescription" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Better Health Clinic" />
+  <meta property="og:title" content="Prescription | The Better Kids Clinic EMR" />
+  <meta property="og:description" content="Prescription page for The Better Kids Clinic EMR, supporting clinic workflows and patient care operations at The Better Health Clinic." />
+  <meta property="og:url" content="https://www.thebetterhealth.clinic/emr/kid/prescription" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Prescription | The Better Kids Clinic EMR" />
+  <meta name="twitter:description" content="Prescription page for The Better Kids Clinic EMR, supporting clinic workflows and patient care operations at The Better Health Clinic." />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thebetterhealth.clinic/#website",
+      "name": "The Better Health Clinic",
+      "url": "https://www.thebetterhealth.clinic/"
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.thebetterhealth.clinic/#clinic",
+      "name": "The Better Health Clinic",
+      "url": "https://www.thebetterhealth.clinic/",
+      "telephone": [
+        "+919686183999",
+        "+919513988840"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#155, 2nd Cross, 1st stage, Arekere MICO Layout, Off Bannerghatta Road",
+        "addressLocality": "Bengaluru",
+        "postalCode": "560076",
+        "addressCountry": "IN"
+      },
+      "medicalSpecialty": [
+        "Pediatrics",
+        "Pulmonology"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.thebetterhealth.clinic/emr/kid/prescription#webpage",
+      "url": "https://www.thebetterhealth.clinic/emr/kid/prescription",
+      "name": "Prescription | The Better Kids Clinic EMR",
+      "description": "Prescription page for The Better Kids Clinic EMR, supporting clinic workflows and patient care operations at The Better Health Clinic.",
+      "isPartOf": {
+        "@id": "https://www.thebetterhealth.clinic/#website"
+      },
+      "about": {
+        "@id": "https://www.thebetterhealth.clinic/#clinic"
+      }
+    }
+  ]
+}
+  </script><script type="module" src="./auth-guard.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef4ef;
+      --panel: #fcfdf8;
+      --ink: #1b2a21;
+      --muted: #607067;
+      --line: #d7e2d9;
+      --brand: #166534;
+      --brand-soft: #dcfce7;
+      --brand-strong: #14532d;
+      --shadow: 0 18px 45px rgba(22, 38, 29, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-size: 15px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.14), transparent 28%),
+        linear-gradient(180deg, #f5faf3 0%, #edf5ef 100%);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(248, 252, 248, 0.85);
+      border-bottom: 1px solid rgba(215, 226, 217, 0.95);
+      box-shadow: 0 8px 24px rgba(22, 38, 29, 0.05);
+    }
+
+    .topbar {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      background: linear-gradient(135deg, #166534, #22c55e);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(22, 101, 52, 0.22);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-left: auto;
+      min-width: 0;
+    }
+
+    .nav-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: 999px;
+      color: #5f6f66;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: #dcfce7;
+      color: #14532d;
+    }
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-left: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--ink);
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(22, 38, 29, 0.08);
+    }
+
+    .menu-toggle-inner {
+      display: grid;
+      gap: 4px;
+    }
+
+    .menu-toggle-bar {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .topbar-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #f8fbf9;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .status-chip.is-warning {
+      color: #9a3412;
+      background: #fff7ed;
+      border-color: #fed7aa;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12);
+    }
+
+    .page-shell {
+      width: min(1120px, calc(100% - 48px));
+      margin: 22px auto 28px;
+    }
+
+    .content-panel {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .nav-patient-chip {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1 1 auto;
+      min-width: 0;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: #f8fbf9;
+      border: 1px solid var(--line);
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .nav-patient-name {
+      color: var(--ink);
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-patient-divider {
+      width: 1px;
+      height: 20px;
+      flex-shrink: 0;
+      background: var(--line);
+    }
+
+    .nav-patient-stats {
+      color: var(--muted);
+      font-weight: 700;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .section-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .section-row.has-detail-slot {
+      position: relative;
+      align-items: stretch;
+    }
+
+    .section-row.has-detail-slot.is-detail-open {
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+    }
+
+    .section-detail-slot {
+      display: none;
+      gap: 8px;
+      align-self: stretch;
+      position: relative;
+      padding-left: 8px;
+    }
+
+    .section-detail-slot.is-ready {
+      display: grid;
+    }
+
+    .section-detail-slot::before,
+    .section-detail-slot::after {
+      content: '';
+      position: absolute;
+      display: block;
+    }
+
+    .section-detail-slot::before {
+      top: 5px;
+      bottom: 5px;
+      left: 0;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(22, 101, 52, 0.06), rgba(34, 197, 94, 0.28), rgba(22, 101, 52, 0.06));
+      border-radius: 999px;
+    }
+
+    .section-detail-slot::after {
+      top: calc(50% - 3px);
+      left: -2px;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #dcfce7;
+      border: 1px solid rgba(22, 101, 52, 0.18);
+      box-shadow: 0 0 0 3px rgba(220, 252, 231, 0.55);
+    }
+
+    .section-side-placeholder {
+      display: grid;
+      gap: 6px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(215, 226, 217, 0.72);
+      background: rgba(248, 252, 249, 0.88);
+      box-shadow: none;
+    }
+
+    .section-side-placeholder[hidden] {
+      display: none;
+    }
+
+    .section-side-placeholder h3 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .section-side-placeholder p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .page-action-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: var(--radius-md);
+      border: 0;
+      background: linear-gradient(135deg, #166534, #22c55e);
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: 0 12px 24px rgba(22, 101, 52, 0.2);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 28px rgba(22, 101, 52, 0.24);
+    }
+
+    .rx-card {
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(215, 226, 217, 0.68);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: none;
+    }
+
+    .rx-card-head {
+      display: block;
+    }
+
+    .rx-card-head h2 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .rx-card-head p {
+      display: none;
+    }
+
+    .notes-freetext {
+      width: 100%;
+      min-height: 96px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      resize: vertical;
+      font: inherit;
+      color: var(--ink);
+      outline: none;
+    }
+
+    .notes-freetext:focus {
+      border-color: rgba(22, 101, 52, 0.55);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+    }
+
+    .search-row input {
+      width: 100%;
+      min-height: 38px;
+      padding: 0 10px;
+      border-radius: 11px;
+      border: 1px solid rgba(215, 226, 217, 0.88);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .search-row input:focus {
+      border-color: rgba(22, 101, 52, 0.55);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+    }
+
+    .selected-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-height: 18px;
+    }
+
+    .selected-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 28px;
+      padding: 0 10px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand-strong);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+
+    .selected-item-remove {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: rgba(20, 83, 45, 0.12);
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .selection-divider {
+      display: none;
+    }
+
+    .selected-placeholder {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .bubble-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .bubble-empty {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .add-option-btn {
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px dashed rgba(22, 101, 52, 0.35);
+      border-radius: 12px;
+      background: rgba(220, 252, 231, 0.45);
+      color: var(--brand-strong);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      justify-self: start;
+    }
+
+    .bubble-btn {
+      min-height: 42px;
+      padding: 0 18px;
+      border: 1px solid rgba(215, 226, 217, 0.9);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .bubble-btn.is-selected {
+      border-color: rgba(22, 101, 52, 0.3);
+      background: var(--brand-soft);
+      color: var(--brand-strong);
+    }
+
+    .bubble-btn:hover {
+      border-color: rgba(22, 101, 52, 0.3);
+      background: var(--brand-soft);
+    }
+
+    .medicine-detail-panel {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      display: grid;
+      align-content: start;
+      gap: 0;
+      padding: 0;
+      border-radius: 14px;
+      border: 1px solid rgba(215, 226, 217, 0.72);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: none;
+      overflow: hidden;
+    }
+
+    .medicine-modal {
+      position: static;
+      display: none;
+      padding: 0;
+      background: none;
+      backdrop-filter: none;
+    }
+
+    .medicine-modal.is-open {
+      display: block;
+    }
+
+    .medicine-modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(215, 226, 217, 0.82);
+      background: rgba(248, 252, 249, 0.92);
+      text-align: center;
+    }
+
+    .medicine-modal-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 84px;
+      justify-content: flex-end;
+    }
+
+    .medicine-modal-title-wrap {
+      display: grid;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .medicine-modal-title-wrap h2 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.15;
+    }
+
+    .medicine-modal-title-wrap p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .modal-close-btn {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(22, 101, 52, 0.12);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--ink);
+      font: inherit;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(22, 38, 29, 0.08);
+    }
+
+    .templates-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(22, 101, 52, 0.22);
+      background: linear-gradient(135deg, #dcfce7, #f0fdf4);
+      color: #166534;
+      font: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(22, 101, 52, 0.12);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .templates-btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .templates-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(22, 101, 52, 0.18);
+    }
+
+    .consult-template-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(10, 30, 20, 0.6);
+      backdrop-filter: blur(10px);
+    }
+
+    .consult-template-modal.is-open {
+      display: flex;
+    }
+
+    .consult-template-dialog {
+      width: min(640px, 100%);
+      max-height: 88vh;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      overflow: hidden;
+      border-radius: 24px;
+      background: #f8faf8;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: 0 30px 80px rgba(31, 12, 66, 0.32);
+    }
+
+    .consult-template-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 18px 18px 22px;
+      border-bottom: 1px solid rgba(221, 214, 254, 0.9);
+      background: linear-gradient(135deg, #dcfce7, #ffffff);
+    }
+
+    .consult-template-head-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: #166534;
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(22, 101, 52, 0.28);
+    }
+
+    .consult-template-head-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .consult-template-head-titles {
+      flex: 1;
+      min-width: 0;
+      display: grid;
+      gap: 2px;
+    }
+
+    .consult-template-head strong {
+      font-size: 17px;
+      color: #14532d;
+    }
+
+    .consult-template-head-titles p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .consult-template-body {
+      min-height: 0;
+      overflow-y: auto;
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .consult-template-save-panel {
+      display: grid;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px dashed rgba(22, 101, 52, 0.32);
+      background: rgba(237, 233, 254, 0.35);
+    }
+
+    .consult-template-save-label {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #14532d;
+    }
+
+    .consult-template-save-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .consult-template-save-row input {
+      flex: 1;
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(22, 101, 52, 0.22);
+      background: #fff;
+      font: inherit;
+      color: var(--ink);
+    }
+
+    .consult-template-save-row input:focus-visible {
+      outline: 2px solid rgba(22, 101, 52, 0.4);
+      outline-offset: 1px;
+    }
+
+    .consult-template-save-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 0;
+      background: linear-gradient(135deg, #166534, #14532d);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      font-size: 15px;
+      white-space: nowrap;
+      cursor: pointer;
+      box-shadow: 0 12px 24px rgba(22, 101, 52, 0.24);
+      transition: transform 0.15s ease;
+    }
+
+    .consult-template-save-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .consult-template-save-btn:disabled {
+      opacity: 0.6;
+      cursor: default;
+      transform: none;
+    }
+
+    .consult-template-error {
+      color: #b91c1c;
+      font-size: 15px;
+      font-weight: 700;
+      display: none;
+    }
+
+    .consult-template-error.is-visible {
+      display: block;
+    }
+
+    .consult-template-section-label {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .consult-template-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .consult-template-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(22, 101, 52, 0.14);
+      background: #fff;
+      box-shadow: 0 6px 16px rgba(31, 12, 66, 0.05);
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    .consult-template-row:hover {
+      box-shadow: 0 10px 22px rgba(31, 12, 66, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .consult-template-row-icon {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: #dcfce7;
+      color: #14532d;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .consult-template-row-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .consult-template-row-info {
+      display: grid;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .consult-template-row-info strong {
+      font-size: 16px;
+      color: var(--ink);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .consult-template-row-info span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .consult-template-row-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .consult-template-apply-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(22, 101, 52, 0.28);
+      background: #f0fdf4;
+      color: #14532d;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .consult-template-apply-btn:hover {
+      background: #dcfce7;
+    }
+
+    .consult-template-delete-btn {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #b91c1c;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .consult-template-delete-btn:hover {
+      background: #fef2f2;
+    }
+
+    .consult-template-empty {
+      padding: 32px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+      border-radius: 14px;
+      border: 1px dashed rgba(22, 101, 52, 0.2);
+      background: rgba(237, 233, 254, 0.25);
+    }
+
+    .dosage-warning-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      margin: 0 0 14px;
+      border-radius: 12px;
+      border: 1px solid #f3d98c;
+      background: #fef8e7;
+      color: #92660a;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .dosage-warning-banner[hidden] {
+      display: none;
+    }
+
+    .edit-mode-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      margin: 0 0 14px;
+      border-radius: 12px;
+      border: 1px solid #9fd8b0;
+      background: #eaf9ef;
+      color: #146c34;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .edit-mode-banner[hidden] {
+      display: none;
+    }
+
+    .init-error-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      margin: 0 0 14px;
+      border-radius: 12px;
+      border: 1px solid #f0a9a9;
+      background: #fdeceb;
+      color: #a12220;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .init-error-banner[hidden] {
+      display: none;
+    }
+
+    .medicine-edit-btn {
+      min-width: 0;
+      padding: 0 12px;
+      border: 1px solid rgba(22, 101, 52, 0.14);
+      border-radius: 12px;
+      background: rgba(22, 163, 74, 0.08);
+      color: var(--brand-strong);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 34px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(22, 38, 29, 0.06);
+    }
+
+    .medicine-edit-btn:hover {
+      background: rgba(22, 163, 74, 0.14);
+    }
+
+    .medicine-edit-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background: rgba(22, 163, 74, 0.04);
+    }
+
+    .add-medicine-panel {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(215, 226, 217, 0.96);
+      background: #fff;
+      box-shadow: 0 16px 30px rgba(22, 38, 29, 0.08);
+      overflow: hidden;
+    }
+
+    .add-medicine-form {
+      display: grid;
+      margin: 0;
+    }
+
+    .add-medicine-head {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid #edf2f7;
+      background: #fff;
+    }
+
+    .add-medicine-head h2 {
+      margin: 0;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .add-medicine-back {
+      border: 0;
+      background: transparent;
+      color: #1682d4;
+      box-shadow: none;
+    }
+
+    .add-medicine-save {
+      min-width: 54px;
+      border: 0;
+      background: transparent;
+      color: #1682d4;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .add-medicine-body {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 20px;
+      padding: 22px 24px 26px;
+    }
+
+    .add-medicine-field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .add-medicine-field.is-full {
+      grid-column: 1 / -1;
+    }
+
+    .add-medicine-field span {
+      color: #52606d;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .add-medicine-field input,
+    .add-medicine-field select,
+    .add-medicine-field textarea {
+      width: 100%;
+      min-height: 40px;
+      padding: 0 12px;
+      border-radius: 4px;
+      border: 1px solid #e5ebf2;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+    }
+
+    .add-medicine-field textarea {
+      min-height: 84px;
+      padding: 10px 12px;
+      resize: vertical;
+    }
+
+    .add-medicine-field input:focus,
+    .add-medicine-field select:focus,
+    .add-medicine-field textarea:focus {
+      border-color: rgba(22, 101, 52, 0.45);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+    }
+
+    .add-medicine-error {
+      display: none;
+      margin: -18px 34px 28px;
+      color: #b91c1c;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .add-medicine-error.is-visible {
+      display: block;
+    }
+
+    .medicine-detail-content {
+      display: grid;
+      grid-auto-flow: row;
+      grid-auto-columns: unset;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 10px;
+      scroll-snap-type: x proximity;
+      scrollbar-width: thin;
+      max-height: none;
+    }
+
+    .medicine-detail-panel h2 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.1;
+    }
+
+    .medicine-detail-panel p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .medicine-empty {
+      padding: 12px;
+      border-radius: 14px;
+      background: #f8fbf9;
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .medicine-detail-card {
+      display: grid;
+      width: 100%;
+      min-width: 0;
+      gap: 8px;
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(215, 226, 217, 0.78);
+      background: #ffffff;
+      scroll-snap-align: start;
+      overflow: visible;
+      box-shadow: none;
+    }
+
+    /* A column stack, not a grid: as a grid the tracks were compressed to fit
+       max-height, and because each question hides its own overflow it was
+       allowed to shrink to nothing and lose its bottom rows. Flex items that
+       refuse to shrink keep their content height, so this scrolls instead. */
+    .medicine-table-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: calc(98vh - 250px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    .medicine-table-body > .medicine-question {
+      flex: 0 0 auto;
+    }
+
+    .medicine-meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 10px 12px;
+      border: 1px solid #dbe7de;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #fbfdff, #f3f8ff);
+      color: #475569;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .medicine-meta-strip span {
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: #eef6ff;
+    }
+
+    .medicine-question {
+      display: grid;
+      gap: 0;
+      border: 1px solid #dbe5f5;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 8px 18px rgba(22, 38, 29, 0.04);
+    }
+
+    .question-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 36px;
+      padding: 7px 12px;
+      background: #e7eefb;
+      color: #1e3a5f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .dose-unit-select,
+    .timing-mode-select {
+      min-height: 26px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+      color: #1e3a5f;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      outline: none;
+    }
+
+    .dose-unit-select {
+      max-width: 98px;
+      padding: 0 8px;
+      cursor: pointer;
+    }
+
+    .timing-mode-select {
+      max-width: 150px;
+      padding: 0 10px;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(30, 58, 95, 0.08);
+    }
+
+    .dose-entry-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 88px;
+      width: 100%;
+      border-bottom: 1px solid #eef2f7;
+      background: #fbfdff;
+    }
+
+    .dose-entry-row span {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      color: #475569;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .dose-entry-row .unit-cell {
+      justify-content: center;
+      border-left: 1px solid #eef2f7;
+      font-size: 14px;
+    }
+
+    .medicine-question input[type="text"] {
+      width: 100%;
+      min-height: 34px;
+      padding: 0 10px;
+      border-radius: 0;
+      border: 0;
+      border-left: 1px solid #eef2f7;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .medicine-question input[type="text"]:focus {
+      box-shadow: inset 0 0 0 2px rgba(14, 165, 233, 0.18);
+    }
+
+    .dose-row,
+    .timing-row,
+    .duration-row {
+      display: grid;
+      gap: 0;
+      width: 100%;
+    }
+
+    .dose-row {
+      grid-template-columns: repeat(auto-fit, minmax(36px, 1fr));
+      padding: 5px 12px;
+      border-bottom: 1px solid #eef2f7;
+      background: #fbfdff;
+    }
+
+    .timing-main-row {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .timing-food-row {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .timing-extra-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timing-interval-row,
+    .timing-frequency-row {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .timing-meal-head-row {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .timing-meal-choice-row {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .meal-head-cell {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      border-right: 1px solid #eef2f7;
+      border-bottom: 1px solid #eef2f7;
+      background: #f1f5fb;
+      color: #1e3a5f;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .duration-row {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .duration-row.duration-final-row {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .duration-row.duration-third-row {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* Slot labels sit above their boxes, the way Docon lays this row out and
+       the way the meal head row above already works. */
+    .timing-count-head-row {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .timing-count-row {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      padding: 7px 12px;
+      border-bottom: 1px solid #eef2f7;
+      background: #fbfdff;
+    }
+
+    .timing-count-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Deliberately outweighs `.medicine-question input[type="text"]`, which
+       strips the border and stretches the field across its whole cell. */
+    .medicine-question .timing-count-row input[type="text"].timing-count-input {
+      width: min(58px, 100%);
+      min-height: 26px;
+      padding: 0 6px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .medicine-question .timing-count-row input[type="text"].timing-count-input:focus {
+      border-color: #166534;
+      box-shadow: 0 0 0 2px rgba(22, 101, 52, 0.16);
+    }
+
+    .option-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      width: 100%;
+      padding: 0 7px;
+      border-radius: 0;
+      border: 0;
+      border-right: 1px solid #eef2f7;
+      border-bottom: 1px solid #eef2f7;
+      background: #fff;
+      color: #334155;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .dose-row .option-pill {
+      min-height: 28px;
+      width: min(28px, 100%);
+      height: 28px;
+      justify-self: center;
+      border: 1px solid #dfe6ef;
+      border-radius: 999px;
+      background: #f8fafc;
+      box-shadow: 0 4px 10px rgba(22, 38, 29, 0.04);
+    }
+
+    .option-pill input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .option-pill:has(input:checked) {
+      border-color: #166534;
+      background: #dcfce7;
+      color: #14532d;
+      box-shadow: inset 0 0 0 1px rgba(22, 101, 52, 0.22);
+    }
+
+    .selection-pill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .selection-pill-grid.days-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .selection-pill-grid.status-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .selection-pill-grid.allergy-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 260px;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .allergy-freetext {
+      min-height: 72px;
+    }
+
+    .selection-pill-grid.status-grid .selection-pill {
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    .selection-pill {
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid #dfe6ef;
+      border-radius: 999px;
+      background: #f8fafc;
+      box-shadow: 0 4px 10px rgba(22, 38, 29, 0.04);
+      font-size: 14px;
+    }
+
+    button.selection-pill {
+      font: inherit;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+    }
+
+    .selection-pill.is-active {
+      border-color: #166534;
+      background: #dcfce7;
+      color: #14532d;
+      box-shadow: inset 0 0 0 1px rgba(22, 101, 52, 0.22);
+    }
+
+    .days-custom-input {
+      width: 100%;
+      min-height: 44px;
+      padding: 12px 14px;
+      border: 1px solid #dbe5f5;
+      border-radius: 14px;
+      background: #fbfdff;
+      font: inherit;
+      outline: none;
+    }
+
+    .days-custom-input:focus {
+      border-color: rgba(22, 101, 52, 0.45);
+      box-shadow: 0 0 0 3px rgba(22, 101, 52, 0.1);
+    }
+
+    .detail-input {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 14px;
+      border: 1px solid #dbe5f5;
+      border-radius: 14px;
+      background: #fbfdff;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+    }
+
+    .detail-input:focus {
+      border-color: rgba(22, 101, 52, 0.45);
+      box-shadow: 0 0 0 3px rgba(22, 101, 52, 0.1);
+    }
+
+    .note-area {
+      display: grid;
+      gap: 8px;
+      position: static;
+      border: 1px solid #dbe5f5;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(22, 38, 29, 0.04);
+    }
+
+    .note-area textarea {
+      width: 100%;
+      min-height: 74px;
+      padding: 12px;
+      border: 0;
+      border-top: 1px solid #eef2f7;
+      resize: vertical;
+      font: inherit;
+      outline: none;
+      background: #fbfdff;
+    }
+
+    @media (max-width: 900px) {
+      .topbar {
+        width: min(100% - 32px, 100%);
+        min-height: auto;
+        padding: 14px 0;
+        flex-wrap: wrap;
+      }
+
+      .page-shell {
+        width: min(100% - 32px, 100%);
+      }
+
+      .content-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .medicine-detail-content {
+        grid-auto-flow: row;
+        grid-auto-columns: unset;
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar {
+        width: min(100% - 28px, 100%);
+        padding: 12px 0;
+        gap: 12px;
+        align-items: stretch;
+      }
+
+      .brand {
+        width: auto;
+        flex: 1 1 auto;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+      }
+
+      .nav-patient-chip {
+        order: 2;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+      }
+
+      .nav-patient-name,
+      .nav-patient-stats {
+        white-space: normal;
+      }
+
+      .nav-patient-divider {
+        display: none;
+      }
+
+      .nav-links {
+        width: 100%;
+        order: 3;
+        margin-left: 0;
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 14px 28px rgba(22, 38, 29, 0.08);
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .topbar-actions {
+        margin-left: 0;
+        width: 100%;
+        order: 4;
+      }
+
+      .page-shell {
+        width: min(100% - 28px, 100%);
+        margin: 12px auto 20px;
+      }
+
+      .medicine-detail-panel {
+        width: 100%;
+        max-height: none;
+        border-radius: 18px;
+      }
+
+      .medicine-modal-head {
+        padding: 14px 14px 12px;
+      }
+
+      .medicine-detail-panel h2 {
+        font-size: 19px;
+      }
+
+      .medicine-detail-content {
+        padding: 0 12px 12px;
+      }
+
+      .add-medicine-panel {
+        width: min(100vw - 12px, 100%);
+        border-radius: 18px;
+      }
+
+      .add-medicine-head {
+        grid-template-columns: 38px minmax(0, 1fr) auto;
+        padding: 14px;
+      }
+
+      .add-medicine-head h2 {
+        font-size: 18px;
+      }
+
+      .add-medicine-body {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 20px 16px 24px;
+      }
+
+      .add-medicine-error {
+        margin: -10px 16px 20px;
+      }
+
+      .medicine-detail-card {
+        padding: 14px;
+        border-radius: 16px;
+      }
+
+      .medicine-question {
+        gap: 10px;
+      }
+
+      .selection-pill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .selection-pill-grid.days-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .selection-pill {
+        min-height: 44px;
+        padding: 0 12px;
+        font-size: 14px;
+      }
+
+      .content-panel {
+        padding: 0;
+      }
+
+      .section-row.has-detail-slot,
+      .section-row.has-detail-slot.is-detail-open {
+        grid-template-columns: 1fr;
+      }
+
+      .section-detail-slot {
+        padding-left: 0;
+      }
+
+      .section-detail-slot::before,
+      .section-detail-slot::after {
+        display: none;
+      }
+
+      .status-chip {
+        width: 100%;
+        justify-content: center;
+        border-radius: 14px;
+      }
+
+      .page-action-row,
+      .btn-primary {
+        width: 100%;
+      }
+
+      .nav-link {
+        width: 100%;
+        min-height: 42px;
+        padding: 10px 12px;
+        border-radius: 14px;
+      }
+    }
+
+  </style>
+  <link rel="stylesheet" href="mobile-app.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">💊</div>
+        <div class="brand-copy">
+          <strong>The Better Kids Clinic</strong>
+          <span>Prescription</span>
+        </div>
+      </div>
+
+      
+      <div id="nav-patient-chip" class="nav-patient-chip" hidden>
+        <span id="nav-patient-name" class="nav-patient-name">Name - </span>
+        <span class="nav-patient-divider" aria-hidden="true"></span>
+        <span id="nav-patient-stats" class="nav-patient-stats">-</span>
+      </div>
+
+      <nav id="primary-nav" class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="/emr/kid/">Dashboard</a>
+        <a class="nav-link active" href="/emr/kid/search">Enter Clinic</a>
+        <a class="nav-link" href="/emr/kid/pending-approvals">Approvals</a>
+        <a class="nav-link" href="/emr/kid/settings">Settings</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <section class="content-panel">
+      <div class="content-layout">
+        <div class="card-grid">
+          <article class="rx-card" data-section-name="Allergy">
+            <div class="rx-card-head">
+              <h2>Allergy</h2>
+              <p></p>
+            </div>
+            <div class="selection-pill-grid allergy-grid" aria-label="Allergy status options">
+              <label class="option-pill selection-pill">
+                <input type="radio" name="allergy-status" value="Yes" data-field="allergy-status">
+                Yes
+              </label>
+              <label class="option-pill selection-pill">
+                <input type="radio" name="allergy-status" value="No" data-field="allergy-status">
+                No
+              </label>
+            </div>
+            <textarea id="allergy-details-input" class="notes-freetext allergy-freetext" placeholder="e.g. Penicillin, peanuts, dust"></textarea>
+          </article>
+
+          <article class="rx-card" data-section-name="Symptoms">
+            <div class="rx-card-head">
+              <h2>Symptoms</h2>
+              <p></p>
+            </div>
+            <div class="search-row" data-search-section="symptoms">
+              <input type="text" placeholder="Search symptoms">
+            </div>
+            <div class="selected-list" data-selected-list>
+            </div>
+            <div class="selection-divider" aria-hidden="true"></div>
+            <div class="bubble-wrap" data-bubble-wrap>
+            </div>
+          </article>
+
+          <article class="rx-card" data-section-name="Past Medical History">
+            <div class="rx-card-head">
+              <h2>Past Medical History</h2>
+              <p></p>
+            </div>
+            <div class="search-row" data-search-section="past medical history">
+              <input type="text" placeholder="Search past medical history">
+            </div>
+            <div class="selected-list" data-selected-list>
+            </div>
+            <div class="selection-divider" aria-hidden="true"></div>
+            <div class="bubble-wrap" data-bubble-wrap>
+            </div>
+          </article>
+
+          <article class="rx-card" data-section-name="Finding">
+            <div class="rx-card-head">
+              <h2>Findings</h2>
+              <p></p>
+            </div>
+            <div class="search-row" data-search-section="finding">
+              <input type="text" placeholder="Search findings">
+            </div>
+            <div class="selected-list" data-selected-list>
+            </div>
+            <div class="selection-divider" aria-hidden="true"></div>
+            <div class="bubble-wrap" data-bubble-wrap>
+            </div>
+          </article>
+
+          <article class="rx-card" data-section-name="Notes">
+            <div class="rx-card-head">
+              <h2>Notes</h2>
+              <p></p>
+            </div>
+            <textarea class="notes-freetext" data-notes-input placeholder="Add any notes for this visit"></textarea>
+          </article>
+
+          <article class="rx-card" data-section-name="Diagnosis">
+            <div class="rx-card-head">
+              <h2>Diagnosis</h2>
+              <p></p>
+            </div>
+            <div class="search-row" data-search-section="diagnosis">
+              <input type="text" placeholder="Search diagnosis">
+            </div>
+            <div class="selected-list" data-selected-list>
+            </div>
+            <div class="selection-divider" aria-hidden="true"></div>
+            <div class="bubble-wrap" data-bubble-wrap>
+            </div>
+          </article>
+
+          <article class="rx-card" data-section-name="Investigation">
+            <div class="rx-card-head">
+              <h2>Investigations</h2>
+              <p></p>
+            </div>
+            <div class="search-row" data-search-section="investigation">
+              <input type="text" placeholder="Search investigation">
+            </div>
+            <div class="selected-list" data-selected-list>
+            </div>
+            <div class="selection-divider" aria-hidden="true"></div>
+            <div class="bubble-wrap" data-bubble-wrap>
+            </div>
+          </article>
+
+          <article class="rx-card" data-section-name="Medication">
+            <div class="rx-card-head">
+              <h2>Medications</h2>
+              <p></p>
+            </div>
+            <div class="search-row" data-search-section="medication">
+              <input type="text" placeholder="Search medication">
+            </div>
+            <div class="selected-list" data-selected-list>
+            </div>
+            <div class="selection-divider" aria-hidden="true"></div>
+            <div class="bubble-wrap" data-bubble-wrap>
+            </div>
+          </article>
+
+          <article class="rx-card" data-section-name="Instruction">
+            <div class="rx-card-head">
+              <h2>Instructions</h2>
+              <p></p>
+            </div>
+            <div class="search-row" data-search-section="instruction">
+              <input type="text" placeholder="Search instruction">
+            </div>
+            <div class="selected-list" data-selected-list>
+            </div>
+            <div class="selection-divider" aria-hidden="true"></div>
+            <div class="bubble-wrap" data-bubble-wrap>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div id="edit-mode-banner" class="edit-mode-banner" hidden></div>
+
+      <div id="init-error-banner" class="init-error-banner" role="alert" hidden></div>
+
+      <div id="dosage-warning-banner" class="dosage-warning-banner" hidden></div>
+
+      <div class="page-action-row">
+            <button id="open-templates-btn" class="templates-btn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="4" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="10" width="18" height="4" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="16" width="18" height="4" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span>Templates</span>
+            </button>
+            <a id="continue-preview-btn" class="btn-primary" href="/emr/kid/preview">Continue</a>
+      </div>
+    </section>
+  </div>
+
+  <div id="consult-template-modal" class="consult-template-modal" aria-hidden="true">
+    <div class="consult-template-dialog" role="dialog" aria-modal="true" aria-labelledby="consult-template-title">
+      <div class="consult-template-head">
+        <div class="consult-template-head-icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="4" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="10" width="18" height="4" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="16" width="18" height="4" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
+        </div>
+        <div class="consult-template-head-titles">
+          <strong id="consult-template-title">Consult Templates</strong>
+          <p>Save this consult or reapply a saved one in one click</p>
+        </div>
+        <button id="consult-template-close" class="modal-close-btn" type="button" aria-label="Close templates">x</button>
+      </div>
+      <div class="consult-template-body">
+        <div class="consult-template-save-panel">
+          <span class="consult-template-save-label">Save current consult</span>
+          <div class="consult-template-save-row">
+            <input id="consult-template-name-input" type="text" placeholder="Name this consult (e.g. 6 Week Vaccination)">
+            <button id="consult-template-save-btn" class="consult-template-save-btn" type="button">Save Template</button>
+          </div>
+          <div id="consult-template-error" class="consult-template-error"></div>
+        </div>
+        <span class="consult-template-section-label">Saved templates</span>
+        <div id="consult-template-list" class="consult-template-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="detail-panel-templates" hidden>
+    <div id="medicine-modal" class="medicine-modal" aria-hidden="true">
+      <aside id="medicine-detail-panel" class="medicine-detail-panel" role="dialog" aria-modal="false" aria-labelledby="medicine-modal-title">
+        <div class="medicine-modal-head">
+          <div class="medicine-modal-title-wrap">
+            <h2 id="medicine-modal-title">Medication Details</h2>
+            <p></p>
+          </div>
+          <div class="medicine-modal-actions">
+            <button id="medicine-modal-edit" class="medicine-edit-btn" type="button" aria-label="Edit selected medicine" disabled>Edit</button>
+            <button id="medicine-modal-close" class="modal-close-btn" type="button" aria-label="Close medication details">x</button>
+          </div>
+        </div>
+        <div id="medicine-detail-content" class="medicine-detail-content medicine-empty">
+          No medication selected yet.
+        </div>
+      </aside>
+    </div>
+
+    <div id="selection-detail-modal" class="medicine-modal" aria-hidden="true">
+      <aside class="medicine-detail-panel" role="dialog" aria-modal="false" aria-labelledby="selection-detail-title">
+        <div class="medicine-modal-head">
+          <div class="medicine-modal-title-wrap">
+            <h2 id="selection-detail-title">Selection Details</h2>
+            <p id="selection-detail-subtitle"></p>
+          </div>
+          <div class="medicine-modal-actions">
+            <button id="selection-detail-edit" class="medicine-edit-btn" type="button" aria-label="Edit selected item" hidden>Edit</button>
+            <button id="selection-detail-close" class="modal-close-btn" type="button" aria-label="Close selection details">x</button>
+          </div>
+        </div>
+        <div id="selection-detail-content" class="medicine-detail-content"></div>
+      </aside>
+    </div>
+
+    <div id="add-medicine-modal" class="medicine-modal" aria-hidden="true">
+      <aside class="add-medicine-panel" role="dialog" aria-modal="false" aria-labelledby="add-medicine-title">
+        <form id="add-medicine-form" class="add-medicine-form">
+          <div class="add-medicine-head">
+            <button id="add-medicine-back" class="modal-close-btn add-medicine-back" type="button" aria-label="Back to medication search">&larr;</button>
+            <h2 id="add-medicine-title">Add New Medicine</h2>
+            <button class="add-medicine-save" type="submit">Save</button>
+          </div>
+          <div class="add-medicine-body">
+            <label class="add-medicine-field" for="add-medicine-name">
+              <span>Brand Name</span>
+              <input id="add-medicine-name" name="name" type="text" autocomplete="off" placeholder="Enter brand name">
+            </label>
+            <label class="add-medicine-field" for="add-medicine-type">
+              <span>Medicine Type</span>
+              <select id="add-medicine-type" name="type">
+                <option value="">Select type</option>
+                <option value="Syrup">Syrup</option>
+                <option value="Drops">Drops</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Capsule">Capsule</option>
+                <option value="Suspension">Suspension</option>
+                <option value="Inhaler">Inhaler</option>
+                <option value="Nebulization">Nebulization</option>
+                <option value="Injection">Injection</option>
+                <option value="Cream/Ointment">Cream/Ointment</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label class="add-medicine-field" for="add-medicine-strength-mg">
+              <span>Strength (mg)</span>
+              <input id="add-medicine-strength-mg" name="strengthMg" type="text" autocomplete="off" placeholder="e.g. 125">
+            </label>
+            <label class="add-medicine-field" for="add-medicine-strength-ml">
+              <span>Strength (ml)</span>
+              <input id="add-medicine-strength-ml" name="strengthMl" type="text" autocomplete="off" placeholder="e.g. 5">
+            </label>
+            <label class="add-medicine-field is-full" for="add-medicine-composition">
+              <span>Medicine Composition</span>
+              <input id="add-medicine-composition" name="composition" type="text" autocomplete="off" placeholder="Enter composition" required>
+            </label>
+          </div>
+          <p id="add-medicine-error" class="add-medicine-error" role="alert">Brand name is required.</p>
+        </form>
+      </aside>
+    </div>
+
+    <div id="edit-item-modal" class="medicine-modal" aria-hidden="true">
+      <aside class="add-medicine-panel" role="dialog" aria-modal="false" aria-labelledby="edit-item-title">
+        <form id="edit-item-form" class="add-medicine-form">
+          <div class="add-medicine-head">
+            <button id="edit-item-back" class="modal-close-btn add-medicine-back" type="button" aria-label="Back to details">&larr;</button>
+            <h2 id="edit-item-title">Edit Instruction</h2>
+            <button class="add-medicine-save" type="submit">Update</button>
+          </div>
+          <div class="add-medicine-body">
+            <label class="add-medicine-field is-full" for="edit-item-text">
+              <span id="edit-item-label">Instruction</span>
+              <textarea id="edit-item-text" name="text" rows="3" placeholder="Enter the instruction"></textarea>
+            </label>
+          </div>
+          <p id="edit-item-error" class="add-medicine-error" role="alert"></p>
+        </form>
+      </aside>
+    </div>
+  </div>
+
+  <script type="module">
+    import { doc, getDoc, setDoc, arrayUnion, serverTimestamp, collection, getDocs, query, orderBy, limit, deleteDoc, runTransaction } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js';
+    import { db } from './lib/firebase-init.js';
+    const CLINIC_FIREBASE_NAMESPACE = 'clinics/kid';
+    const FIREBASE_COLLECTIONS = {
+      patients: `${CLINIC_FIREBASE_NAMESPACE}/patients`,
+      pendingPatients: `${CLINIC_FIREBASE_NAMESPACE}/pendingPatients`,
+      history: `${CLINIC_FIREBASE_NAMESPACE}/history`,
+      prescription: `${CLINIC_FIREBASE_NAMESPACE}/prescription`,
+      consultTemplates: `${CLINIC_FIREBASE_NAMESPACE}/consultTemplates`
+    };
+    const CLINIC_STORAGE_PREFIX = CLINIC_FIREBASE_NAMESPACE;
+    const CLINIC_LOCAL_STORAGE_PREFIX = CLINIC_FIREBASE_NAMESPACE.replace(/\//g, ':');
+    const clinicStorageKey = (key) => `${CLINIC_LOCAL_STORAGE_PREFIX}:${key}`;
+    const PRESCRIPTION_EDIT_WINDOW_MS = 2 * 60 * 60 * 1000;
+    let activePrescriptionEditId = '';
+    // Guards against a save racing ahead of the initial draft/repeat/edit
+    // restore on page load - without this, an early click could persist a
+    // still-empty selection state and permanently wipe out whatever was
+    // saved from a previous visit before it gets a chance to be restored.
+    let prescriptionInitReady = false;
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+    const navLinks = [...document.querySelectorAll('#primary-nav .nav-link')];
+    const rxCards = [...document.querySelectorAll('.rx-card')];
+    const notesInput = document.querySelector('[data-notes-input]');
+    const allergyStatusInputs = [...document.querySelectorAll('[data-field="allergy-status"]')];
+    const allergyDetailsInput = document.getElementById('allergy-details-input');
+    const statusChip = document.querySelector('.status-chip');
+    const cardGrid = document.querySelector('.card-grid');
+    const medicineModal = document.getElementById('medicine-modal');
+    const medicineModalClose = document.getElementById('medicine-modal-close');
+    const openTemplatesBtn = document.getElementById('open-templates-btn');
+    const consultTemplateModal = document.getElementById('consult-template-modal');
+    const consultTemplateClose = document.getElementById('consult-template-close');
+    const consultTemplateNameInput = document.getElementById('consult-template-name-input');
+    const consultTemplateSaveBtn = document.getElementById('consult-template-save-btn');
+    const consultTemplateError = document.getElementById('consult-template-error');
+    const consultTemplateList = document.getElementById('consult-template-list');
+    const dosageWarningBanner = document.getElementById('dosage-warning-banner');
+    const editModeBanner = document.getElementById('edit-mode-banner');
+    const initErrorBanner = document.getElementById('init-error-banner');
+    const medicineModalEdit = document.getElementById('medicine-modal-edit');
+    const medicineModalTitle = document.getElementById('medicine-modal-title');
+    const medicineModalSubtitle = medicineModalTitle?.parentElement?.querySelector('p');
+    const navPatientChip = document.getElementById('nav-patient-chip');
+    const navPatientName = document.getElementById('nav-patient-name');
+    const navPatientStats = document.getElementById('nav-patient-stats');
+    const medicineDetailContent = document.getElementById('medicine-detail-content');
+    const selectionDetailModal = document.getElementById('selection-detail-modal');
+    const selectionDetailClose = document.getElementById('selection-detail-close');
+    const selectionDetailTitle = document.getElementById('selection-detail-title');
+    const selectionDetailSubtitle = document.getElementById('selection-detail-subtitle');
+    const selectionDetailContent = document.getElementById('selection-detail-content');
+    const selectionDetailEdit = document.getElementById('selection-detail-edit');
+    const editItemModal = document.getElementById('edit-item-modal');
+    const editItemForm = document.getElementById('edit-item-form');
+    const editItemBack = document.getElementById('edit-item-back');
+    const editItemTitle = document.getElementById('edit-item-title');
+    const editItemLabel = document.getElementById('edit-item-label');
+    const editItemText = document.getElementById('edit-item-text');
+    const editItemError = document.getElementById('edit-item-error');
+    const addMedicineModal = document.getElementById('add-medicine-modal');
+    const addMedicineForm = document.getElementById('add-medicine-form');
+    const addMedicineBack = document.getElementById('add-medicine-back');
+    const addMedicineName = document.getElementById('add-medicine-name');
+    const addMedicineType = document.getElementById('add-medicine-type');
+    const addMedicineStrengthMg = document.getElementById('add-medicine-strength-mg');
+    const addMedicineStrengthMl = document.getElementById('add-medicine-strength-ml');
+    const addMedicineComposition = document.getElementById('add-medicine-composition');
+    const addMedicineError = document.getElementById('add-medicine-error');
+    const continuePreviewBtn = document.getElementById('continue-preview-btn');
+    const selectedMedicines = new Set();
+    const medicineDetails = new Map();
+    const medicineCatalog = new Map();
+    const sectionItemDetails = {
+      Symptoms: new Map(),
+      Finding: new Map(),
+      Diagnosis: new Map(),
+      Investigation: new Map(),
+      'Past Medical History': new Map(),
+      Instruction: new Map()
+    };
+    const prescriptionSelections = {};
+    let activeMedicine = '';
+    let activeSelectionDetail = null;
+    let lastAddMedicineTrigger = null;
+    let pendingAddMedicineResolve = null;
+    let addMedicineMode = 'create';
+    let editingMedicineKey = '';
+    const sectionDetailSlots = new Map();
+    const DETAIL_SECTIONS = new Set(['Symptoms', 'Finding', 'Diagnosis', 'Investigation', 'Past Medical History', 'Instruction', 'Medication']);
+    // Sections whose saved items can be reworded in place, the same way a
+    // medicine can be edited from its details panel.
+    const EDITABLE_ITEM_SECTIONS = new Set(['Instruction']);
+    const EDITABLE_ITEM_LABELS = { Instruction: 'Instruction' };
+    // Per-patient, exactly like the draft below. A single shared key used to
+    // let one patient's doses reappear on the next patient's prescription
+    // while the 10-minute TTL was still running.
+    const MEDICINE_DETAIL_STORAGE_PREFIX = clinicStorageKey('prescriptionMedicineDetails');
+    const CUSTOM_TEMPLATE_STORAGE_KEY = clinicStorageKey('prescriptionCustomTemplates');
+    const PRESCRIPTION_TEMPLATE_CACHE_KEY = clinicStorageKey('prescriptionCloudTemplates');
+    const PRESCRIPTION_USAGE_STORAGE_KEY = clinicStorageKey('prescriptionUsageCounts');
+    const PRESCRIPTION_DRAFT_STORAGE_PREFIX = clinicStorageKey('prescriptionDraft');
+    const MEDICINE_DETAIL_TTL_MS = 10 * 60 * 1000;
+    const PRESCRIPTION_TEMPLATE_CACHE_TTL_MS = 15 * 60 * 1000;
+    const CHART_RECORD_STORAGE_KEY = clinicStorageKey('growthChartRecentRecords');
+    const PRESCRIPTION_DRAFT_TTL_MS = 10 * 60 * 1000;
+    const VISIBLE_CHIP_LIMIT = 10;
+    const prescriptionTemplates = {
+      Symptoms: ['Fever', 'Cough', 'Cold', 'Vomiting', 'Loose stools', 'Abdominal pain', 'Normal activity', 'No fever', 'No cough', 'No vomiting', 'No breathlessness', 'Normal urine', 'Bladder and bowel normal', 'Normal development', 'Throat pain', 'Nose block', 'Itching and rashes over body', 'Fast breathing', 'Eye redness', 'Excessive crying', 'No loose stools', 'Passing hard stools', 'Nausea', 'Productive cough', 'Ear pain', 'Headache', 'Sticky eye-discharge', 'Rashes', 'Feeding well', 'Earache', 'Decreased activity', 'Decreased urine output', 'Not eating well'],
+      Finding: ['Throat congestion', 'Wheeze', 'Pallor', 'Dehydrated', 'Active child', 'Irritable child', 'Hydration fair', 'Febrile', 'Afebrile', 'Chest clear', 'Abdomen soft', 'No organomegaly', 'Tonsils enlarged', 'Skin rash present', 'Mild dehydration', 'Conjunctival congestion', 'Nasal congestion', 'Crepitations', 'Oral ulcers', 'Ear discharge', 'Mottling', 'Pulse regular', 'No cyanosis', 'Mild pallor', 'Tachypnea', 'Tonsillar exudate'],
+      Diagnosis: ['Viral fever', 'URTI', 'Gastroenteritis', 'Allergic rhinitis', 'Observation advised', 'Acute bronchitis', 'Pharyngitis', 'Bronchiolitis', 'Tonsillitis', 'Constipation', 'AGE', 'Typhoid fever', 'UTI', 'Viral exanthem'],
+      Investigation: ['CBC', 'CRP', 'Urine routine', 'Chest X-ray', 'Dengue test', 'Widal test', 'RFT', 'LFT', 'Blood culture', 'Urine culture', 'Stool routine', 'Electrolytes', 'Random blood sugar', 'Peripheral smear', 'Malaria test', 'Ultrasound abdomen', 'Throat swab', 'X-ray PNS', 'Sputum culture', 'Procalcitonin', 'Blood gas', 'Serum calcium', 'Serum sodium', 'Serum potassium'],
+      'Past Medical History': ['Previous wheeze episodes', 'NICU stay', 'Febrile seizures', 'Asthma history', 'Drug allergy', 'Previous hospitalization', 'Recurrent cold', 'Recurrent cough', 'Developmental delay', 'Birth history normal', 'Vaccination delayed', 'Family history of allergy'],
+      Medication: ['Paracetamol', 'Cetirizine', 'Ondansetron', 'Azithromycin', 'ORS', 'Amoxicillin', 'Cefixime', 'Ibuprofen', 'Salbutamol', 'Budesonide', 'Zinc', 'Probiotic', 'Vitamin D3', 'Multivitamin'],
+      Instruction: ['Plenty of fluids', 'Steam inhalation', 'Soft diet', 'Review if fever persists', 'Emergency visit if breathing worsens', 'Tepid sponging if fever', 'Small frequent feeds', 'ORS after each loose stool', 'Saline nasal drops', 'Warm saline gargle', 'Avoid dust exposure', 'Keep child hydrated']
+    };
+    const prescriptionFallbackTemplates = {
+      Symptoms: ['Fever', 'Cough', 'Cold', 'Vomiting', 'Loose stools', 'Abdominal pain', 'Normal activity', 'No fever', 'No cough', 'No vomiting', 'No breathlessness', 'Normal urine', 'Bladder and bowel normal', 'Normal development', 'Throat pain', 'Nose block', 'Itching and rashes over body', 'Fast breathing', 'Eye redness', 'Excessive crying', 'No loose stools', 'Passing hard stools', 'Nausea', 'Productive cough', 'Ear pain', 'Headache', 'Sticky eye-discharge', 'Rashes', 'Feeding well', 'Earache', 'Decreased activity', 'Decreased urine output', 'Not eating well'],
+      'Past Medical History': ['Recurrent cough', 'Recurrent cold', 'Previous hospitalization', 'Known asthma', 'Known allergy', 'Recurrent abdominal pain', 'Recurrent UTI', 'Developmental delay', 'Birth history normal', 'No significant history', 'Vaccination delayed', 'Family history of allergy', 'Seizure history', 'Prematurity', 'NICU admission', 'Wheezing episodes', 'Frequent fever', 'Surgery history'],
+      Finding: ['Febrile', 'Afebrile', 'Chest clear', 'Crepitations', 'Abdomen soft', 'No organomegaly', 'Hydration fair', 'Oral ulcers', 'Tonsils enlarged', 'Ear normal', 'Skin rash present', 'Active and playful', 'Irritable child', 'Throat congestion', 'Wheeze present', 'Mild dehydration', 'Conjunctival congestion', 'Nasal discharge', 'Pulse regular', 'No cyanosis', 'Nasal congestion', 'Mild pallor', 'Tachypnea', 'Tonsillar exudate', 'Mottling', 'Ear discharge', 'Rhonchi'],
+      Diagnosis: ['Acute bronchitis', 'Acute gastritis', 'Tonsillitis', 'Pharyngitis', 'Bronchiolitis', 'Wheeze associated LRTI', 'Acute otitis media', 'UTI', 'Constipation', 'AGE', 'Dengue fever', 'Typhoid fever', 'Viral exanthem', 'Injury', 'Abrasion right leg', 'Viral fever', 'Allergic rhinitis', 'Acute diarrheal illness', 'Possible dehydration', 'Observation advised', 'Suspected viral infection', 'Acute febrile illness', 'Acute tonsillopharyngitis'],
+      Investigation: ['CBC with smear', 'Malaria test', 'Widal test', 'LFT', 'RFT', 'Blood culture', 'Urine culture', 'Stool routine', 'Electrolytes', 'Random blood sugar', 'Throat swab', 'X-ray PNS', 'Ultrasound abdomen', 'Dengue NS1', 'CRP', 'Chest X-ray', 'Urine routine', 'Peripheral smear', 'Sputum culture', 'Procalcitonin', 'Blood gas', 'Serum calcium', 'Serum sodium', 'Serum potassium', 'Serum creatinine', 'Serum bilirubin', 'ECG', 'ECG with lead placement'],
+      Medication: ['Amoxicillin', 'Amoxicillin clavulanate', 'Cefixime', 'Levocetirizine', 'Montelukast', 'Salbutamol', 'Budesonide', 'Pantoprazole', 'Domperidone', 'Zinc', 'Probiotic', 'Vitamin D3', 'Multivitamin', 'Ibuprofen', 'Paracetamol', 'Ondansetron', 'ORS', 'Cetirizine', 'Azithromycin', 'Metronidazole', 'Albendazole', 'Ferrous syrup', 'Prednisolone', 'Domperidone syrup', 'Ferrous ascorbate'],
+      Instruction: ['Complete medicine course', 'Tepid sponging if fever', 'Avoid oily food', 'Small frequent feeds', 'ORS after each loose stool', 'Saline nasal drops', 'Warm saline gargle', 'Avoid dust exposure', 'Monitor urine output', 'Return if breathing fast', 'Return if child is drowsy', 'Review with reports', 'Keep child hydrated', 'Use humidified air', 'Avoid cold drinks', 'Give medicine after food', 'Follow up in 2 days', 'Rest at home', 'Wash hands frequently', 'Avoid crowded places']
+    };
+    const fallbackTemplateRank = new Map();
+
+    function setSyncStatus(message, warning = false) {
+      if (!statusChip) {
+        return;
+      }
+
+      statusChip.textContent = message;
+      statusChip.classList.toggle('is-warning', warning);
+    }
+
+    function closeMobileMenu() {
+      if (!menuToggle || !primaryNav) {
+        return;
+      }
+
+      menuToggle.setAttribute('aria-expanded', 'false');
+      primaryNav.classList.remove('is-open');
+    }
+
+    function toggleMobileMenu() {
+      if (!menuToggle || !primaryNav) {
+        return;
+      }
+
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('is-open', !isOpen);
+    }
+
+    if (menuToggle && primaryNav) {
+      menuToggle.addEventListener('click', toggleMobileMenu);
+      navLinks.forEach((link) => link.addEventListener('click', closeMobileMenu));
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 640) {
+          closeMobileMenu();
+        }
+      });
+    }
+
+    let lastMedicineTrigger = null;
+
+    function getSectionPlaceholderCopy(sectionName) {
+      if (sectionName === 'Medication') {
+        return 'Select a medicine to set dose, timing, duration, and notes here.';
+      }
+
+      if (sectionName === 'Symptoms') {
+        return 'Select a symptom and its days, severity, and notes will appear here.';
+      }
+
+      if (sectionName === 'Finding') {
+        return 'Select a finding and its note box will appear here.';
+      }
+
+      if (sectionName === 'Diagnosis') {
+        return 'Select a diagnosis and its note box will appear here.';
+      }
+
+      return 'Extra details for this section will appear here.';
+    }
+
+    function createSectionDetailSlot(sectionName, sectionLabel = sectionName) {
+      const slot = document.createElement('aside');
+      slot.className = 'section-detail-slot';
+      slot.dataset.sectionSlot = sectionName;
+      slot.innerHTML = `
+        <div class="section-side-placeholder">
+          <div class="eyebrow">${escapeHtml(sectionLabel)}</div>
+          <h3>${escapeHtml(sectionLabel)} details</h3>
+          <p>${escapeHtml(getSectionPlaceholderCopy(sectionName))}</p>
+        </div>
+      `;
+      return slot;
+    }
+
+    function setupSectionRows() {
+      rxCards.forEach((card) => {
+        const sectionName = card.dataset.sectionName || card.querySelector('h2')?.textContent.trim() || '';
+        const sectionLabel = card.querySelector('h2')?.textContent.trim() || sectionName;
+        const row = document.createElement('div');
+        row.className = 'section-row';
+        row.dataset.section = sectionName;
+        card.parentNode.insertBefore(row, card);
+        row.appendChild(card);
+
+        if (DETAIL_SECTIONS.has(sectionName)) {
+          row.classList.add('has-detail-slot');
+          const slot = createSectionDetailSlot(sectionName, sectionLabel);
+          sectionDetailSlots.set(sectionName, slot);
+          row.appendChild(slot);
+        }
+      });
+    }
+
+    function showSectionPanel(sectionName, activePanel = null) {
+      [medicineModal, selectionDetailModal, addMedicineModal, editItemModal].forEach((panel) => {
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+      });
+
+      sectionDetailSlots.forEach((slot, name) => {
+        const placeholder = slot.querySelector('.section-side-placeholder');
+        const isTarget = name === sectionName;
+        const row = slot.closest('.section-row');
+        const shouldOpen = isTarget && Boolean(activePanel);
+        slot.classList.toggle('is-ready', shouldOpen);
+        row?.classList.toggle('is-detail-open', shouldOpen);
+
+        if (placeholder) {
+          placeholder.hidden = true;
+        }
+
+        if (!isTarget) {
+          return;
+        }
+
+        if (activePanel) {
+          slot.appendChild(activePanel);
+          activePanel.classList.add('is-open');
+          activePanel.setAttribute('aria-hidden', 'false');
+        }
+      });
+    }
+
+    function openMedicineModal(trigger = document.activeElement) {
+      lastMedicineTrigger = trigger instanceof HTMLElement ? trigger : null;
+      showSectionPanel('Medication', medicineModal);
+    }
+
+    function closeMedicineModal() {
+      syncMedicineDetailsFromDom();
+      // syncMedicineDetailsFromDom() only writes the standalone medicine-detail
+      // store, which the preview page never reads - it builds the sheet from
+      // the draft. Without this the dose, timing and duration a doctor just
+      // entered were dropped the moment they pressed Continue.
+      savePrescriptionDraft();
+      updateDosageWarningBanner();
+      showSectionPanel('Medication', null);
+      if (medicineModalEdit) {
+        medicineModalEdit.disabled = true;
+      }
+      if (lastMedicineTrigger && typeof lastMedicineTrigger.focus === 'function') {
+        lastMedicineTrigger.focus();
+      }
+      lastMedicineTrigger = null;
+    }
+
+    function showAddMedicineError(message) {
+      addMedicineError.textContent = message;
+      addMedicineError.classList.add('is-visible');
+    }
+
+    function clearAddMedicineError() {
+      addMedicineError.textContent = '';
+      addMedicineError.classList.remove('is-visible');
+    }
+
+    function closeAddMedicineModal(result = null) {
+      showSectionPanel('Medication', null);
+      clearAddMedicineError();
+
+      if (pendingAddMedicineResolve) {
+        pendingAddMedicineResolve(result);
+        pendingAddMedicineResolve = null;
+      }
+
+      if (lastAddMedicineTrigger && typeof lastAddMedicineTrigger.focus === 'function') {
+        lastAddMedicineTrigger.focus();
+      }
+
+      lastAddMedicineTrigger = null;
+      addMedicineMode = 'create';
+      editingMedicineKey = '';
+      addMedicineForm.dataset.mode = 'create';
+      const saveButton = addMedicineForm.querySelector('.add-medicine-save');
+      if (saveButton) {
+        saveButton.textContent = 'Save';
+      }
+      const title = document.getElementById('add-medicine-title');
+      if (title) {
+        title.textContent = 'Add New Medicine';
+      }
+    }
+
+    function openAddMedicineModal(initialName = '', trigger = document.activeElement) {
+      if (pendingAddMedicineResolve) {
+        pendingAddMedicineResolve(null);
+        pendingAddMedicineResolve = null;
+      }
+
+      addMedicineForm.reset();
+      addMedicineName.value = toTitleCase(initialName || '');
+      clearAddMedicineError();
+      addMedicineMode = 'create';
+      editingMedicineKey = '';
+      addMedicineForm.dataset.mode = 'create';
+      const saveButton = addMedicineForm.querySelector('.add-medicine-save');
+      if (saveButton) {
+        saveButton.textContent = 'Save';
+      }
+      const title = document.getElementById('add-medicine-title');
+      if (title) {
+        title.textContent = 'Add New Medicine';
+      }
+      lastAddMedicineTrigger = trigger instanceof HTMLElement ? trigger : null;
+      showSectionPanel('Medication', addMedicineModal);
+      window.setTimeout(() => addMedicineName.focus(), 0);
+
+      return new Promise((resolve) => {
+        pendingAddMedicineResolve = resolve;
+      });
+    }
+
+    function openEditMedicineModal(trigger = document.activeElement) {
+      if (!activeMedicine) {
+        return null;
+      }
+
+      if (pendingAddMedicineResolve) {
+        pendingAddMedicineResolve(null);
+        pendingAddMedicineResolve = null;
+      }
+
+      const detail = getMedicineDetail(activeMedicine);
+      const strengthParts = String(detail.strength || '')
+        .split(' / ')
+        .map((part) => part.replace(/\s*(mg|ml)$/i, '').trim());
+      const strengthMg = strengthParts[0] || '';
+      const strengthMl = strengthParts[1] || '';
+
+      addMedicineForm.reset();
+      addMedicineName.value = toTitleCase(detail.name || detail.displayName || activeMedicine);
+      addMedicineType.value = detail.type || '';
+      addMedicineStrengthMg.value = strengthMg;
+      addMedicineStrengthMl.value = strengthMl;
+      addMedicineComposition.value = detail.composition || '';
+      clearAddMedicineError();
+      addMedicineMode = 'edit';
+      editingMedicineKey = activeMedicine;
+      addMedicineForm.dataset.mode = 'edit';
+      const saveButton = addMedicineForm.querySelector('.add-medicine-save');
+      if (saveButton) {
+        saveButton.textContent = 'Update';
+      }
+      const title = document.getElementById('add-medicine-title');
+      if (title) {
+        title.textContent = 'Edit Medicine';
+      }
+      lastAddMedicineTrigger = trigger instanceof HTMLElement ? trigger : null;
+      showSectionPanel('Medication', addMedicineModal);
+      window.setTimeout(() => addMedicineName.focus(), 0);
+
+      return new Promise((resolve) => {
+        pendingAddMedicineResolve = resolve;
+      });
+    }
+
+    const MEDICINE_TYPE_ABBREVIATIONS = {
+      Syrup: 'SYP',
+      Drops: 'DROPS',
+      Tablet: 'TAB',
+      Capsule: 'CAP',
+      Suspension: 'SUSP',
+      Inhaler: 'INH',
+      Nebulization: 'NEB',
+      Injection: 'INJ',
+      'Cream/Ointment': 'OINT',
+      Other: 'OTHER'
+    };
+
+    function getMedicineTypeAbbreviation(type) {
+      const trimmedType = String(type || '').trim();
+      return MEDICINE_TYPE_ABBREVIATIONS[trimmedType] || trimmedType.toUpperCase();
+    }
+
+    const LEGACY_MEDICINE_TYPE_PREFIX_PATTERN = new RegExp(
+      `^(${Object.keys(MEDICINE_TYPE_ABBREVIATIONS).map((type) => type.replace(/[/]/g, '\\/')).join('|')})\\s+(.+)$`,
+      'i'
+    );
+
+    function normalizeLegacyMedicineTypePrefix(text) {
+      const trimmed = String(text || '').trim();
+      const match = trimmed.match(LEGACY_MEDICINE_TYPE_PREFIX_PATTERN);
+      if (!match) {
+        return trimmed;
+      }
+
+      return `${getMedicineTypeAbbreviation(match[1])}: ${match[2]}`;
+    }
+
+    function buildMedicineDisplayName(meta = {}) {
+      const name = toTitleCase(meta.name || '');
+      const type = String(meta.type || '').trim();
+
+      if (!name || !type) {
+        return name;
+      }
+
+      const abbreviation = getMedicineTypeAbbreviation(type);
+      const lowerName = name.toLowerCase();
+      if (lowerName.startsWith(`${abbreviation.toLowerCase()}: `)) {
+        return name;
+      }
+
+      return `${abbreviation}: ${name}`;
+    }
+
+    function mergeUniqueItems(...lists) {
+      const seen = new Set();
+      const merged = [];
+
+      lists.flat().forEach((item) => {
+        const value = String(item || '').trim();
+        const key = value.toLowerCase();
+
+        if (!value || seen.has(key)) {
+          return;
+        }
+
+        seen.add(key);
+        merged.push(value);
+      });
+
+      return merged;
+    }
+
+    function getFallbackRank(sectionName, value) {
+      const key = `${sectionName}::${String(value || '').trim().toLowerCase()}`;
+      if (!fallbackTemplateRank.has(key)) {
+        fallbackTemplateRank.set(key, Math.random());
+      }
+      return fallbackTemplateRank.get(key);
+    }
+
+    function orderSectionItems(sectionName, items = []) {
+      const commonItems = prescriptionTemplates[sectionName] || [];
+      const commonRank = new Map(commonItems.map((item, index) => [String(item).toLowerCase(), index]));
+      const fallbackItems = prescriptionFallbackTemplates[sectionName] || [];
+      const fallbackSet = new Set(fallbackItems.map((item) => String(item).toLowerCase()));
+      const usageCounts = loadPrescriptionUsageCounts()[sectionName] || {};
+
+      return [...items].sort((left, right) => {
+        const leftKey = String(left).toLowerCase();
+        const rightKey = String(right).toLowerCase();
+        const leftCount = Number(usageCounts[leftKey] || 0);
+        const rightCount = Number(usageCounts[rightKey] || 0);
+
+        if (leftCount !== rightCount) {
+          return rightCount - leftCount;
+        }
+
+        const leftRank = commonRank.has(leftKey) ? commonRank.get(leftKey) : Number.MAX_SAFE_INTEGER;
+        const rightRank = commonRank.has(rightKey) ? commonRank.get(rightKey) : Number.MAX_SAFE_INTEGER;
+
+        if (leftRank !== rightRank) {
+          return leftRank - rightRank;
+        }
+
+        const leftFallback = fallbackSet.has(leftKey);
+        const rightFallback = fallbackSet.has(rightKey);
+        if (leftFallback !== rightFallback) {
+          return leftFallback ? -1 : 1;
+        }
+        if (leftFallback && rightFallback) {
+          return getFallbackRank(sectionName, left) - getFallbackRank(sectionName, right);
+        }
+
+        return left.localeCompare(right);
+      });
+    }
+
+    function loadPrescriptionUsageCounts() {
+      const saved = readLocalJson(PRESCRIPTION_USAGE_STORAGE_KEY, {});
+      return saved && typeof saved === 'object' ? saved : {};
+    }
+
+    function savePrescriptionUsageCounts(payload) {
+      try {
+        localStorage.setItem(PRESCRIPTION_USAGE_STORAGE_KEY, JSON.stringify(payload));
+      } catch (error) {
+        console.warn(`Unable to save prescription usage counts: ${error.message}`);
+      }
+    }
+
+    function recordPrescriptionUsage(sectionName, value) {
+      const normalizedValue = String(value || '').trim();
+      if (!sectionName || !normalizedValue) {
+        return;
+      }
+
+      const saved = loadPrescriptionUsageCounts();
+      saved[sectionName] = saved[sectionName] || {};
+      const key = normalizedValue.toLowerCase();
+      saved[sectionName][key] = Number(saved[sectionName][key] || 0) + 1;
+      savePrescriptionUsageCounts(saved);
+    }
+
+    function loadCustomTemplates() {
+      const saved = readLocalJson(CUSTOM_TEMPLATE_STORAGE_KEY, {});
+      return saved && typeof saved === 'object' ? saved : {};
+    }
+
+    function saveCustomTemplates(payload) {
+      localStorage.setItem(CUSTOM_TEMPLATE_STORAGE_KEY, JSON.stringify(payload));
+    }
+
+    function rememberMedicineCatalogEntry(medicine, meta = {}) {
+      const displayName = meta.displayName || medicine;
+      const name = meta.name || displayName;
+
+      if (!displayName) {
+        return;
+      }
+
+      medicineCatalog.set(displayName, {
+        name,
+        displayName,
+        type: meta.type || '',
+        strength: meta.strength || '',
+        composition: meta.composition || '',
+        updatedAtIso: meta.updatedAtIso || new Date().toISOString()
+      });
+    }
+
+    function rememberMedicineCatalogEntries(catalog = {}) {
+      Object.entries(catalog || {}).forEach(([medicine, meta]) => {
+        rememberMedicineCatalogEntry(medicine, {
+          ...(meta || {}),
+          displayName: meta?.displayName || medicine
+        });
+      });
+    }
+
+    function getMedicineMeta(medicine) {
+      return medicineCatalog.get(medicine) || null;
+    }
+
+    function formatMedicineLabel(medicine, detail = {}) {
+      const brandName = normalizeLegacyMedicineTypePrefix(detail.name || detail.displayName || medicine);
+      const type = String(detail.type || '').trim();
+      const composition = String(detail.composition || '').trim();
+      const lowerBrand = brandName.toLowerCase();
+      const abbreviation = getMedicineTypeAbbreviation(type);
+      const nameWithType = type && !lowerBrand.startsWith(`${abbreviation.toLowerCase()}: `)
+        ? `${abbreviation}: ${brandName}`
+        : brandName;
+
+      return composition ? `${nameWithType} (${composition})` : nameWithType;
+    }
+
+    function hydrateMedicineMeta(medicine) {
+      const meta = getMedicineMeta(medicine);
+
+      if (meta) {
+        saveMedicineMeta(medicine, meta);
+      }
+    }
+
+    function mergeWithSavedTemplates(templates) {
+      const saved = loadCustomTemplates();
+      rememberMedicineCatalogEntries(saved.medicineCatalog || {});
+
+      const merged = {};
+      Object.entries(templates).forEach(([sectionName, items]) => {
+        // Items renamed locally are hidden so the old wording can't creep back
+        // in from the fallback list or a stale cloud copy.
+        const hidden = new Set((saved.hiddenItems?.[sectionName] || []).map((item) => String(item).toLowerCase()));
+        merged[sectionName] = mergeUniqueItems(items, saved[sectionName] || [], prescriptionFallbackTemplates[sectionName] || [])
+          .filter((item) => !hidden.has(item.toLowerCase()));
+      });
+
+      return merged;
+    }
+
+    function forgetCustomTemplateItem(sectionName, value) {
+      const normalizedValue = String(value || '').trim();
+      if (!normalizedValue) {
+        return;
+      }
+
+      const saved = loadCustomTemplates();
+      const key = normalizedValue.toLowerCase();
+
+      if (Array.isArray(saved[sectionName])) {
+        saved[sectionName] = saved[sectionName].filter((item) => String(item).toLowerCase() !== key);
+      }
+
+      saved.hiddenItems = saved.hiddenItems && typeof saved.hiddenItems === 'object' ? saved.hiddenItems : {};
+      saved.hiddenItems[sectionName] = mergeUniqueItems(saved.hiddenItems[sectionName] || [], [normalizedValue]);
+      saveCustomTemplates(saved);
+    }
+
+    function rememberCustomTemplateItem(sectionName, value, medicineMeta = null) {
+      const saved = loadCustomTemplates();
+      saved[sectionName] = mergeUniqueItems(saved[sectionName] || [], [value]);
+
+      if (Array.isArray(saved.hiddenItems?.[sectionName])) {
+        const key = String(value).toLowerCase();
+        saved.hiddenItems[sectionName] = saved.hiddenItems[sectionName].filter((item) => String(item).toLowerCase() !== key);
+      }
+
+      if (sectionName === 'Medication' && medicineMeta) {
+        saved.medicineCatalog = saved.medicineCatalog || {};
+        saved.medicineCatalog[value] = {
+          name: medicineMeta.name || value,
+          displayName: value,
+          type: medicineMeta.type || '',
+          strength: medicineMeta.strength || '',
+          composition: medicineMeta.composition || '',
+          updatedAtIso: new Date().toISOString()
+        };
+        rememberMedicineCatalogEntry(value, saved.medicineCatalog[value]);
+      }
+
+      saveCustomTemplates(saved);
+    }
+
+    function getSectionItemDetail(sectionName, value) {
+      if (!sectionItemDetails[sectionName]) {
+        return {};
+      }
+
+      if (!sectionItemDetails[sectionName].has(value)) {
+        const initialDetail = sectionName === 'Symptoms'
+          ? { days: '', severity: '', note: '' }
+          : { note: '' };
+        if (sectionName === 'Diagnosis') {
+          initialDetail.status = '';
+        }
+        sectionItemDetails[sectionName].set(value, initialDetail);
+      }
+
+      return sectionItemDetails[sectionName].get(value);
+    }
+
+    function saveSelectionDetailsToDraft() {
+      savePrescriptionDraft();
+    }
+
+    function formatSelectedItemLabel(sectionName, value) {
+      if (sectionName === 'Medication') {
+        return formatMedicineLabel(value, getMedicineDetail(value));
+      }
+
+      if (sectionName !== 'Symptoms' && sectionName !== 'Diagnosis') {
+        return value;
+      }
+
+      const detail = getSectionItemDetail(sectionName, value);
+      const detailParts = [];
+      if (sectionName === 'Symptoms' && detail.days) {
+        detailParts.push(detail.days);
+      }
+      if (sectionName === 'Symptoms' && detail.severity) {
+        detailParts.push(detail.severity);
+      }
+      if (sectionName === 'Diagnosis' && detail.status) {
+        detailParts.push(detail.status);
+      }
+      if (detail.note) {
+        detailParts.push(detail.note);
+      }
+      return detailParts.length ? `${value}(${detailParts.join(',')})` : value;
+    }
+
+    function refreshSelectedItemsForSection(sectionName) {
+      const card = sectionMap.get(sectionName);
+      const selectedValues = prescriptionSelections[sectionName];
+      if (!card || !selectedValues) {
+        return;
+      }
+
+      const selectedList = card.querySelector('[data-selected-list]');
+      if (!selectedList) {
+        return;
+      }
+
+      renderSelectedItems(selectedList, [...selectedValues], sectionName);
+    }
+
+    function syncSelectionDetailsFromDom() {
+      if (!activeSelectionDetail) {
+        return;
+      }
+
+      const { sectionName, value } = activeSelectionDetail;
+      const detail = getSectionItemDetail(sectionName, value);
+      const daysInput = selectionDetailContent.querySelector('[data-field="days"]');
+      const severityInput = selectionDetailContent.querySelector('[data-field="severity"]:checked');
+      const diagnosisStatusInput = selectionDetailContent.querySelector('[data-field="diagnosis-status"]:checked');
+      const noteInput = selectionDetailContent.querySelector('[data-field="note"]');
+
+      if (sectionName === 'Symptoms') {
+        detail.days = daysInput?.value.trim() || '';
+        detail.severity = severityInput?.value || '';
+      }
+
+      if (sectionName === 'Diagnosis') {
+        detail.status = diagnosisStatusInput?.value || '';
+      }
+
+      detail.note = noteInput?.value.trim() || '';
+      sectionItemDetails[sectionName].set(value, { ...detail });
+      refreshSelectedItemsForSection(sectionName);
+      saveSelectionDetailsToDraft();
+    }
+
+    function syncDaysQuickPickState() {
+      const daysInput = selectionDetailContent.querySelector('[data-field="days"]');
+      const quickButtons = selectionDetailContent.querySelectorAll('[data-days-option]');
+      if (!daysInput || !quickButtons.length) {
+        return;
+      }
+
+      const currentValue = daysInput.value.trim().toLowerCase();
+      quickButtons.forEach((button) => {
+        const optionValue = (button.dataset.daysOption || '').trim().toLowerCase();
+        button.classList.toggle('is-active', optionValue === currentValue);
+      });
+    }
+
+    function bindSelectionDetailInteractions() {
+      const daysInput = selectionDetailContent.querySelector('[data-field="days"]');
+      const quickButtons = selectionDetailContent.querySelectorAll('[data-days-option]');
+
+      quickButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          if (!daysInput) {
+            return;
+          }
+
+          daysInput.value = button.dataset.daysOption || '';
+          syncDaysQuickPickState();
+          syncSelectionDetailsFromDom();
+          daysInput.focus();
+        });
+      });
+
+      if (daysInput) {
+        daysInput.addEventListener('input', () => {
+          syncDaysQuickPickState();
+          syncSelectionDetailsFromDom();
+        });
+      }
+
+      selectionDetailContent.querySelectorAll('[data-field="severity"], [data-field="diagnosis-status"], [data-field="note"]').forEach((element) => {
+        element.addEventListener('input', syncSelectionDetailsFromDom);
+        element.addEventListener('change', syncSelectionDetailsFromDom);
+      });
+
+      const noteField = selectionDetailContent.querySelector('[data-field="note"]');
+      noteField?.addEventListener('blur', () => {
+        noteField.value = formatClauseText(noteField.value);
+        syncSelectionDetailsFromDom();
+      });
+
+      syncDaysQuickPickState();
+    }
+
+    function openSelectionDetailModal(sectionName, value, trigger = document.activeElement) {
+      activeSelectionDetail = {
+        sectionName,
+        value,
+        trigger: trigger instanceof HTMLElement ? trigger : null
+      };
+
+      const detail = getSectionItemDetail(sectionName, value);
+      selectionDetailTitle.textContent = sectionName === 'Symptoms'
+        ? 'Symptom Details'
+        : sectionName === 'Diagnosis'
+          ? 'Diagnosis Details'
+          : `${sectionName} Notes`;
+      selectionDetailSubtitle.textContent = value;
+      if (selectionDetailEdit) {
+        selectionDetailEdit.hidden = !EDITABLE_ITEM_SECTIONS.has(sectionName);
+        selectionDetailEdit.setAttribute('aria-label', `Edit ${EDITABLE_ITEM_LABELS[sectionName] || sectionName}`);
+      }
+      selectionDetailContent.className = 'medicine-detail-content';
+      selectionDetailContent.innerHTML = sectionName === 'Symptoms'
+        ? `
+          <div class="medicine-detail-card">
+            <div class="medicine-question">
+              <div class="question-bar">
+                <span>Days</span>
+                <span>Optional</span>
+              </div>
+              <div class="selection-pill-grid days-grid" aria-label="${value} days quick options">
+                ${['1d', '2d', '3d', '5d', '7d'].map((option) => `
+                  <button type="button" class="selection-pill" data-days-option="${option}">${option}</button>
+                `).join('')}
+              </div>
+              <input class="days-custom-input" type="text" placeholder="Custom days" data-field="days" value="${escapeHtml(detail.days || '')}">
+            </div>
+            <div class="medicine-question">
+              <div class="question-bar">
+                <span>Severity</span>
+                <span>Choose one</span>
+              </div>
+              <div class="selection-pill-grid" aria-label="${value} severity options">
+                ${['Mild', 'Moderate', 'Severe'].map((option) => `
+                  <label class="option-pill selection-pill">
+                    <input type="radio" name="severity-detail" value="${option}" data-field="severity" ${checkedAttr(detail.severity === option)}>
+                    ${option}
+                  </label>
+                `).join('')}
+              </div>
+            </div>
+            <div class="note-area">
+              <div class="question-bar">
+                <span>Notes</span>
+                <span>Optional</span>
+              </div>
+              <textarea placeholder="Add note" data-field="note">${escapeHtml(detail.note || '')}</textarea>
+            </div>
+          </div>
+        `
+        : `
+          <div class="medicine-detail-card">
+            ${sectionName === 'Diagnosis' ? `
+              <div class="medicine-question">
+                <div class="question-bar">
+                  <span>Status</span>
+                  <span>Choose one</span>
+                </div>
+                <div class="selection-pill-grid status-grid" aria-label="${value} status options">
+                  ${['Suspected', 'Recovering', 'Recovered', 'Under evaluation'].map((option) => `
+                    <label class="option-pill selection-pill">
+                      <input type="radio" name="diagnosis-status-detail" value="${option}" data-field="diagnosis-status" ${checkedAttr(detail.status === option)}>
+                      ${option}
+                    </label>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+            <div class="note-area">
+              <div class="question-bar">
+                <span>${sectionName === 'Diagnosis' ? 'Free text notes' : 'Notes'}</span>
+                <span>Optional</span>
+              </div>
+              <textarea placeholder="${sectionName === 'Diagnosis' ? 'Add diagnosis notes' : 'Add note'}" data-field="note">${escapeHtml(detail.note || '')}</textarea>
+            </div>
+          </div>
+        `;
+
+      showSectionPanel(sectionName, selectionDetailModal);
+      bindSelectionDetailInteractions();
+    }
+
+    function closeSelectionDetailModal() {
+      syncSelectionDetailsFromDom();
+      showSectionPanel(activeSelectionDetail?.sectionName || 'Symptoms', null);
+      if (activeSelectionDetail?.trigger && typeof activeSelectionDetail.trigger.focus === 'function') {
+        activeSelectionDetail.trigger.focus();
+      }
+      activeSelectionDetail = null;
+    }
+
+    let editingSectionItem = null;
+
+    function showEditItemError(message) {
+      editItemError.textContent = message;
+      editItemError.classList.add('is-visible');
+    }
+
+    function clearEditItemError() {
+      editItemError.textContent = '';
+      editItemError.classList.remove('is-visible');
+    }
+
+    function openEditItemModal(sectionName, value, trigger = document.activeElement) {
+      if (!EDITABLE_ITEM_SECTIONS.has(sectionName) || !value) {
+        return;
+      }
+
+      syncSelectionDetailsFromDom();
+      // The details panel is about to be swapped out, so stop treating its
+      // stale markup as the live source for note edits.
+      activeSelectionDetail = null;
+      editingSectionItem = {
+        sectionName,
+        value,
+        trigger: trigger instanceof HTMLElement ? trigger : null
+      };
+
+      const label = EDITABLE_ITEM_LABELS[sectionName] || sectionName;
+      editItemTitle.textContent = `Edit ${label}`;
+      editItemLabel.textContent = label;
+      editItemText.value = value;
+      clearEditItemError();
+      showSectionPanel(sectionName, editItemModal);
+      window.setTimeout(() => {
+        editItemText.focus();
+        editItemText.select();
+      }, 0);
+    }
+
+    function closeEditItemModal(reopenValue = null) {
+      const context = editingSectionItem;
+      editingSectionItem = null;
+      clearEditItemError();
+
+      if (!context) {
+        return;
+      }
+
+      // Hand the panel slot straight back to the details view so the flow
+      // matches the medicine edit round-trip.
+      const value = reopenValue || context.value;
+      getSectionItemDetail(context.sectionName, value);
+      openSelectionDetailModal(context.sectionName, value, context.trigger || selectionDetailEdit);
+    }
+
+    function renameSectionItemUsage(sectionName, oldValue, newValue) {
+      const saved = loadPrescriptionUsageCounts();
+      const sectionCounts = saved[sectionName];
+      const oldKey = String(oldValue).toLowerCase();
+
+      if (!sectionCounts || !(oldKey in sectionCounts)) {
+        return;
+      }
+
+      const newKey = String(newValue).toLowerCase();
+      sectionCounts[newKey] = Number(sectionCounts[newKey] || 0) + Number(sectionCounts[oldKey] || 0);
+      delete sectionCounts[oldKey];
+      savePrescriptionUsageCounts(saved);
+    }
+
+    // Replaces oldValue with newValue in a section's item list, keeping its
+    // position. Matching is case-insensitive so a differently-cased copy of
+    // the new value is not left behind as a duplicate.
+    function replaceItemInList(items, oldValue, newValue) {
+      const oldKey = String(oldValue).toLowerCase();
+      const newKey = String(newValue).toLowerCase();
+      const next = [];
+      let inserted = false;
+
+      (Array.isArray(items) ? items : []).forEach((item) => {
+        const key = String(item || '').toLowerCase();
+        if (key === oldKey || key === newKey) {
+          if (!inserted) {
+            next.push(newValue);
+            inserted = true;
+          }
+          return;
+        }
+        next.push(item);
+      });
+
+      if (!inserted) {
+        next.push(newValue);
+      }
+      return next;
+    }
+
+    // One read-modify-write transaction, so the list is never left with the
+    // old value removed but the new one missing.
+    async function renameSectionItemInCloud(sectionName, oldValue, newValue) {
+      if (!db) {
+        setSyncStatus('Rename saved on this device only - cloud sync unavailable', true);
+        return false;
+      }
+
+      const sectionRef = doc(db, FIREBASE_COLLECTIONS.prescription, sectionName);
+
+      try {
+        await runTransaction(db, async (transaction) => {
+          const snapshot = await transaction.get(sectionRef);
+          const items = snapshot.exists() ? snapshot.data().items : [];
+          transaction.set(sectionRef, {
+            name: sectionName,
+            items: replaceItemInList(items, oldValue, newValue),
+            updatedAt: serverTimestamp()
+          }, { merge: true });
+        });
+        setSyncStatus('Prescription collection synced');
+        return true;
+      } catch (error) {
+        console.error(`Unable to rename prescription item: ${error.message}`);
+        setSyncStatus('Rename not saved to cloud - check connection and try again', true);
+        return false;
+      }
+    }
+
+    // Saves an edited medicine: swaps the name in `items` and moves its
+    // `medicineCatalog` entry to the new key with the new details, in one
+    // transaction. `medicineCatalog` is written with update() so the old key
+    // is actually removed (a merge would keep it).
+    async function saveMedicineEditToCloud(oldKey, newKey, meta) {
+      if (!db) {
+        setSyncStatus('Medicine edit saved on this device only - cloud sync unavailable', true);
+        return false;
+      }
+
+      const sectionRef = doc(db, FIREBASE_COLLECTIONS.prescription, 'Medication');
+
+      try {
+        await runTransaction(db, async (transaction) => {
+          const snapshot = await transaction.get(sectionRef);
+          const data = snapshot.exists() ? snapshot.data() : {};
+          const catalog = { ...(data.medicineCatalog || {}) };
+          const oldLower = String(oldKey).toLowerCase();
+          const newLower = String(newKey).toLowerCase();
+
+          Object.keys(catalog).forEach((key) => {
+            const lower = key.toLowerCase();
+            if (lower === oldLower || lower === newLower) {
+              delete catalog[key];
+            }
+          });
+
+          catalog[newKey] = {
+            name: meta.name || newKey,
+            displayName: newKey,
+            type: meta.type || '',
+            strength: meta.strength || '',
+            composition: meta.composition || '',
+            updatedAtIso: new Date().toISOString()
+          };
+
+          const payload = {
+            name: 'Medication',
+            items: replaceItemInList(data.items, oldKey, newKey),
+            medicineCatalog: catalog,
+            updatedAt: serverTimestamp()
+          };
+
+          if (snapshot.exists()) {
+            transaction.update(sectionRef, payload);
+          } else {
+            transaction.set(sectionRef, { ...payload, createdAt: serverTimestamp() });
+          }
+        });
+        setSyncStatus('Prescription collection synced');
+        return true;
+      } catch (error) {
+        console.error(`Unable to save medicine edit: ${error.message}`);
+        setSyncStatus('Medicine edit not saved to cloud - check connection and try again', true);
+        return false;
+      }
+    }
+
+    function renameSectionItemEverywhere(sectionName, oldValue, newValue) {
+      if (!oldValue || !newValue || oldValue === newValue) {
+        return;
+      }
+
+      const detailMap = sectionItemDetails[sectionName];
+      if (detailMap && detailMap.has(oldValue)) {
+        detailMap.set(newValue, { ...detailMap.get(oldValue) });
+        detailMap.delete(oldValue);
+      }
+
+      sectionBindings.get(sectionName)?.renameValue?.(oldValue, newValue);
+      forgetCustomTemplateItem(sectionName, oldValue);
+      rememberCustomTemplateItem(sectionName, newValue);
+      renameSectionItemUsage(sectionName, oldValue, newValue);
+      savePrescriptionDraft();
+      renameSectionItemInCloud(sectionName, oldValue, newValue);
+    }
+
+    medicineModalClose.addEventListener('click', closeMedicineModal);
+    medicineModalEdit.addEventListener('click', () => {
+      if (!activeMedicine) {
+        return;
+      }
+
+      openEditMedicineModal(medicineModalEdit);
+    });
+    selectionDetailClose.addEventListener('click', closeSelectionDetailModal);
+    selectionDetailEdit?.addEventListener('click', () => {
+      if (!activeSelectionDetail) {
+        return;
+      }
+
+      openEditItemModal(activeSelectionDetail.sectionName, activeSelectionDetail.value, activeSelectionDetail.trigger || selectionDetailEdit);
+    });
+    editItemBack.addEventListener('click', () => closeEditItemModal());
+    editItemText.addEventListener('input', clearEditItemError);
+    editItemForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!editingSectionItem) {
+        return;
+      }
+
+      const { sectionName, value } = editingSectionItem;
+      const label = EDITABLE_ITEM_LABELS[sectionName] || sectionName;
+      const nextValue = toSentenceCase(editItemText.value.replace(/\s+/g, ' '));
+
+      if (!nextValue) {
+        showEditItemError(`${label} text is required.`);
+        editItemText.focus();
+        return;
+      }
+
+      if (nextValue === value) {
+        closeEditItemModal();
+        return;
+      }
+
+      const isDuplicate = nextValue.toLowerCase() !== value.toLowerCase()
+        && Boolean(sectionBindings.get(sectionName)?.hasItem?.(nextValue));
+
+      if (isDuplicate) {
+        showEditItemError(`"${nextValue}" is already saved in ${label}s.`);
+        editItemText.focus();
+        return;
+      }
+
+      renameSectionItemEverywhere(sectionName, value, nextValue);
+      closeEditItemModal(nextValue);
+    });
+    addMedicineBack.addEventListener('click', () => closeAddMedicineModal(null));
+    addMedicineForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = toTitleCase(addMedicineName.value);
+      const type = addMedicineType.value.trim();
+      const strengthMg = addMedicineStrengthMg.value.trim();
+      const strengthMl = addMedicineStrengthMl.value.trim();
+      const strength = [
+        strengthMg ? `${strengthMg} mg` : '',
+        strengthMl ? `${strengthMl} ml` : ''
+      ].filter(Boolean).join(' / ');
+      const composition = addMedicineComposition.value.trim();
+
+      if (!name) {
+        showAddMedicineError('Brand name is required.');
+        addMedicineName.focus();
+        return;
+      }
+
+      if (!type) {
+        showAddMedicineError('Medicine type is required so it can be saved as Syrup, Tablet, Drops, etc.');
+        addMedicineType.focus();
+        return;
+      }
+
+      if (!composition) {
+        showAddMedicineError('Medicine composition is required.');
+        addMedicineComposition.focus();
+        return;
+      }
+
+      const result = {
+        name,
+        displayName: buildMedicineDisplayName({ name, type }),
+        type,
+        strength,
+        composition
+      };
+
+      if (addMedicineMode === 'edit' && editingMedicineKey) {
+        const oldKey = editingMedicineKey;
+        const newKey = result.displayName || oldKey;
+        renameMedicineEverywhere(oldKey, newKey);
+        saveMedicineMeta(newKey, result);
+        if (newKey !== oldKey) {
+          forgetCustomTemplateItem('Medication', oldKey);
+        }
+        rememberCustomTemplateItem('Medication', newKey, result);
+        saveMedicineEditToCloud(oldKey, newKey, result);
+        editingMedicineKey = newKey;
+        savePrescriptionDraft();
+        sectionBindings.get('Medication')?.refreshSelectedList?.();
+        renderMedicineDetails();
+        closeAddMedicineModal(result);
+        return;
+      }
+
+      closeAddMedicineModal(result);
+    });
+    addMedicineName.addEventListener('input', clearAddMedicineError);
+    addMedicineStrengthMg.addEventListener('input', clearAddMedicineError);
+    addMedicineStrengthMl.addEventListener('input', clearAddMedicineError);
+    addMedicineComposition.addEventListener('input', clearAddMedicineError);
+    addMedicineType.addEventListener('change', clearAddMedicineError);
+    selectionDetailContent.addEventListener('input', syncSelectionDetailsFromDom);
+    selectionDetailContent.addEventListener('change', syncSelectionDetailsFromDom);
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        if (editItemModal.classList.contains('is-open')) {
+          closeEditItemModal();
+          return;
+        }
+
+        if (addMedicineModal.classList.contains('is-open')) {
+          closeAddMedicineModal(null);
+          return;
+        }
+
+        if (selectionDetailModal.classList.contains('is-open')) {
+          closeSelectionDetailModal();
+          return;
+        }
+        closeMedicineModal();
+      }
+    });
+
+    function renderSelectedItems(selectedList, values, sectionName = '') {
+      selectedList.innerHTML = '';
+
+      if (!values.length) {
+        return;
+      }
+
+      values.forEach((value) => {
+        const item = document.createElement('button');
+        item.className = 'selected-item';
+        item.type = 'button';
+        item.dataset.selectedValue = value;
+        item.textContent = formatSelectedItemLabel(sectionName, value);
+
+        const removeIcon = document.createElement('span');
+        removeIcon.className = 'selected-item-remove';
+        removeIcon.textContent = 'x';
+        item.appendChild(removeIcon);
+
+        selectedList.appendChild(item);
+      });
+    }
+
+    function toTitleCase(value) {
+      return value
+        .trim()
+        .toLowerCase()
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ');
+    }
+
+    function toSentenceCase(value) {
+      const trimmed = String(value || '').trim();
+      return trimmed ? trimmed.charAt(0).toUpperCase() + trimmed.slice(1) : '';
+    }
+
+    function formatClauseText(rawValue) {
+      return String(rawValue || '')
+        .split(/\r?\n|\.\s*/)
+        .map((clause) => clause.trim().replace(/[.,]+$/, ''))
+        .filter(Boolean)
+        .map((clause) => clause.charAt(0).toUpperCase() + clause.slice(1))
+        .join(', ');
+    }
+
+    function renderBubbleButtons(wrap, items, addableQuery = '', selectedValues = null, sectionName = '') {
+      wrap.innerHTML = '';
+
+      const selectedItems = selectedValues ? items.filter((item) => selectedValues.has(item)) : [];
+      const unselectedItems = selectedValues ? items.filter((item) => !selectedValues.has(item)) : items;
+      const remainingSlots = Math.max(VISIBLE_CHIP_LIMIT - selectedItems.length, 0);
+      const visibleItems = [...selectedItems, ...unselectedItems.slice(0, remainingSlots)];
+
+      if (!items.length) {
+        if (!addableQuery) {
+          const emptyState = document.createElement('span');
+          emptyState.className = 'bubble-empty';
+          emptyState.textContent = 'No matching items found.';
+          wrap.appendChild(emptyState);
+        }
+      }
+
+      visibleItems.forEach((item) => {
+        const button = document.createElement('button');
+        button.className = 'bubble-btn';
+        button.type = 'button';
+        button.dataset.value = item;
+        button.textContent = sectionName === 'Medication' ? normalizeLegacyMedicineTypePrefix(item) : item;
+        wrap.appendChild(button);
+      });
+
+      if (addableQuery) {
+        const addButton = document.createElement('button');
+        addButton.className = 'add-option-btn';
+        addButton.type = 'button';
+        addButton.dataset.addValue = addableQuery;
+        addButton.textContent = `Add "${addableQuery}"`;
+        wrap.appendChild(addButton);
+      }
+    }
+
+    function formatDateTime(value) {
+      if (!value) {
+        return '-';
+      }
+
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) {
+        return value;
+      }
+
+      return date.toLocaleString('en-IN', {
+        day: 'numeric',
+        month: 'short',
+        year: '2-digit',
+        hour: 'numeric',
+        minute: '2-digit'
+      });
+    }
+
+    function getCurrentPatientId() {
+      const params = new URLSearchParams(window.location.search);
+      return (params.get('patientId') || '').trim().toUpperCase();
+    }
+
+    function isValidPatientId(value) {
+      const patientId = String(value || '').trim().toUpperCase();
+      return Boolean(patientId)
+        && patientId !== '-'
+        && patientId !== 'UNKNOWN'
+        && patientId !== 'ID NOT SAVED';
+    }
+
+    function getPrescriptionDraftStorageKey(patientId) {
+      const normalizedPatientId = String(patientId || '').trim().toUpperCase();
+      return isValidPatientId(normalizedPatientId)
+        ? `${PRESCRIPTION_DRAFT_STORAGE_PREFIX}:${normalizedPatientId}`
+        : PRESCRIPTION_DRAFT_STORAGE_PREFIX;
+    }
+
+    function getMedicineDetailStorageKey(patientId = getCurrentPatientId()) {
+      const normalizedPatientId = String(patientId || '').trim().toUpperCase();
+      return isValidPatientId(normalizedPatientId)
+        ? `${MEDICINE_DETAIL_STORAGE_PREFIX}:${normalizedPatientId}`
+        : MEDICINE_DETAIL_STORAGE_PREFIX;
+    }
+
+    function stripChartPageData(record) {
+      return {
+        ...record,
+        chartPages: Array.isArray(record?.chartPages)
+          ? record.chartPages.slice(0, 4).map((page) => ({
+            label: page?.label || '',
+            width: page?.width || 0,
+            height: page?.height || 0,
+            chartFormatVersion: page?.chartFormatVersion || record.chartFormatVersion || ''
+          }))
+          : []
+      };
+    }
+
+    function getRecentChartRecords() {
+      try {
+        const records = JSON.parse(localStorage.getItem(CHART_RECORD_STORAGE_KEY) || '[]');
+        const now = Date.now();
+        const activeRecords = records.filter((record) => record.keepUntilPrescription || Number(record.expiresAt) > now);
+
+        if (activeRecords.length) {
+          localStorage.setItem(CHART_RECORD_STORAGE_KEY, JSON.stringify(activeRecords.map(stripChartPageData).slice(0, 8)));
+        } else {
+          localStorage.removeItem(CHART_RECORD_STORAGE_KEY);
+        }
+
+        const patientId = getCurrentPatientId();
+        const filteredRecords = patientId
+          ? activeRecords.filter((record) => (record.patientId || '').toUpperCase() === patientId)
+          : activeRecords;
+
+        return filteredRecords.sort((a, b) => new Date(b.savedAt) - new Date(a.savedAt));
+      } catch (error) {
+        console.warn(`Unable to load local chart records: ${error.message}`);
+        return [];
+      }
+    }
+
+    function getActiveChartRecord() {
+      const chartRecords = getRecentChartRecords();
+      return chartRecords[0] || null;
+    }
+
+    function formatGrowthStat(value, unit) {
+      const raw = String(value ?? '').trim();
+      return raw ? `${raw} ${unit}` : '-';
+    }
+
+    function renderGrowthSummary() {
+      if (!navPatientChip) {
+        return;
+      }
+
+      const record = getActiveChartRecord();
+      if (!record) {
+        navPatientChip.hidden = true;
+        return;
+      }
+
+      const patientName = (record.childName || '').trim();
+      const ageLabel = (record.age || '').toString().trim() || '-';
+
+      navPatientChip.hidden = false;
+      navPatientName.textContent = `Name - ${patientName || '-'}`;
+      navPatientStats.textContent = `${ageLabel} / ${formatGrowthStat(record.weight, 'kg')} / ${formatGrowthStat(record.height, 'cm')}`;
+    }
+
+    function getPreviewTargetUrl() {
+      const patientId = getCurrentPatientId() || getActiveChartRecord()?.patientId || '';
+      const params = new URLSearchParams();
+      if (isValidPatientId(patientId)) {
+        params.set('patientId', patientId);
+      }
+      if (activePrescriptionEditId) {
+        params.set('editId', activePrescriptionEditId);
+      }
+      const query = params.toString();
+      return query ? `/emr/kid/preview?${query}` : '/emr/kid/preview';
+    }
+
+    function readLocalJson(key, fallback = null) {
+      try {
+        return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback));
+      } catch (error) {
+        return fallback;
+      }
+    }
+
+    function getPrescriptionDraftId(patientId) {
+      if (!isValidPatientId(patientId)) {
+        return '';
+      }
+
+      const existingDraft = readLocalJson(getPrescriptionDraftStorageKey(patientId), null);
+      if (existingDraft?.draftId && existingDraft?.patientId === patientId) {
+        return existingDraft.draftId;
+      }
+
+      const randomPart = window.crypto?.randomUUID
+        ? window.crypto.randomUUID().slice(0, 8)
+        : Math.random().toString(36).slice(2, 10);
+      return `rx-${patientId || 'UNKNOWN'}-${Date.now()}-${randomPart}`;
+    }
+
+    function updateDosageWarningBanner() {
+      if (!dosageWarningBanner) {
+        return;
+      }
+
+      const missingDoseMedicines = [...selectedMedicines].filter((medicine) => {
+        const detail = medicineDetails.get(medicine);
+        return !detail || !String(detail.dose || '').trim();
+      });
+
+      if (!missingDoseMedicines.length) {
+        dosageWarningBanner.hidden = true;
+        dosageWarningBanner.textContent = '';
+        return;
+      }
+
+      dosageWarningBanner.hidden = false;
+      dosageWarningBanner.textContent = missingDoseMedicines.length === 1
+        ? `You have added ${missingDoseMedicines[0]} without a dosage.`
+        : `You have added ${missingDoseMedicines.length} medicines without a dosage.`;
+    }
+
+    function serializeCurrentSelections() {
+      const sections = {};
+      const details = {};
+
+      Object.entries(prescriptionSelections).forEach(([sectionName, selectedSet]) => {
+        sections[sectionName] = [...selectedSet];
+      });
+
+      // Only the medicines actually on this prescription. The map can still
+      // hold details for a medicine that was picked and then removed, and
+      // writing those into the draft put them back on the printed sheet.
+      medicineDetails.forEach((detail, medicine) => {
+        if (selectedMedicines.has(medicine)) {
+          details[medicine] = { ...detail };
+        }
+      });
+
+      const sectionDetails = {};
+      Object.entries(sectionItemDetails).forEach(([sectionName, detailMap]) => {
+        if (detailMap.size) {
+          sectionDetails[sectionName] = {};
+          detailMap.forEach((detail, item) => {
+            sectionDetails[sectionName][item] = { ...detail };
+          });
+        }
+      });
+
+      return { sections, sectionDetails, medicineDetails: details };
+    }
+
+    function savePrescriptionDraft() {
+      if (!prescriptionInitReady) {
+        return;
+      }
+
+      const chartRecord = getActiveChartRecord();
+      const patientId = getCurrentPatientId() || chartRecord?.patientId || '';
+      const validPatientId = isValidPatientId(patientId) ? patientId : '';
+      const { sections, sectionDetails, medicineDetails: details } = serializeCurrentSelections();
+
+      const draftKey = getPrescriptionDraftStorageKey(validPatientId);
+      // Carried forward, not regenerated: this stamp is what tells a later load
+      // that the draft already produced a saved prescription and is still
+      // inside its edit window. Dropping it on the first chip edit after
+      // stepping back from the preview would make the next save a duplicate.
+      const previousSavedPrescriptionAt = readLocalJson(draftKey, null)?.savedPrescriptionAt || 0;
+
+      localStorage.setItem(draftKey, JSON.stringify({
+        draftId: getPrescriptionDraftId(validPatientId),
+        editId: activePrescriptionEditId || '',
+        savedPrescriptionAt: previousSavedPrescriptionAt,
+        savedAt: new Date().toISOString(),
+        expiresAt: Date.now() + PRESCRIPTION_DRAFT_TTL_MS,
+        patientId: validPatientId,
+        sections,
+        sectionDetails,
+        medicineDetails: details,
+        notes: notesInput?.value || '',
+        allergy: {
+          status: allergyStatusInputs.find((input) => input.checked)?.value || '',
+          details: allergyDetailsInput?.value || ''
+        }
+      }));
+      continuePreviewBtn.href = getPreviewTargetUrl();
+      updateDosageWarningBanner();
+    }
+
+    function slugify(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
+    function getMedicineDetail(medicine) {
+      if (!medicineDetails.has(medicine)) {
+        medicineDetails.set(medicine, {
+          name: '',
+          displayName: medicine,
+          type: '',
+          strength: '',
+          composition: '',
+          dose: '',
+          doseChip: '',
+          doseUnit: '',
+          timings: [],
+          timingMode: 'daily',
+          timingCounts: { M: '', A: '', E: '', N: '' },
+          food: '',
+          duration: '',
+          note: '',
+          savedAt: Date.now()
+        });
+      }
+
+      return medicineDetails.get(medicine);
+    }
+
+    function loadMedicineDetailsFromStorage() {
+      try {
+        const patientId = getCurrentPatientId();
+        const savedBlob = JSON.parse(localStorage.getItem(getMedicineDetailStorageKey(patientId)) || '{}');
+
+        // Newer blobs stamp the patient they belong to. The stamp is the
+        // backstop for the unscoped fallback key used when a prescription is
+        // started without a patient id, and it also discards anything written
+        // by the old build that shared one key across every patient.
+        if (!savedBlob.medicines || String(savedBlob.patientId || '') !== patientId) {
+          return;
+        }
+
+        const savedPayload = savedBlob.medicines;
+        const now = Date.now();
+
+        Object.entries(savedPayload).forEach(([medicine, detail]) => {
+          if (!detail?.savedAt || now - detail.savedAt > MEDICINE_DETAIL_TTL_MS) {
+            return;
+          }
+
+          medicineDetails.set(medicine, {
+            name: detail.name || '',
+            displayName: detail.displayName || medicine,
+            type: detail.type || '',
+            strength: detail.strength || '',
+            composition: detail.composition || '',
+            dose: detail.dose || '',
+            doseChip: detail.doseChip || '',
+            doseUnit: detail.doseUnit || '',
+            timings: Array.isArray(detail.timings) ? detail.timings : [],
+            timingMode: detail.timingMode || 'daily',
+            timingCounts: {
+              M: detail.timingCounts?.M || '',
+              A: detail.timingCounts?.A || '',
+              E: detail.timingCounts?.E || '',
+              N: detail.timingCounts?.N || ''
+            },
+            food: detail.food || '',
+            duration: detail.duration || '',
+            note: detail.note || '',
+            savedAt: detail.savedAt
+          });
+        });
+      } catch (error) {
+        console.warn(`Unable to load saved medicine details: ${error.message}`);
+      }
+    }
+
+    function saveMedicineDetailsToStorage() {
+      const now = Date.now();
+      const payload = {};
+
+      medicineDetails.forEach((detail, medicine) => {
+        if (!detail.savedAt || now - detail.savedAt <= MEDICINE_DETAIL_TTL_MS) {
+          payload[medicine] = {
+            ...detail,
+            savedAt: detail.savedAt || now
+          };
+        }
+      });
+
+      const patientId = getCurrentPatientId();
+      localStorage.setItem(
+        getMedicineDetailStorageKey(patientId),
+        JSON.stringify({ patientId, medicines: payload })
+      );
+    }
+
+    function cleanupExpiredMedicineDetails() {
+      const now = Date.now();
+
+      medicineDetails.forEach((detail, medicine) => {
+        if (detail.savedAt && now - detail.savedAt > MEDICINE_DETAIL_TTL_MS) {
+          medicineDetails.delete(medicine);
+        }
+      });
+
+      saveMedicineDetailsToStorage();
+    }
+
+    // The build before medicine details were scoped per patient wrote a bare
+    // map of medicine name to detail under the unscoped key. Nothing reads
+    // that shape any more, so drop it rather than leaving one patient's doses
+    // sitting in storage. A current unscoped blob is left alone - it is the
+    // fallback for a prescription started without a patient id.
+    function removeLegacyMedicineDetailStore() {
+      try {
+        const legacy = JSON.parse(localStorage.getItem(MEDICINE_DETAIL_STORAGE_PREFIX) || 'null');
+        if (legacy && typeof legacy === 'object' && !legacy.medicines) {
+          localStorage.removeItem(MEDICINE_DETAIL_STORAGE_PREFIX);
+        }
+      } catch {
+        localStorage.removeItem(MEDICINE_DETAIL_STORAGE_PREFIX);
+      }
+    }
+
+    function syncMedicineDetailsFromDom() {
+      [...medicineDetailContent.querySelectorAll('.medicine-detail-card')].forEach((card) => {
+        const medicine = card.dataset.medicine;
+
+        if (!medicine) {
+          return;
+        }
+
+        const doseInput = card.querySelector('[data-field="dose"]');
+        const doseChip = card.querySelector('[data-field="doseChip"]:checked');
+        const doseUnit = card.querySelector('[data-field="doseUnit"]');
+        const timingMode = card.querySelector('[data-field="timingMode"]');
+        const timings = [...card.querySelectorAll('[data-field="timing"]:checked')].map((input) => input.value);
+        const food = card.querySelector('[data-field="food"]:checked');
+        const duration = card.querySelector('[data-field="duration"]:checked');
+        const note = card.querySelector('[data-field="note"]');
+        const existingDetail = getMedicineDetail(medicine);
+        const effectiveTimingMode = timingMode?.value || existingDetail.timingMode || 'daily';
+
+        // Numeric mode's row is number inputs rather than checkboxes, so it
+        // never fills `timings` directly - a slot counts as "on" once its
+        // number is above zero. Every other mode (daily M/A/E/N, interval,
+        // meal) still reads straight off its own checkboxes.
+        const timingCounts = { ...existingDetail.timingCounts };
+        card.querySelectorAll('[data-field="timingCount"]').forEach((input) => {
+          const slot = input.dataset.slot;
+          if (slot) {
+            timingCounts[slot] = input.value.trim();
+          }
+        });
+        const numericTimings = ['M', 'A', 'E', 'N'].filter((slot) => {
+          const parsed = Number.parseFloat(timingCounts[slot]);
+          return Number.isFinite(parsed) && parsed > 0;
+        });
+
+        medicineDetails.set(medicine, {
+          ...existingDetail,
+          dose: doseInput?.value || '',
+          doseChip: doseChip?.value || '',
+          doseUnit: doseUnit?.value || existingDetail.doseUnit || '',
+          timings: effectiveTimingMode === 'numeric' ? numericTimings : timings,
+          timingMode: effectiveTimingMode,
+          timingCounts,
+          food: food?.value || '',
+          duration: duration?.value || '',
+          note: note?.value || '',
+          savedAt: Date.now()
+        });
+      });
+
+      saveMedicineDetailsToStorage();
+    }
+
+    function saveMedicineMeta(medicine, meta = {}) {
+      const detail = getMedicineDetail(medicine);
+      rememberMedicineCatalogEntry(medicine, {
+        ...meta,
+        displayName: meta.displayName || medicine
+      });
+      medicineDetails.set(medicine, {
+        ...detail,
+        name: meta.name || detail.name || '',
+        displayName: meta.displayName || detail.displayName || medicine,
+        type: meta.type || detail.type || '',
+        strength: meta.strength || detail.strength || '',
+        composition: meta.composition || detail.composition || '',
+        savedAt: Date.now()
+      });
+      saveMedicineDetailsToStorage();
+    }
+
+    function renameMedicineEverywhere(oldKey, newKey) {
+      if (!oldKey || !newKey || oldKey === newKey) {
+        return;
+      }
+
+      const oldDetail = medicineDetails.get(oldKey);
+      if (oldDetail) {
+        medicineDetails.set(newKey, { ...oldDetail, displayName: newKey });
+        medicineDetails.delete(oldKey);
+      }
+
+      medicineCatalog.delete(oldKey);
+
+      if (selectedMedicines.has(oldKey)) {
+        selectedMedicines.delete(oldKey);
+        selectedMedicines.add(newKey);
+      }
+
+      if (activeMedicine === oldKey) {
+        activeMedicine = newKey;
+      }
+
+      sectionBindings.get('Medication')?.renameValue?.(oldKey, newKey);
+      saveMedicineDetailsToStorage();
+    }
+
+    const DOSE_CONFIG_BY_TYPE = {
+      Syrup: {
+        label: 'Syrup',
+        units: ['ml', 'spoon', 'tsp'],
+        defaultUnit: 'ml',
+        doses: ['1', '1.5', '2.5', '4', '5', '7.5', '10', '15']
+      },
+      Suspension: {
+        label: 'Suspension',
+        units: ['ml', 'spoon', 'tsp'],
+        defaultUnit: 'ml',
+        doses: ['1', '1.5', '2.5', '4', '5', '7.5', '10', '15']
+      },
+      Drops: {
+        label: 'Drops',
+        units: ['drops', 'ml'],
+        defaultUnit: 'drops',
+        doses: ['1', '2', '3', '4', '5', '6', '8', '10']
+      },
+      Tablet: {
+        label: 'Tablet',
+        units: ['tablet', 'tab'],
+        defaultUnit: 'tablet',
+        doses: ['1/4', '1/2', '1', '1.5', '2']
+      },
+      Capsule: {
+        label: 'Capsule',
+        units: ['capsule', 'cap'],
+        defaultUnit: 'capsule',
+        doses: ['1', '2']
+      },
+      Inhaler: {
+        label: 'Inhaler',
+        units: ['puff', 'puffs'],
+        defaultUnit: 'puff',
+        doses: ['1', '2', '3', '4']
+      },
+      Nebulization: {
+        label: 'Nebulization',
+        units: ['respule', 'ml'],
+        defaultUnit: 'respule',
+        doses: ['1/2', '1', '2', '2.5', '5']
+      },
+      Injection: {
+        label: 'Injection',
+        units: ['ml', 'ampoule'],
+        defaultUnit: 'ml',
+        doses: ['0.5', '1', '2', '5']
+      },
+      'Cream/Ointment': {
+        label: 'Cream/Ointment',
+        units: ['application', 'thin layer'],
+        defaultUnit: 'application',
+        doses: ['Small', 'Pea size', 'Thin layer', 'Once']
+      },
+      Other: {
+        label: 'Dose',
+        units: ['dose', 'ml', 'tablet'],
+        defaultUnit: 'dose',
+        doses: ['1', '1.5', '2', '2.5', '5']
+      }
+    };
+
+    const TIMING_MODE_ORDER = ['daily', 'numeric', 'interval', 'meal'];
+
+    function checkedAttr(condition) {
+      return condition ? 'checked' : '';
+    }
+
+    function selectedAttr(condition) {
+      return condition ? 'selected' : '';
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function normalizeMedicineType(type = '') {
+      const value = String(type).trim().toLowerCase();
+
+      if (!value) {
+        return '';
+      }
+
+      if (value.includes('syrup') || value === 'syr') return 'Syrup';
+      if (value.includes('suspension')) return 'Suspension';
+      if (value.includes('drop') || value === 'dro') return 'Drops';
+      if (value.includes('tablet') || value === 'tab') return 'Tablet';
+      if (value.includes('capsule') || value === 'cap') return 'Capsule';
+      if (value.includes('inhaler')) return 'Inhaler';
+      if (value.includes('nebul')) return 'Nebulization';
+      if (value.includes('injection') || value === 'inj') return 'Injection';
+      if (value.includes('cream') || value.includes('ointment')) return 'Cream/Ointment';
+
+      return DOSE_CONFIG_BY_TYPE[type] ? type : 'Other';
+    }
+
+    function getMedicineType(detail, medicine) {
+      const explicitType = normalizeMedicineType(detail.type);
+
+      if (explicitType) {
+        return explicitType;
+      }
+
+      const medicineName = String(medicine || '').toLowerCase();
+
+      if (/\b(syr|syrup)\b/.test(medicineName)) return 'Syrup';
+      if (/\bsuspension\b/.test(medicineName)) return 'Suspension';
+      if (/\b(dro|drop|drops)\b/.test(medicineName)) return 'Drops';
+      if (/\b(tab|tablet)\b/.test(medicineName)) return 'Tablet';
+      if (/\b(cap|capsule)\b/.test(medicineName)) return 'Capsule';
+      if (/\binhaler\b/.test(medicineName)) return 'Inhaler';
+      if (/\bnebul/.test(medicineName)) return 'Nebulization';
+      if (/\b(inj|injection)\b/.test(medicineName)) return 'Injection';
+      if (/\b(cream|ointment)\b/.test(medicineName)) return 'Cream/Ointment';
+
+      return 'Syrup';
+    }
+
+    function getDoseConfig(medicineType) {
+      return DOSE_CONFIG_BY_TYPE[medicineType] || DOSE_CONFIG_BY_TYPE.Other;
+    }
+
+    function getTimingMode(detail) {
+      return TIMING_MODE_ORDER.includes(detail.timingMode) ? detail.timingMode : 'daily';
+    }
+
+    function formatDoseWithUnit(value, unit) {
+      const cleanValue = String(value || '').trim();
+      const cleanUnit = String(unit || '').trim();
+
+      if (!cleanValue) {
+        return '';
+      }
+
+      return cleanUnit ? `${cleanValue} ${cleanUnit}` : cleanValue;
+    }
+
+    function renderDoseQuestion(medicine, medicineSlug, detail, doseConfig) {
+      const selectedUnit = detail.doseUnit || doseConfig.defaultUnit;
+
+      return `
+        <div class="medicine-question">
+          <div class="question-bar">
+            <span>${escapeHtml(doseConfig.label)}</span>
+            <select class="dose-unit-select" data-field="doseUnit" aria-label="${escapeHtml(medicine)} dose unit">
+              ${doseConfig.units.map((unit) => `
+                <option value="${escapeHtml(unit)}" ${selectedAttr(selectedUnit === unit)}>${escapeHtml(unit)}</option>
+              `).join('')}
+            </select>
+          </div>
+          <div class="dose-row" aria-label="${escapeHtml(medicine)} dose options">
+            ${doseConfig.doses.map((value) => `
+              <label class="option-pill">
+                <input type="radio" name="dose-chip-${medicineSlug}" value="${escapeHtml(value)}" data-field="doseChip" ${checkedAttr(detail.doseChip === value)}>
+                ${escapeHtml(value)}
+              </label>
+            `).join('')}
+          </div>
+          <div class="dose-entry-row">
+            <span>Dose</span>
+            <input id="dose-${medicineSlug}" type="text" placeholder="Dose" data-field="dose" value="${escapeHtml(detail.dose)}" data-applied-unit="${escapeHtml(selectedUnit && detail.dose && detail.dose.endsWith(selectedUnit) ? selectedUnit : '')}">
+          </div>
+        </div>
+      `;
+    }
+
+    function renderFoodTimingRows(medicine, medicineSlug, detail) {
+      return `
+        <div class="timing-row timing-food-row" aria-label="${escapeHtml(medicine)} food timing options">
+          ${['Before Food', 'With Food', 'After Food'].map((value) => `
+            <label class="option-pill">
+              <input type="radio" name="food-${medicineSlug}" value="${value}" data-field="food" ${checkedAttr(detail.food === value)}>
+              ${value}
+            </label>
+          `).join('')}
+        </div>
+        <div class="timing-row timing-extra-row" aria-label="${escapeHtml(medicine)} extra timing options">
+          ${['Empty Stomach', 'Bedtime'].map((value) => `
+            <label class="option-pill">
+              <input type="radio" name="food-${medicineSlug}" value="${value}" data-field="food" ${checkedAttr(detail.food === value)}>
+              ${value}
+            </label>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function renderDailyTimingOptions(medicine, medicineSlug, detail) {
+      return `
+        <div class="timing-row timing-main-row" aria-label="${escapeHtml(medicine)} timing options">
+          ${['M', 'A', 'E', 'N'].map((value) => `
+            <label class="option-pill">
+              <input type="checkbox" name="timing-${medicineSlug}" value="${value}" data-field="timing" ${checkedAttr(detail.timings.includes(value))}>
+              ${value}
+            </label>
+          `).join('')}
+        </div>
+        ${renderFoodTimingRows(medicine, medicineSlug, detail)}
+      `;
+    }
+
+    // A slot's saved count wins; a record that only ever used the M/A/E/N
+    // checkboxes falls back to "1" for a checked slot, "" for an unchecked
+    // one, so switching a medicine to numeric keeps the schedule it had.
+    function getSlotCount(detail, slot) {
+      const saved = detail.timingCounts && detail.timingCounts[slot];
+      if (saved !== undefined && saved !== null && saved !== '') {
+        return String(saved);
+      }
+      return detail.timings.includes(slot) ? '1' : '';
+    }
+
+    // Numeric mode: the same four M/A/E/N slots, but each takes a dose count
+    // rather than a tick, so "2 at night" is expressible. Prints as 1-0-1-0.
+    function renderNumericTimingOptions(medicine, medicineSlug, detail) {
+      const slots = [['M', 'Morning'], ['A', 'Afternoon'], ['E', 'Evening'], ['N', 'Night']];
+
+      return `
+        <div class="timing-row timing-count-head-row" aria-hidden="true">
+          ${slots.map(([slot]) => `<span class="meal-head-cell">${slot}</span>`).join('')}
+        </div>
+        <div class="timing-row timing-count-row" aria-label="${escapeHtml(medicine)} dose count per slot">
+          ${slots.map(([slot, slotLabel]) => `
+            <span class="timing-count-cell">
+              <input type="text" inputmode="decimal" class="timing-count-input" data-field="timingCount" data-slot="${slot}" value="${escapeHtml(getSlotCount(detail, slot))}" placeholder="0" aria-label="${escapeHtml(medicine)} ${slotLabel} dose count">
+            </span>
+          `).join('')}
+        </div>
+        ${renderFoodTimingRows(medicine, medicineSlug, detail)}
+      `;
+    }
+
+    function renderIntervalTimingOptions(medicine, medicineSlug, detail) {
+      return `
+        <div class="timing-row timing-interval-row" aria-label="${escapeHtml(medicine)} interval timing options">
+          ${['4h', '6h', '8h', '12h', '48h'].map((value) => `
+            <label class="option-pill">
+              <input type="checkbox" name="timing-${medicineSlug}" value="${value}" data-field="timing" ${checkedAttr(detail.timings.includes(value))}>
+              ${value}
+            </label>
+          `).join('')}
+        </div>
+        <div class="timing-row timing-frequency-row" aria-label="${escapeHtml(medicine)} frequency timing options">
+          ${['Once', 'Twice', 'Thrice', 'Times', 'a day'].map((value) => `
+            <label class="option-pill">
+              <input type="checkbox" name="timing-${medicineSlug}" value="${value}" data-field="timing" ${checkedAttr(detail.timings.includes(value))}>
+              ${value}
+            </label>
+          `).join('')}
+        </div>
+        <div class="timing-row timing-food-row" aria-label="${escapeHtml(medicine)} food timing options">
+          ${['Before Food', 'After Food', 'With Food'].map((value) => `
+            <label class="option-pill">
+              <input type="radio" name="food-${medicineSlug}" value="${value}" data-field="food" ${checkedAttr(detail.food === value)}>
+              ${value}
+            </label>
+          `).join('')}
+        </div>
+        <div class="timing-row timing-extra-row" aria-label="${escapeHtml(medicine)} extra timing options">
+          ${['Empty Stomach', 'Bedtime'].map((value) => `
+            <label class="option-pill">
+              <input type="radio" name="food-${medicineSlug}" value="${value}" data-field="food" ${checkedAttr(detail.food === value)}>
+              ${value}
+            </label>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function renderMealTimingOptions(medicine, medicineSlug, detail) {
+      const mealOptions = [
+        ['Breakfast Before', 'Before'],
+        ['Breakfast After', 'After'],
+        ['Lunch Before', 'Before'],
+        ['Lunch After', 'After'],
+        ['Dinner Before', 'Before'],
+        ['Dinner After', 'After']
+      ];
+
+      return `
+        <div class="timing-row timing-meal-head-row" aria-label="${escapeHtml(medicine)} meal timing groups">
+          ${['Breakfast', 'Lunch', 'Dinner'].map((value) => `
+            <span class="meal-head-cell">${escapeHtml(value)}</span>
+          `).join('')}
+        </div>
+        <div class="timing-row timing-meal-choice-row" aria-label="${escapeHtml(medicine)} meal timing options">
+          ${mealOptions.map(([value, label]) => `
+            <label class="option-pill">
+              <input type="checkbox" name="timing-${medicineSlug}" value="${escapeHtml(value)}" data-field="timing" ${checkedAttr(detail.timings.includes(value))}>
+              ${escapeHtml(label)}
+            </label>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function renderTimingQuestion(medicine, medicineSlug, detail) {
+      const timingMode = getTimingMode(detail);
+      const timingMarkup = timingMode === 'interval'
+        ? renderIntervalTimingOptions(medicine, medicineSlug, detail)
+        : timingMode === 'meal'
+          ? renderMealTimingOptions(medicine, medicineSlug, detail)
+          : timingMode === 'numeric'
+            ? renderNumericTimingOptions(medicine, medicineSlug, detail)
+            : renderDailyTimingOptions(medicine, medicineSlug, detail);
+
+      return `
+        <div class="medicine-question">
+          <div class="question-bar">
+            <span>Timing</span>
+            <select class="timing-mode-select" data-field="timingMode" aria-label="${escapeHtml(medicine)} timing mode">
+              <option value="daily" ${selectedAttr(timingMode === 'daily')}>M A E N</option>
+              <option value="numeric" ${selectedAttr(timingMode === 'numeric')}>1-0-1-0</option>
+              <option value="interval" ${selectedAttr(timingMode === 'interval')}>Hourly / Daily</option>
+              <option value="meal" ${selectedAttr(timingMode === 'meal')}>Meals</option>
+            </select>
+          </div>
+          ${timingMarkup}
+        </div>
+      `;
+    }
+
+    function renderMedicineDetails() {
+      syncMedicineDetailsFromDom();
+      medicineDetailContent.innerHTML = '';
+
+      if (!activeMedicine || !selectedMedicines.has(activeMedicine)) {
+        medicineModalTitle.textContent = 'Medication Details';
+        if (medicineModalSubtitle) {
+          medicineModalSubtitle.textContent = '';
+        }
+        if (medicineModalEdit) {
+          medicineModalEdit.disabled = true;
+        }
+        medicineDetailContent.className = 'medicine-detail-content medicine-empty';
+        medicineDetailContent.textContent = 'Select a medication to add its dose, timing, duration, and note.';
+        return;
+      }
+
+      const detail = getMedicineDetail(activeMedicine);
+      const titleName = detail.name || detail.displayName || activeMedicine;
+      const subtitleText = [detail.strength, detail.composition || detail.type].filter(Boolean).join(' | ');
+      medicineModalTitle.textContent = titleName;
+      if (medicineModalSubtitle) {
+        medicineModalSubtitle.textContent = subtitleText;
+      }
+      if (medicineModalEdit) {
+        medicineModalEdit.disabled = false;
+      }
+      medicineDetailContent.className = 'medicine-detail-content';
+
+      [activeMedicine].forEach((medicine) => {
+        const medicineSlug = slugify(medicine);
+        const detail = getMedicineDetail(medicine);
+        detail.timings = Array.isArray(detail.timings) ? detail.timings : [];
+        detail.timingMode = getTimingMode(detail);
+        const medicineType = getMedicineType(detail, medicine);
+        const doseConfig = getDoseConfig(medicineType);
+        detail.doseUnit = detail.doseUnit || doseConfig.defaultUnit;
+        const card = document.createElement('div');
+        card.className = 'medicine-detail-card';
+        card.dataset.medicine = medicine;
+        const medicineName = detail.name || detail.displayName || medicine;
+        card.innerHTML = `
+          ${medicineName || detail.type || detail.composition ? `
+            <div class="medicine-meta-strip">
+              ${medicineName ? `<span>Name: ${escapeHtml(medicineName)}</span>` : ''}
+              ${detail.strength ? `<span>Strength: ${escapeHtml(detail.strength)}</span>` : ''}
+              ${detail.composition ? `<span>Composition: ${escapeHtml(detail.composition)}</span>` : ''}
+              ${detail.type ? `<span>Type: ${escapeHtml(detail.type)}</span>` : ''}
+            </div>
+          ` : ''}
+          <div class="medicine-table-body">
+          ${renderDoseQuestion(medicine, medicineSlug, detail, doseConfig)}
+
+          ${renderTimingQuestion(medicine, medicineSlug, detail)}
+
+          <div class="medicine-question">
+            <div class="question-bar">
+              <span>Duration</span>
+              <span></span>
+            </div>
+            <div class="duration-row" aria-label="${medicine} duration options">
+              ${['1d', '2d', '3d', '4d', '5d', '1w', '10d', '2w', '15d', '3w', '4w', '1m'].map((value) => `
+                <label class="option-pill">
+                  <input type="radio" name="duration-${medicineSlug}" value="${value}" data-field="duration" ${checkedAttr(detail.duration === value)}>
+                  ${value}
+                </label>
+              `).join('')}
+            </div>
+            <div class="duration-row duration-third-row" aria-label="${medicine} longer duration options">
+              ${['2m', '3m', '6m', '1y'].map((value) => `
+                <label class="option-pill">
+                  <input type="radio" name="duration-${medicineSlug}" value="${value}" data-field="duration" ${checkedAttr(detail.duration === value)}>
+                  ${value}
+                </label>
+              `).join('')}
+            </div>
+            <div class="duration-row duration-final-row" aria-label="${medicine} special duration options">
+              ${['SoS', 'Till required', 'To Continue', 'Stat'].map((value) => `
+                <label class="option-pill">
+                  <input type="radio" name="duration-${medicineSlug}" value="${value}" data-field="duration" ${checkedAttr(detail.duration === value)}>
+                  ${value}
+                </label>
+              `).join('')}
+            </div>
+          </div>
+          </div>
+
+          <div class="note-area">
+            <div class="question-bar">
+              <span>Note</span>
+              <span></span>
+            </div>
+            <textarea placeholder="Add note" data-field="note">${escapeHtml(detail.note)}</textarea>
+          </div>
+        `;
+
+        medicineDetailContent.appendChild(card);
+      });
+    }
+
+    function updateDoseInputFromChip(card) {
+      const doseInput = card.querySelector('[data-field="dose"]');
+      const doseChip = card.querySelector('[data-field="doseChip"]:checked');
+      const doseUnit = card.querySelector('[data-field="doseUnit"]');
+
+      if (!doseInput) {
+        return;
+      }
+
+      const unit = doseUnit?.value || '';
+      let baseValue = doseChip?.value || '';
+
+      if (!baseValue) {
+        // No preset chip is selected (the doctor typed the dose by hand) — reuse
+        // that value, stripping off whatever unit is currently applied so
+        // switching Size still updates the printed Quantity instead of no-op'ing.
+        const appliedUnit = doseInput.dataset.appliedUnit || '';
+        baseValue = doseInput.value.trim();
+        if (appliedUnit && baseValue.endsWith(appliedUnit)) {
+          baseValue = baseValue.slice(0, baseValue.length - appliedUnit.length).trim();
+        }
+      }
+
+      if (baseValue) {
+        doseInput.value = formatDoseWithUnit(baseValue, unit);
+        doseInput.dataset.appliedUnit = unit;
+      }
+    }
+
+    medicineDetailContent.addEventListener('input', () => {
+      syncMedicineDetailsFromDom();
+      savePrescriptionDraft();
+    });
+    medicineDetailContent.addEventListener('change', (event) => {
+      const input = event.target;
+      const card = input.closest('.medicine-detail-card');
+
+      if ((input.matches('[data-field="doseChip"]') || input.matches('[data-field="doseUnit"]')) && card) {
+        updateDoseInputFromChip(card);
+      }
+
+      if (input.matches('[data-field="timingMode"]') && card) {
+        card.querySelectorAll('[data-field="timing"], [data-field="food"]').forEach((field) => {
+          field.checked = false;
+        });
+        card.querySelectorAll('[data-field="timingCount"]').forEach((field) => {
+          field.value = '';
+        });
+        syncMedicineDetailsFromDom();
+        renderMedicineDetails();
+        return;
+      }
+
+      syncMedicineDetailsFromDom();
+      // Also commit to the draft here, so an edit is not lost if the doctor
+      // leaves the page without closing the modal first.
+      savePrescriptionDraft();
+    });
+
+    function readPrescriptionTemplateCache() {
+      try {
+        const cache = JSON.parse(localStorage.getItem(PRESCRIPTION_TEMPLATE_CACHE_KEY) || 'null');
+        if (!cache || typeof cache !== 'object') {
+          return null;
+        }
+
+        const savedAt = Number(cache.savedAt || 0);
+        if (!savedAt || Date.now() - savedAt > PRESCRIPTION_TEMPLATE_CACHE_TTL_MS) {
+          return null;
+        }
+
+        if (cache.medicineCatalog && typeof cache.medicineCatalog === 'object') {
+          rememberMedicineCatalogEntries(cache.medicineCatalog);
+        }
+
+        return cache.templates && typeof cache.templates === 'object' ? cache.templates : null;
+      } catch (error) {
+        console.warn(`Unable to read prescription template cache: ${error.message}`);
+        return null;
+      }
+    }
+
+    function writePrescriptionTemplateCache(templates, medicineCatalogEntries = {}) {
+      try {
+        localStorage.setItem(PRESCRIPTION_TEMPLATE_CACHE_KEY, JSON.stringify({
+          savedAt: Date.now(),
+          templates,
+          medicineCatalog: medicineCatalogEntries
+        }));
+      } catch (error) {
+        console.warn(`Unable to cache prescription templates: ${error.message}`);
+      }
+    }
+
+    async function ensurePrescriptionCollection() {
+      const cachedTemplates = readPrescriptionTemplateCache();
+      if (!db) {
+        setSyncStatus('Cloud sync unavailable', true);
+        return cachedTemplates || prescriptionTemplates;
+      }
+
+      const entries = await Promise.all(
+        Object.entries(prescriptionTemplates).map(async ([sectionName, items]) => {
+          const sectionRef = doc(db, FIREBASE_COLLECTIONS.prescription, sectionName);
+          const snapshot = await getDoc(sectionRef);
+
+          if (!snapshot.exists()) {
+            await setDoc(sectionRef, {
+              name: sectionName,
+              items,
+              createdAt: serverTimestamp(),
+              updatedAt: serverTimestamp()
+            });
+            return [sectionName, items];
+          }
+
+          const data = snapshot.data();
+          const savedItems = Array.isArray(data.items) && data.items.length ? data.items : items;
+          const savedMedicineCatalog = sectionName === 'Medication' ? data.medicineCatalog || {} : {};
+          if (sectionName === 'Medication') {
+            rememberMedicineCatalogEntries(savedMedicineCatalog);
+          }
+          return [sectionName, savedItems, savedMedicineCatalog];
+        })
+      );
+
+      const templates = Object.fromEntries(entries.map(([sectionName, items]) => [sectionName, items]));
+      const medicineCatalogEntries = entries.find(([sectionName]) => sectionName === 'Medication')?.[2] || {};
+      writePrescriptionTemplateCache(templates, medicineCatalogEntries);
+      setSyncStatus('Prescription collection synced');
+      return templates;
+    }
+
+    setupSectionRows();
+
+    const sectionMap = new Map(rxCards.map((card) => [card.dataset.sectionName || card.querySelector('h2').textContent.trim(), card]));
+    const sectionBindings = new Map();
+
+    function bindCardSelection(card, initialItems) {
+      const selectedList = card.querySelector('[data-selected-list]');
+      const bubbleWrap = card.querySelector('[data-bubble-wrap]');
+      const searchInput = card.querySelector('.search-row input');
+      const sectionName = card.dataset.sectionName || card.querySelector('h2').textContent.trim();
+
+      if (sectionBindings.has(sectionName)) {
+        sectionBindings.get(sectionName).updateItems(initialItems);
+        return;
+      }
+
+      const sectionRef = db ? doc(db, FIREBASE_COLLECTIONS.prescription, sectionName) : null;
+      const selectedValues = new Set();
+      prescriptionSelections[sectionName] = selectedValues;
+      let allItems = orderSectionItems(sectionName, mergeUniqueItems(initialItems));
+      const hasDetailPanel = DETAIL_SECTIONS.has(sectionName) && sectionName !== 'Medication';
+
+      function getBubbleButtons() {
+        return [...card.querySelectorAll('.bubble-btn')];
+      }
+
+      function updateItems(items) {
+        allItems = orderSectionItems(sectionName, mergeUniqueItems(allItems, items));
+        applySearchFilter();
+
+        if (sectionName === 'Medication' && activeMedicine && selectedValues.has(activeMedicine)) {
+          hydrateMedicineMeta(activeMedicine);
+          renderMedicineDetails();
+        }
+      }
+
+      function renameValue(oldValue, newValue) {
+        if (!oldValue || !newValue || oldValue === newValue) {
+          return;
+        }
+
+        const index = allItems.findIndex((item) => item === oldValue);
+        if (index !== -1) {
+          allItems[index] = newValue;
+        } else if (!allItems.includes(newValue)) {
+          allItems.push(newValue);
+        }
+        allItems = orderSectionItems(sectionName, mergeUniqueItems(allItems));
+
+        if (selectedValues.has(oldValue)) {
+          selectedValues.delete(oldValue);
+          selectedValues.add(newValue);
+        }
+
+        applySearchFilter();
+        renderSelectedItems(selectedList, [...selectedValues], sectionName);
+      }
+
+      function toggleValue(value, shouldSelect, trigger = document.activeElement, options = {}) {
+        const { silent = false } = options;
+        const isNewSelection = shouldSelect && !selectedValues.has(value);
+
+        getBubbleButtons().forEach((button) => {
+          if (button.dataset.value === value) {
+            button.classList.toggle('is-selected', shouldSelect);
+          }
+        });
+
+        if (shouldSelect) {
+          selectedValues.add(value);
+        } else {
+          selectedValues.delete(value);
+        }
+
+        renderSelectedItems(selectedList, [...selectedValues], sectionName);
+        savePrescriptionDraft();
+        const modalTrigger = clearSearchAfterSelection(shouldSelect, trigger);
+
+        if (isNewSelection) {
+          recordPrescriptionUsage(sectionName, value);
+          allItems = orderSectionItems(sectionName, allItems);
+          applySearchFilter();
+        }
+
+        if (sectionName === 'Medication') {
+          if (shouldSelect) {
+            selectedMedicines.add(value);
+            hydrateMedicineMeta(value);
+            getMedicineDetail(value);
+            activeMedicine = value;
+          } else {
+            selectedMedicines.delete(value);
+            if (activeMedicine === value) {
+              activeMedicine = [...selectedMedicines][0] || '';
+            }
+          }
+
+          updateDosageWarningBanner();
+
+          if (!silent) {
+            renderMedicineDetails();
+
+            if (shouldSelect || activeMedicine) {
+              openMedicineModal(modalTrigger);
+            }
+          }
+          return;
+        }
+
+        if (silent) {
+          return;
+        }
+
+        if (hasDetailPanel && shouldSelect) {
+          getSectionItemDetail(sectionName, value);
+          openSelectionDetailModal(sectionName, value, modalTrigger);
+        }
+
+        if (!shouldSelect && sectionItemDetails[sectionName]) {
+          sectionItemDetails[sectionName].delete(value);
+          saveSelectionDetailsToDraft();
+        }
+      }
+
+      function bindBubbleClickHandlers() {
+        getBubbleButtons().forEach((button) => {
+          if (selectedValues.has(button.dataset.value)) {
+            button.classList.add('is-selected');
+          }
+
+          button.addEventListener('click', () => {
+            const value = button.dataset.value;
+            const isSelected = selectedValues.has(value);
+
+            if (isSelected && hasDetailPanel) {
+              getSectionItemDetail(sectionName, value);
+              openSelectionDetailModal(sectionName, value, button);
+              return;
+            }
+
+            toggleValue(value, !isSelected, button);
+          });
+        });
+      }
+
+      function clearSearchAfterSelection(shouldSelect, trigger) {
+        if (!shouldSelect || !searchInput.value.trim()) {
+          return trigger;
+        }
+
+        searchInput.value = '';
+        applySearchFilter();
+        return searchInput;
+      }
+
+      async function addNewItem(rawValue) {
+        let normalizedValue = sectionName === 'Medication' ? toTitleCase(rawValue) : toSentenceCase(rawValue);
+
+        if (!normalizedValue) {
+          return;
+        }
+
+        let medicineMeta = null;
+        if (sectionName === 'Medication') {
+          medicineMeta = await openAddMedicineModal(normalizedValue, searchInput);
+          if (!medicineMeta) {
+            return;
+          }
+
+          normalizedValue = medicineMeta.displayName || medicineMeta.name;
+        }
+
+        // Reuse the spelling already in the list when only the case or spacing
+        // differs, so "calpol  syrup" doesn't become a second catalog entry
+        // next to "Calpol Syrup".
+        const normalizedKey = normalizedValue.replace(/\s+/g, ' ').trim().toLowerCase();
+        const existingItem = allItems.find((item) => item.replace(/\s+/g, ' ').trim().toLowerCase() === normalizedKey);
+        if (existingItem) {
+          normalizedValue = existingItem;
+        } else {
+          allItems.push(normalizedValue);
+          allItems = orderSectionItems(sectionName, allItems);
+        }
+
+        rememberCustomTemplateItem(sectionName, normalizedValue, medicineMeta);
+
+        if (sectionRef) {
+          // Name and details go in one write, so a medicine can't end up in
+          // the list without its type and composition.
+          const payload = {
+            name: sectionName,
+            items: arrayUnion(normalizedValue),
+            updatedAt: serverTimestamp()
+          };
+
+          if (sectionName === 'Medication' && medicineMeta) {
+            payload.medicineCatalog = {
+              [normalizedValue]: {
+                name: medicineMeta.name || normalizedValue,
+                displayName: normalizedValue,
+                type: medicineMeta.type || '',
+                strength: medicineMeta.strength || '',
+                composition: medicineMeta.composition || '',
+                updatedAtIso: new Date().toISOString()
+              }
+            };
+          }
+
+          try {
+            await setDoc(sectionRef, payload, { merge: true });
+          } catch (error) {
+            console.error(`Unable to add prescription item: ${error.message}`);
+            setSyncStatus('New item not saved to cloud - check connection and try again', true);
+          }
+        }
+
+        if (sectionName === 'Medication' && medicineMeta) {
+          saveMedicineMeta(normalizedValue, medicineMeta);
+        }
+
+        searchInput.value = normalizedValue;
+        applySearchFilter();
+        toggleValue(normalizedValue, true, searchInput);
+      }
+
+      function applySearchFilter() {
+        const query = searchInput.value.trim().toLowerCase();
+        const filteredItems = query
+          ? allItems.filter((item) => sectionName === 'Medication'
+            ? item.toLowerCase().includes(query)
+            : item.toLowerCase().startsWith(query))
+          : allItems;
+        const exactExists = query
+          ? allItems.some((item) => item.toLowerCase() === query)
+          : true;
+        const addableQuery = query && !exactExists && filteredItems.length === 0
+          ? (sectionName === 'Medication' ? toTitleCase(searchInput.value) : toSentenceCase(searchInput.value))
+          : '';
+
+        renderBubbleButtons(bubbleWrap, filteredItems, addableQuery, selectedValues, sectionName);
+        bindBubbleClickHandlers();
+      }
+
+      searchInput.addEventListener('input', applySearchFilter);
+
+      // Clicking a saved chip opens its edit view, the same way in every
+      // section (including Medication) - the x stays as the one dedicated
+      // way to remove a chip.
+      selectedList.addEventListener('click', (event) => {
+        const selectedButton = event.target.closest('.selected-item');
+
+        if (!selectedButton) {
+          return;
+        }
+
+        const selectedValue = selectedButton.dataset.selectedValue;
+        const clickedRemove = Boolean(event.target.closest('.selected-item-remove'));
+
+        if (clickedRemove) {
+          toggleValue(selectedValue, false, selectedButton);
+          return;
+        }
+
+        if (sectionName === 'Medication') {
+          activeMedicine = selectedValue;
+          hydrateMedicineMeta(selectedValue);
+          getMedicineDetail(selectedValue);
+          renderMedicineDetails();
+          openMedicineModal(selectedButton);
+          return;
+        }
+
+        if (hasDetailPanel) {
+          getSectionItemDetail(sectionName, selectedValue);
+          openSelectionDetailModal(sectionName, selectedValue, selectedButton);
+        }
+      });
+
+      bubbleWrap.addEventListener('click', async (event) => {
+        const addButton = event.target.closest('.add-option-btn');
+
+        if (!addButton) {
+          return;
+        }
+
+        await addNewItem(addButton.dataset.addValue);
+      });
+
+      applySearchFilter();
+      sectionBindings.set(sectionName, {
+        updateItems,
+        toggleValue,
+        renameValue,
+        hasItem: (candidate) => allItems.some((item) => item.toLowerCase() === String(candidate || '').trim().toLowerCase()),
+        refreshSelectedList: () => renderSelectedItems(selectedList, [...selectedValues], sectionName)
+      });
+    }
+
+    async function initPrescriptionData() {
+      removeLegacyMedicineDetailStore();
+      loadMedicineDetailsFromStorage();
+      cleanupExpiredMedicineDetails();
+      renderGrowthSummary();
+
+      // Only ever bind items that are actually stored in Firebase (or a cached
+      // copy of a previous Firebase fetch) - never the hardcoded fallback list,
+      // so bubbles never show content that isn't backed by the cloud collection.
+      const cachedCloudTemplates = readPrescriptionTemplateCache();
+      const localTemplates = cachedCloudTemplates ? mergeWithSavedTemplates(cachedCloudTemplates) : null;
+      if (localTemplates) {
+        Object.entries(localTemplates).forEach(([sectionName, items]) => {
+          if (sectionName === 'Notes') {
+            return;
+          }
+
+          const card = sectionMap.get(sectionName);
+
+          if (card) {
+            bindCardSelection(card, items);
+          }
+        });
+      }
+
+      try {
+        const prescriptionData = mergeWithSavedTemplates(await ensurePrescriptionCollection());
+
+        Object.entries(prescriptionData).forEach(([sectionName, items]) => {
+          if (sectionName === 'Notes') {
+            return;
+          }
+
+          const card = sectionMap.get(sectionName);
+
+          if (!card) {
+            return;
+          }
+
+          bindCardSelection(card, items);
+        });
+      } catch (error) {
+        setSyncStatus('Cloud sync failed', true);
+        console.error(`Prescription collection sync failed: ${error.message}`);
+
+        if (localTemplates) {
+          Object.entries(localTemplates).forEach(([sectionName, items]) => {
+            if (sectionName === 'Notes') {
+              return;
+            }
+
+            const card = sectionMap.get(sectionName);
+
+            if (!card) {
+              return;
+            }
+
+            bindCardSelection(card, items);
+          });
+        }
+      }
+    }
+
+    async function applyRepeatSelections(record) {
+      if (!record) {
+        return;
+      }
+
+      const sections = record.sections || {};
+      const sectionDetails = record.sectionDetails || {};
+      const medDetails = record.medicineDetails || {};
+
+      Object.entries(sections).forEach(([sectionName, items]) => {
+        const binding = sectionBindings.get(sectionName);
+        if (!binding || !Array.isArray(items)) {
+          return;
+        }
+
+        items.forEach((value) => {
+          binding.toggleValue(value, true, document.activeElement, { silent: true });
+        });
+      });
+
+      Object.entries(sectionDetails).forEach(([sectionName, detailMap]) => {
+        if (!sectionItemDetails[sectionName] || !detailMap) {
+          return;
+        }
+
+        Object.entries(detailMap).forEach(([item, detail]) => {
+          sectionItemDetails[sectionName].set(item, { ...detail });
+        });
+      });
+
+      Object.entries(medDetails).forEach(([medicine, detail]) => {
+        medicineDetails.set(medicine, { ...detail, savedAt: Date.now() });
+      });
+
+      if (notesInput) {
+        if (typeof record.notes === 'string') {
+          notesInput.value = record.notes;
+        } else if (Array.isArray(sections.Notes) && sections.Notes.length) {
+          // Older saved prescriptions stored Notes as picked chips - fall back
+          // to showing them as plain text instead of dropping them silently.
+          notesInput.value = sections.Notes.join(', ');
+        }
+      }
+
+      if (record.allergy) {
+        allergyStatusInputs.forEach((input) => {
+          input.checked = input.value === record.allergy.status;
+        });
+        if (allergyDetailsInput && typeof record.allergy.details === 'string') {
+          allergyDetailsInput.value = record.allergy.details;
+        }
+      }
+
+      saveMedicineDetailsToStorage();
+      savePrescriptionDraft();
+    }
+
+    async function restoreUnsavedDraftForCurrentPatient() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('repeatFrom') || params.get('editId')) {
+        // Those flows load their own record via applyRepeatSelections - don't
+        // also layer a leftover in-progress draft on top of it.
+        return;
+      }
+
+      const patientId = getCurrentPatientId();
+      if (!isValidPatientId(patientId)) {
+        return;
+      }
+
+      const draft = readLocalJson(getPrescriptionDraftStorageKey(patientId), null);
+      if (!draft || draft.patientId !== patientId) {
+        return;
+      }
+
+      const hasSavedContent = Object.values(draft.sections || {}).some((items) => Array.isArray(items) && items.length)
+        || Object.keys(draft.medicineDetails || {}).length > 0
+        || Boolean(String(draft.notes || '').trim());
+      if (!hasSavedContent) {
+        return;
+      }
+
+      await applyRepeatSelections(draft);
+    }
+
+    async function loadRepeatFromHistory() {
+      const repeatFromId = new URLSearchParams(window.location.search).get('repeatFrom');
+
+      if (!repeatFromId || !db) {
+        return;
+      }
+
+      try {
+        const snapshot = await getDoc(doc(db, FIREBASE_COLLECTIONS.history, repeatFromId));
+        if (snapshot.exists()) {
+          await applyRepeatSelections(snapshot.data());
+        }
+      } catch (error) {
+        console.warn(`Unable to load previous visit for repeat: ${error.message}`);
+      }
+    }
+
+    function getRecordCreatedAtMs(record) {
+      if (record?.createdAtIso) {
+        const parsed = new Date(record.createdAtIso).getTime();
+        if (!Number.isNaN(parsed)) {
+          return parsed;
+        }
+      }
+
+      if (record?.createdAt && typeof record.createdAt.toMillis === 'function') {
+        return record.createdAt.toMillis();
+      }
+
+      return 0;
+    }
+
+    function showEditModeBanner(message) {
+      if (!editModeBanner) {
+        return;
+      }
+
+      editModeBanner.textContent = message;
+      editModeBanner.hidden = !message;
+    }
+
+    // Returns the draft's editId only while the prescription it produced is
+    // still editable, matching the same 2-hour window the save path enforces.
+    function getEditableDraftEditId() {
+      try {
+        const draft = readLocalJson(getPrescriptionDraftStorageKey(getCurrentPatientId()), null);
+        if (!draft || !draft.editId) {
+          return '';
+        }
+
+        const savedAt = Number(draft.savedPrescriptionAt || 0);
+        if (!savedAt || Date.now() - savedAt > PRESCRIPTION_EDIT_WINDOW_MS) {
+          return '';
+        }
+
+        return draft.editId;
+      } catch (error) {
+        console.warn(`Unable to read the draft's edit id: ${error.message}`);
+        return '';
+      }
+    }
+
+    function clearStaleEditIdFromDraft() {
+      try {
+        const draftKey = getPrescriptionDraftStorageKey(getCurrentPatientId());
+        const existingDraft = readLocalJson(draftKey, null);
+        if (existingDraft && existingDraft.editId) {
+          existingDraft.editId = '';
+          localStorage.setItem(draftKey, JSON.stringify(existingDraft));
+        }
+      } catch (error) {
+        console.warn(`Unable to clear stale prescription edit id: ${error.message}`);
+      }
+    }
+
+    async function loadEditFromHistory() {
+      const editId = (new URLSearchParams(window.location.search).get('editId') || '').trim();
+
+      if (!editId || !db) {
+        // Arriving with no edit link is either the doctor stepping back from
+        // the preview mid-consult, or a brand-new prescription. Tell them apart
+        // by the draft: if it was already saved and is still inside the 2-hour
+        // edit window, keep editing that record so going back and forward
+        // revises one prescription instead of piling up duplicates. Otherwise
+        // drop the id, so a stale one from an abandoned session cannot attach
+        // itself to a new prescription.
+        const adoptedEditId = getEditableDraftEditId();
+
+        if (adoptedEditId) {
+          activePrescriptionEditId = adoptedEditId;
+          showEditModeBanner('Editing the prescription you just previewed. Continue to preview again to update it.');
+        } else {
+          activePrescriptionEditId = '';
+          clearStaleEditIdFromDraft();
+        }
+        return;
+      }
+
+      try {
+        const snapshot = await getDoc(doc(db, FIREBASE_COLLECTIONS.history, editId));
+        if (!snapshot.exists()) {
+          alert('This prescription could not be found for editing.');
+          return;
+        }
+
+        const record = snapshot.data();
+        const createdAtMs = getRecordCreatedAtMs(record);
+        if (!createdAtMs || Date.now() - createdAtMs > PRESCRIPTION_EDIT_WINDOW_MS) {
+          alert('The 2-hour edit window for this prescription has expired.');
+          const patientId = record.patientId || getCurrentPatientId();
+          window.location.href = patientId
+            ? `patient-details.html?patientId=${encodeURIComponent(patientId)}`
+            : 'patient-details.html';
+          return;
+        }
+
+        await applyRepeatSelections(record);
+        activePrescriptionEditId = editId;
+        const expiresAt = new Date(createdAtMs + PRESCRIPTION_EDIT_WINDOW_MS);
+        showEditModeBanner(`Editing existing prescription. Edit window closes at ${expiresAt.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}.`);
+        savePrescriptionDraft();
+      } catch (error) {
+        console.warn(`Unable to load prescription for edit: ${error.message}`);
+      }
+    }
+
+    function showConsultTemplateError(message) {
+      consultTemplateError.textContent = message;
+      consultTemplateError.classList.toggle('is-visible', Boolean(message));
+    }
+
+    function formatTemplateItemCount(template) {
+      const sections = template.sections || {};
+      const count = Object.values(sections).reduce((sum, items) => sum + (Array.isArray(items) ? items.length : 0), 0);
+      return `${count} item${count === 1 ? '' : 's'}`;
+    }
+
+    function renderConsultTemplateList(templates) {
+      if (!templates.length) {
+        consultTemplateList.innerHTML = '<div class="consult-template-empty">No saved templates yet.</div>';
+        return;
+      }
+
+      consultTemplateList.innerHTML = templates.map((template) => {
+        const name = template.name || 'Untitled template';
+        const initial = name.trim().charAt(0).toUpperCase() || 'T';
+        return `
+        <div class="consult-template-row" data-template-id="${template.id}">
+          <div class="consult-template-row-main">
+            <div class="consult-template-row-icon">${escapeHtml(initial)}</div>
+            <div class="consult-template-row-info">
+              <strong>${escapeHtml(name)}</strong>
+              <span>${formatTemplateItemCount(template)}</span>
+            </div>
+          </div>
+          <div class="consult-template-row-actions">
+            <button class="consult-template-apply-btn" type="button" data-apply-template="${template.id}">Apply</button>
+            <button class="consult-template-delete-btn" type="button" data-delete-template="${template.id}" aria-label="Delete template">x</button>
+          </div>
+        </div>
+      `;
+      }).join('');
+    }
+
+    async function loadConsultTemplates() {
+      if (!db) {
+        consultTemplateList.innerHTML = '<div class="consult-template-empty">Online records are not configured.</div>';
+        return [];
+      }
+
+      consultTemplateList.innerHTML = '<div class="consult-template-empty">Loading templates...</div>';
+
+      try {
+        const snapshot = await getDocs(query(collection(db, FIREBASE_COLLECTIONS.consultTemplates), orderBy('createdAtIso', 'desc'), limit(200)));
+        const templates = snapshot.docs.map((templateDoc) => ({ id: templateDoc.id, ...templateDoc.data() }));
+        renderConsultTemplateList(templates);
+        return templates;
+      } catch (error) {
+        consultTemplateList.innerHTML = '<div class="consult-template-empty">Unable to load templates right now.</div>';
+        console.warn(`Unable to load consult templates: ${error.message}`);
+        return [];
+      }
+    }
+
+    async function saveCurrentAsTemplate() {
+      const name = consultTemplateNameInput.value.trim();
+      showConsultTemplateError('');
+
+      if (!name) {
+        showConsultTemplateError('Give this template a name.');
+        return;
+      }
+
+      const { sections, sectionDetails, medicineDetails: details } = serializeCurrentSelections();
+      const hasAnyItem = Object.values(sections).some((items) => Array.isArray(items) && items.length);
+
+      if (!hasAnyItem) {
+        showConsultTemplateError('Select at least one symptom, finding, diagnosis, or medicine first.');
+        return;
+      }
+
+      consultTemplateSaveBtn.disabled = true;
+
+      try {
+        const templateId = window.crypto?.randomUUID ? window.crypto.randomUUID() : `tpl-${Date.now()}`;
+        await setDoc(doc(db, FIREBASE_COLLECTIONS.consultTemplates, templateId), {
+          name,
+          sections,
+          sectionDetails,
+          medicineDetails: details,
+          createdAt: serverTimestamp(),
+          createdAtIso: new Date().toISOString()
+        });
+        consultTemplateNameInput.value = '';
+        await loadConsultTemplates();
+      } catch (error) {
+        showConsultTemplateError(error?.message || 'Unable to save this template right now.');
+      } finally {
+        consultTemplateSaveBtn.disabled = false;
+      }
+    }
+
+    async function applyConsultTemplate(templateId) {
+      try {
+        const snapshot = await getDoc(doc(db, FIREBASE_COLLECTIONS.consultTemplates, templateId));
+        if (snapshot.exists()) {
+          await applyRepeatSelections(snapshot.data());
+        }
+        closeConsultTemplateModal();
+      } catch (error) {
+        showConsultTemplateError(error?.message || 'Unable to apply this template right now.');
+      }
+    }
+
+    async function deleteConsultTemplate(templateId) {
+      try {
+        await deleteDoc(doc(db, FIREBASE_COLLECTIONS.consultTemplates, templateId));
+        await loadConsultTemplates();
+      } catch (error) {
+        showConsultTemplateError(error?.message || 'Unable to delete this template right now.');
+      }
+    }
+
+    function openConsultTemplateModal() {
+      consultTemplateModal.classList.add('is-open');
+      consultTemplateModal.setAttribute('aria-hidden', 'false');
+      showConsultTemplateError('');
+      loadConsultTemplates();
+    }
+
+    function closeConsultTemplateModal() {
+      consultTemplateModal.classList.remove('is-open');
+      consultTemplateModal.setAttribute('aria-hidden', 'true');
+    }
+
+    openTemplatesBtn.addEventListener('click', openConsultTemplateModal);
+    consultTemplateClose.addEventListener('click', closeConsultTemplateModal);
+    consultTemplateModal.addEventListener('click', (event) => {
+      if (event.target === consultTemplateModal) {
+        closeConsultTemplateModal();
+      }
+    });
+    consultTemplateSaveBtn.addEventListener('click', saveCurrentAsTemplate);
+    consultTemplateList.addEventListener('click', (event) => {
+      const applyId = event.target.closest('[data-apply-template]')?.getAttribute('data-apply-template');
+      const deleteId = event.target.closest('[data-delete-template]')?.getAttribute('data-delete-template');
+
+      if (applyId) {
+        applyConsultTemplate(applyId);
+      } else if (deleteId) {
+        deleteConsultTemplate(deleteId);
+      }
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && consultTemplateModal.classList.contains('is-open')) {
+        closeConsultTemplateModal();
+      }
+    });
+
+    function showPrescriptionInitError(error) {
+      console.error(`Prescription page failed to load: ${error.message}`);
+      setSyncStatus('Page did not load fully', true);
+
+      if (initErrorBanner) {
+        initErrorBanner.textContent = 'This page did not load fully, so anything already on it may be incomplete. Please reload before you continue prescribing.';
+        initErrorBanner.hidden = false;
+      }
+    }
+
+    async function openInitialPrescriptionAction() {
+      let restored = false;
+
+      try {
+        await initPrescriptionData();
+        await restoreUnsavedDraftForCurrentPatient();
+        await loadRepeatFromHistory();
+        await loadEditFromHistory();
+        restored = true;
+      } catch (error) {
+        showPrescriptionInitError(error);
+      } finally {
+        // This must be set on every path. savePrescriptionDraft() is a no-op
+        // until it is true, so a throw above used to leave the page silently
+        // discarding every edit the doctor made for the rest of the session.
+        prescriptionInitReady = true;
+      }
+
+      if (restored) {
+        // Commits whatever was restored, plus any selection the user managed
+        // to make while the restore above was still in flight. Skipped after a
+        // failure so a half-restored page cannot overwrite the stored draft.
+        savePrescriptionDraft();
+      }
+
+      if (window.location.hash === '#add-medicine') {
+        history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+      }
+    }
+
+    openInitialPrescriptionAction().catch((error) => {
+      showPrescriptionInitError(error);
+    });
+    notesInput?.addEventListener('input', () => {
+      savePrescriptionDraft();
+    });
+    notesInput?.addEventListener('blur', () => {
+      notesInput.value = formatClauseText(notesInput.value);
+      savePrescriptionDraft();
+    });
+    allergyStatusInputs.forEach((input) => {
+      input.addEventListener('change', () => {
+        savePrescriptionDraft();
+      });
+    });
+    allergyDetailsInput?.addEventListener('input', () => {
+      savePrescriptionDraft();
+    });
+    allergyDetailsInput?.addEventListener('blur', () => {
+      allergyDetailsInput.value = formatClauseText(allergyDetailsInput.value);
+      savePrescriptionDraft();
+    });
+    continuePreviewBtn.addEventListener('click', () => {
+      syncMedicineDetailsFromDom();
+      savePrescriptionDraft();
+    });
+    continuePreviewBtn.href = getPreviewTargetUrl();
+  </script>
+</body>
+</html>

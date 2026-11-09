@@ -1,0 +1,4725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Preview | The Better Kids Clinic EMR</title>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="manifest" href="/emr/kid/site.webmanifest" />
+  <meta name="description" content="Preview page for The Better Kids Clinic EMR, supporting clinic workflows and patient care operations at The Better Health Clinic." />
+  <link rel="canonical" href="https://www.thebetterhealth.clinic/emr/kid/preview" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Better Health Clinic" />
+  <meta property="og:title" content="Preview | The Better Kids Clinic EMR" />
+  <meta property="og:description" content="Preview page for The Better Kids Clinic EMR, supporting clinic workflows and patient care operations at The Better Health Clinic." />
+  <meta property="og:url" content="https://www.thebetterhealth.clinic/emr/kid/preview" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Preview | The Better Kids Clinic EMR" />
+  <meta name="twitter:description" content="Preview page for The Better Kids Clinic EMR, supporting clinic workflows and patient care operations at The Better Health Clinic." />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thebetterhealth.clinic/#website",
+      "name": "The Better Health Clinic",
+      "url": "https://www.thebetterhealth.clinic/"
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.thebetterhealth.clinic/#clinic",
+      "name": "The Better Health Clinic",
+      "url": "https://www.thebetterhealth.clinic/",
+      "telephone": [
+        "+919686183999",
+        "+919513988840"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#155, 2nd Cross, 1st stage, Arekere MICO Layout, Off Bannerghatta Road",
+        "addressLocality": "Bengaluru",
+        "postalCode": "560076",
+        "addressCountry": "IN"
+      },
+      "medicalSpecialty": [
+        "Pediatrics",
+        "Pulmonology"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.thebetterhealth.clinic/emr/kid/preview#webpage",
+      "url": "https://www.thebetterhealth.clinic/emr/kid/preview",
+      "name": "Preview | The Better Kids Clinic EMR",
+      "description": "Preview page for The Better Kids Clinic EMR, supporting clinic workflows and patient care operations at The Better Health Clinic.",
+      "isPartOf": {
+        "@id": "https://www.thebetterhealth.clinic/#website"
+      },
+      "about": {
+        "@id": "https://www.thebetterhealth.clinic/#clinic"
+      }
+    }
+  ]
+}
+  </script><script type="module" src="./auth-guard.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef4ef;
+      --panel: #fcfdf8;
+      --ink: #1b2a21;
+      --muted: #607067;
+      --line: #d7e2d9;
+      --brand: #166534;
+      --brand-soft: #dcfce7;
+      --brand-strong: #14532d;
+      --shadow: 0 18px 45px rgba(22, 38, 29, 0.08);
+      --radius-lg: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Outfit', system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.14), transparent 28%),
+        linear-gradient(180deg, #f5faf3 0%, #edf5ef 100%);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(248, 252, 248, 0.85);
+      border-bottom: 1px solid rgba(215, 226, 217, 0.95);
+      box-shadow: 0 8px 24px rgba(22, 38, 29, 0.05);
+    }
+
+    .topbar {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      background: linear-gradient(135deg, #166534, #22c55e);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(22, 101, 52, 0.22);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-left: auto;
+      min-width: 0;
+    }
+
+    .nav-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: 999px;
+      color: #5f6f66;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: #dcfce7;
+      color: #14532d;
+    }
+
+    .nav-link.nav-enter-clinic {
+      flex: 0 1 220px;
+      width: min(100%, 220px);
+      justify-self: center;
+      margin-inline: auto;
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      color: #ffffff;
+      box-shadow: 0 10px 22px rgba(22, 101, 52, 0.22);
+      padding-inline: 18px;
+    }
+
+    .nav-link.nav-enter-clinic:hover,
+    .nav-link.nav-enter-clinic.active {
+      background: linear-gradient(135deg, var(--brand-strong), var(--brand));
+      color: #ffffff;
+    }
+
+    .nav-link.nav-enter-clinic[aria-disabled="true"] {
+      background: #cbd5e1;
+      color: #64748b;
+      box-shadow: none;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-left: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--ink);
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(22, 38, 29, 0.08);
+    }
+
+    .menu-toggle-inner {
+      display: grid;
+      gap: 4px;
+    }
+
+    .menu-toggle-bar {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .topbar-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #f8fbf9;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12);
+    }
+
+    .save-state-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      margin: 0 0 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #f8fbf9;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .save-state-banner[hidden] {
+      display: none;
+    }
+
+    .save-state-banner.is-saved {
+      border-color: #9fd8b0;
+      background: #eaf9ef;
+      color: #146c34;
+    }
+
+    .save-state-banner.is-failed {
+      border-color: #f0a9a9;
+      background: #fdeceb;
+      color: #a12220;
+    }
+
+    .save-state-retry {
+      margin-left: auto;
+      min-height: 38px;
+      padding: 0 16px;
+      border: 1px solid currentColor;
+      border-radius: 12px;
+      background: #fff;
+      color: inherit;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .save-state-retry[hidden] {
+      display: none;
+    }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 22px auto 42px;
+    }
+
+    .content-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(215, 226, 217, 0.95);
+      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .preview-workbar {
+      position: sticky;
+      top: 86px;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 16px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 12px 28px rgba(22, 38, 29, 0.08);
+    }
+
+    .preview-title {
+      min-width: 0;
+    }
+
+    .preview-title h1 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.15;
+    }
+
+    .preview-title p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .preview-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-self: end;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 14px;
+      border: 0;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary[hidden],
+    .btn-secondary[hidden],
+    .btn-whatsapp[hidden],
+    .btn-ghost[hidden] {
+      display: none;
+    }
+
+    .nav-enter-clinic {
+      min-height: 40px;
+      padding: 0 16px;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .btn-primary:disabled,
+    .btn-secondary:disabled,
+    .btn-whatsapp:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #166534, #22c55e);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(22, 101, 52, 0.18);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--brand-strong);
+    }
+
+    .btn-whatsapp {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(22, 101, 52, 0.18);
+    }
+
+    .action-divider {
+      width: 1px;
+      align-self: stretch;
+      min-height: 24px;
+      background: var(--line);
+      margin: 0 2px;
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(22, 101, 52, 0.22);
+      background: transparent;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-strong);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-ghost:hover {
+      background: #f1f5f2;
+      border-color: var(--line);
+      color: var(--brand-strong);
+    }
+
+    .btn-ghost:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    .header-mode-toggle {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .header-mode-btn {
+      min-height: 36px;
+      padding: 0 10px;
+      border: 0;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .header-mode-btn.is-active {
+      background: var(--brand-strong);
+      color: #fff;
+      box-shadow: 0 8px 16px rgba(22, 101, 52, 0.14);
+    }
+
+    .document-stage {
+      overflow: auto;
+      padding: 20px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(45deg, rgba(22, 101, 52, 0.035) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(22, 101, 52, 0.035) 25%, transparent 25%),
+        #eef4ef;
+      background-size: 18px 18px;
+    }
+
+    .rx-sheet {
+      width: min(794px, 100%);
+      min-height: 1123px;
+      margin: 0 auto;
+      padding: var(--rx-margin-top, 38px) var(--rx-margin-right, 42px) var(--rx-margin-bottom, 38px) var(--rx-margin-left, 42px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      color: #111827;
+      box-shadow: 0 0 0 10px #242424;
+      font-family: var(--rx-font-family, Arial, Helvetica, sans-serif);
+      /* Every size inside the sheet is expressed as a multiple of --rx-fs so
+         the Font Size setting actually scales the whole prescription. calc()
+         against the variable is used instead of em because these elements
+         nest, and em would compound at each level.
+
+         --rx-font-size is the size the doctor picked in Settings, in PRINTED
+         POINTS. Two conversions stand between that number and a CSS px value,
+         and skipping them is why "16" used to come out of the printer looking
+         like 9.5pt:
+           - the sheet is 794px wide printed at 210mm, i.e. 96dpi, so 1px = 0.75pt
+           - the clinical rows are 0.786 x --rx-fs, not 1.0
+         1 / 0.75 / 0.786 = 1.6964, so scaling the base by that lands .text-row
+         (allergy, symptoms, diagnosis, the patient band) on exactly the chosen
+         point size. Every other ratio below is unchanged, so the size hierarchy
+         across the sheet stays as designed. */
+      --rx-fs: calc(var(--rx-font-size, 8px) * 1.6964);
+      /* The letterhead - clinic name, address, doctor block, footer - does not
+         follow the Font Size setting. That setting is there to make the clinical
+         content readable, and letting it drag the branding along blew the clinic
+         name up to 22pt at a 16pt body. 14px is the base the letterhead has
+         always printed at, so it is now pinned there while the ratios below keep
+         the proportions inside the header and footer unchanged. */
+      --rx-fs-chrome: 14px;
+      font-size: var(--rx-fs);
+    }
+
+    body.rendering-prescription-download .rx-sheet {
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    body.preview-without-header .rx-sheet-header {
+      display: none;
+    }
+
+    body.preview-without-header .rx-sheet {
+      padding-top: var(--rx-margin-top, 38px);
+    }
+
+    .rx-sheet-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      padding: 0 0 10px;
+      border-bottom: 1px solid #777;
+      background: #fff;
+    }
+
+    .clinic-title {
+      margin: 0;
+      font-size: calc(var(--rx-fs-chrome) * 1.07);
+      line-height: 1.1;
+      color: #111827;
+      font-weight: 800;
+    }
+
+    .clinic-address {
+      margin: 6px 0 0;
+      max-width: 310px;
+      color: #111827;
+      font-size: calc(var(--rx-fs-chrome) * 0.75);
+      line-height: 1.18;
+    }
+
+    .doctor-block {
+      text-align: right;
+      font-size: calc(var(--rx-fs-chrome) * 0.75);
+      line-height: 1.18;
+    }
+
+    .doctor-block strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: calc(var(--rx-fs-chrome) * 0.786);
+    }
+
+    .patient-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 0.9fr);
+      gap: 10px;
+      margin: 12px 0 10px;
+      padding: 7px 8px;
+      border: 1px solid #e5e7eb;
+      font-size: calc(var(--rx-fs) * 0.786);
+      line-height: 1.24;
+    }
+
+    .patient-band strong,
+    .text-row strong {
+      font-weight: 800;
+    }
+
+    .text-row {
+      margin: 3px 0;
+      font-size: calc(var(--rx-fs) * 0.786);
+      line-height: 1.2;
+    }
+
+    .rx-section {
+      padding: 0;
+      border-bottom: 0;
+    }
+
+    .medicine-table {
+      width: 100%;
+      margin: 10px 0 8px;
+      border-collapse: collapse;
+      border: 1px solid #4b5563;
+      font-size: calc(var(--rx-fs) * 0.75);
+    }
+
+    .medicine-table-wrap {
+      overflow-x: auto;
+      margin: 10px 0 8px;
+    }
+
+    .medicine-table-wrap .medicine-table {
+      margin: 0;
+      min-width: 620px;
+    }
+
+    .medicine-table th,
+    .medicine-table td {
+      padding: 4px 5px;
+      border: 1px solid #4b5563;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    /* Column labels are small, centred and unemphasised - the row content is
+       what should carry weight, not the headings. */
+    .medicine-table th {
+      background: #f3f4f6;
+      color: #374151;
+      font-size: calc(var(--rx-fs) * 0.68);
+      font-weight: 500;
+    }
+
+    .medicine-table .medicine-name {
+      text-align: left;
+      font-weight: 800;
+    }
+
+    /* The food instruction hangs under the frequency, centred beneath the
+       timing above it. */
+    .medicine-table .medicine-sub {
+      display: block;
+      margin-top: 1px;
+      font-size: calc(var(--rx-fs) * 0.65);
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      text-align: center;
+    }
+
+    /* Composition sits under the brand in small italic capitals. */
+    .medicine-table .medicine-composition {
+      display: block;
+      margin-top: 1px;
+      font-size: calc(var(--rx-fs) * 0.607);
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    /* Dosage form ahead of the brand, in normal weight. */
+    .medicine-table .medicine-form {
+      font-weight: 400;
+    }
+
+    .medicine-table .medicine-index {
+      text-align: center;
+    }
+
+    .medicine-table .medicine-quantity {
+      text-align: center;
+    }
+
+    .medicine-table .medicine-remark {
+      text-align: left;
+      font-weight: 500;
+      font-size: calc(var(--rx-fs) * 0.7);
+    }
+
+
+
+    .instructions-block {
+      margin-top: 6px;
+      font-size: calc(var(--rx-fs) * 0.75);
+      line-height: 1.22;
+    }
+
+    .instructions-block strong {
+      display: inline;
+      margin: 0 4px 0 0;
+      font-size: calc(var(--rx-fs) * 0.786);
+    }
+
+    .instructions-block p {
+      display: inline;
+      margin: 0;
+    }
+
+    .instructions-block ul {
+      margin: 4px 0 0 22px;
+      padding: 0;
+    }
+
+    .mini-chart-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 4px;
+      margin-top: 8px;
+      align-items: start;
+      width: 100%;
+      page-break-inside: avoid;
+    }
+
+    .mini-chart-card {
+      min-width: 0;
+      text-align: center;
+      padding: 2px 1px 0;
+    }
+
+    .mini-chart-card strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: calc(var(--rx-fs) * 0.679);
+      font-weight: 700;
+      color: #27352c;
+    }
+
+    .mini-chart-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1.38 / 1;
+      margin: 0 auto;
+      object-fit: contain;
+      object-position: center;
+      image-rendering: auto;
+      background: transparent;
+    }
+
+    .rx-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 18px;
+      /* The footer follows the growth charts after a short gap rather than
+         being pushed to the bottom of the page with margin-top:auto. Any
+         leftover height on a short prescription is now blank paper below the
+         signature instead of a long gap in the middle of the sheet. */
+      margin-top: 26px;
+      padding-top: 10px;
+      font-size: calc(var(--rx-fs-chrome) * 0.714);
+      line-height: 1.15;
+    }
+
+    .rx-footer.is-footer-right {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+
+    .rx-footer.is-footer-right .signature-image {
+      margin-left: auto;
+      object-position: right bottom;
+    }
+
+    .footer-address {
+      max-width: 300px;
+      text-align: right;
+      font-size: calc(var(--rx-fs-chrome) * 0.643);
+      line-height: 1.18;
+    }
+
+    .signature-line {
+      width: 160px;
+      height: 56px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #111827;
+    }
+
+    .signature-image {
+      display: block;
+      width: 178px;
+      height: 64px;
+      margin-bottom: 5px;
+      object-fit: contain;
+      object-position: left bottom;
+    }
+
+    .empty-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 901px) {
+      .page-shell {
+        width: min(1240px, calc(100% - 32px));
+      }
+
+      .content-panel {
+        padding: 20px;
+        gap: 18px;
+      }
+
+      .preview-workbar {
+        grid-template-columns: auto 1fr;
+      }
+
+      .preview-actions {
+        min-width: 0;
+        justify-content: flex-end;
+        gap: 10px;
+        flex-wrap: nowrap;
+      }
+
+      .preview-actions .nav-enter-clinic,
+      .preview-actions .btn-primary,
+      .preview-actions .btn-secondary,
+      .preview-actions .btn-whatsapp {
+        padding-inline: 14px;
+      }
+
+      .action-divider {
+        display: block;
+      }
+
+      .preview-actions .header-mode-btn {
+        padding-inline: 9px;
+      }
+
+      .document-stage {
+        display: grid;
+        place-items: start center;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .topbar {
+        width: min(100% - 24px, 100%);
+        min-height: auto;
+        padding: 14px 0;
+        flex-wrap: wrap;
+      }
+
+      .page-shell {
+        width: min(100% - 24px, 100%);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar {
+        width: min(100% - 20px, 100%);
+        padding: 12px 0;
+        gap: 12px;
+        align-items: stretch;
+      }
+
+      .brand {
+        width: auto;
+        flex: 1 1 auto;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        order: 3;
+        margin-left: 0;
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 14px 28px rgba(22, 38, 29, 0.08);
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .topbar-actions {
+        margin-left: 0;
+        width: 100%;
+        order: 4;
+      }
+
+      .page-shell {
+        width: min(100% - 20px, 100%);
+        margin: 16px auto 22px;
+      }
+
+      .content-panel {
+        min-height: 260px;
+        padding: 12px;
+      }
+
+      .preview-workbar {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px;
+      }
+
+      .preview-actions {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        justify-content: flex-start;
+        gap: 8px;
+        width: 100%;
+        padding-bottom: 2px;
+        margin-inline: -10px;
+        padding-inline: 10px;
+      }
+
+      .preview-actions::-webkit-scrollbar {
+        height: 4px;
+      }
+
+      .preview-actions .nav-enter-clinic,
+      .preview-actions .btn-primary,
+      .preview-actions .btn-secondary,
+      .preview-actions .btn-whatsapp,
+      .preview-actions .btn-ghost,
+      .preview-actions .header-mode-toggle {
+        flex: 0 0 auto;
+        width: auto;
+        scroll-snap-align: start;
+      }
+
+      .action-divider {
+        display: none;
+      }
+
+      .document-stage {
+        padding: 8px;
+        border-radius: 16px;
+      }
+
+      .rx-sheet {
+        min-height: auto;
+        padding: 22px 16px;
+        font-size: var(--rx-fs);
+      }
+
+      .patient-band,
+      .mini-chart-grid,
+      .rx-sheet-header {
+        grid-template-columns: 1fr;
+      }
+
+      .status-chip {
+        width: 100%;
+        min-height: 38px;
+        justify-content: center;
+        border-radius: 14px;
+      }
+
+      .nav-link {
+        width: 100%;
+        min-height: 42px;
+        padding: 10px 12px;
+        border-radius: 14px;
+      }
+    }
+
+    @media print {
+      /* The real @page rule is written at runtime by applyPrintPageRule() so
+         it carries the doctor's configured margins. This is only the fallback
+         for the case where that has not run yet. */
+      @page {
+        size: A4 portrait;
+      }
+
+      :root {
+        --print-header-gap: 0cm;
+      }
+
+      html,
+      body {
+        /* Must NOT be pinned to 210mm. @page now supplies the margins, so the
+           printable area is narrower than the sheet - forcing full page width
+           here pushed the header and footer off the right edge of the paper. */
+        width: auto;
+        min-height: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff;
+        overflow: visible;
+      }
+
+      .site-header,
+      .preview-workbar,
+      .save-state-banner {
+        display: none !important;
+      }
+
+      body:not(.print-with-header) .rx-sheet-header {
+        display: none !important;
+      }
+
+      body.print-with-header .rx-sheet-header {
+        display: grid !important;
+      }
+
+      .page-shell,
+      .content-panel,
+      .document-stage {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: #fff;
+        /* An ancestor that scrolls on screen would clip the sheet on paper. */
+        overflow: visible;
+        display: block;
+      }
+
+      .rx-sheet {
+        box-sizing: border-box;
+        /* Width and margins come from @page now, so the sheet itself is a
+           plain block that fills the printable area and grows as needed. */
+        width: auto;
+        min-height: 0;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        /* Follow the configured Font Size. This used to be pinned at 10px,
+           which silently shrank every browser-printed prescription. */
+        font-size: var(--rx-fs);
+        overflow: visible;
+        /* Flex columns paginate badly - the footer's margin-top:auto would
+           strand it at the bottom of page one. Block layout lets content
+           flow across pages normally. */
+        display: block;
+      }
+
+      body:not(.print-with-header) .rx-sheet {
+        padding-top: var(--print-header-gap);
+      }
+
+      /* Nothing may be clipped or scrolled away on paper. */
+      .medicine-table-wrap {
+        overflow: visible !important;
+      }
+
+      .medicine-table-wrap .medicine-table {
+        min-width: 0;
+      }
+
+      /* Keep rows, the patient band and the footer whole across page breaks -
+         this is the part the old rasterised export could never do. */
+      .patient-band,
+      .medicine-table tr,
+      .mini-chart-card,
+      .instructions-block,
+      .rx-footer {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .medicine-table thead {
+        display: table-header-group;
+      }
+
+      .rx-footer {
+        margin-top: 12mm;
+      }
+
+      .billing-modal,
+      .modal-backdrop,
+      /* Parked off-canvas at left: -10000px for html2canvas to capture. Off
+         screen is not off paper - leave it in the print flow and it can push
+         out a stray blank page. */
+      #receipt-sheet-holder {
+        display: none !important;
+      }
+    }
+
+    .billing-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(11, 22, 16, 0.68);
+      backdrop-filter: blur(10px);
+    }
+
+    .billing-modal.is-open {
+      display: flex;
+    }
+
+    .billing-dialog {
+      width: min(640px, 100%);
+      max-height: 90vh;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      overflow: hidden;
+      border-radius: 24px;
+      background: #f8fbf9;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: 0 30px 80px rgba(11, 22, 16, 0.28);
+    }
+
+    .billing-modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 16px 16px 20px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .billing-modal-head strong {
+      font-size: 16px;
+    }
+
+    .billing-modal-close {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(22, 38, 29, 0.08);
+    }
+
+    .billing-modal-body {
+      min-height: 0;
+      overflow-y: auto;
+      padding: 20px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .billing-section-label {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .bill-item-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 120px 40px;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .bill-item-custom-input {
+      grid-column: 1 / -1;
+    }
+
+    .bill-item-row select,
+    .bill-item-row input,
+    .billing-modal-body select,
+    .billing-modal-body input[type="number"] {
+      min-height: 42px;
+      padding: 0 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font: inherit;
+      color: var(--ink);
+    }
+
+    .bill-item-remove {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #b91c1c;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .bill-item-add-btn {
+      justify-self: start;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px dashed var(--line);
+      background: #fff;
+      color: var(--brand-strong);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .bill-totals-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 800;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+
+    .billing-error {
+      color: #b91c1c;
+      font-size: 13px;
+      font-weight: 700;
+      display: none;
+    }
+
+    .billing-error.is-visible {
+      display: block;
+    }
+
+    .billing-modal-foot {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 14px 20px;
+      border-top: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    #receipt-sheet-holder {
+      position: fixed;
+      left: -10000px;
+      top: 0;
+      z-index: -1;
+    }
+
+    #receipt-sheet {
+      width: 148mm;
+      background: #ffffff;
+      padding: 14mm 12mm;
+      font-family: 'Outfit', system-ui, sans-serif;
+      color: #10172a;
+    }
+
+    .receipt-clinic-header {
+      text-align: center;
+      border-bottom: 2px solid #166534;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .receipt-clinic-header strong {
+      display: block;
+      font-size: 18px;
+      color: #14532d;
+    }
+
+    .receipt-clinic-header span {
+      display: block;
+      font-size: 10.5px;
+      color: #4a5a4f;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .receipt-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 4px 0 14px;
+      color: #14532d;
+    }
+
+    .receipt-meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11.5px;
+      margin-bottom: 4px;
+    }
+
+    .receipt-patient-info {
+      padding: 10px 12px;
+      border: 1px solid #d7e2d9;
+      border-radius: 8px;
+      margin: 10px 0 16px;
+      font-size: 11.5px;
+    }
+
+    .receipt-items-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      margin-bottom: 12px;
+    }
+
+    .receipt-items-table th,
+    .receipt-items-table td {
+      text-align: left;
+      padding: 6px 4px;
+      border-bottom: 1px solid #d7e2d9;
+    }
+
+    .receipt-items-table td:last-child,
+    .receipt-items-table th:last-child {
+      text-align: right;
+    }
+
+    .receipt-totals {
+      font-size: 12.5px;
+      display: grid;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .receipt-totals .is-total {
+      font-weight: 800;
+      font-size: 14px;
+      border-top: 1px solid #10172a;
+      padding-top: 6px;
+    }
+
+    .receipt-footer {
+      font-size: 10.5px;
+      color: #4a5a4f;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+  </style>
+  <link rel="stylesheet" href="mobile-app.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">🩺</div>
+        <div class="brand-copy">
+          <strong>The Better Kids Clinic</strong>
+          <span>Preview</span>
+        </div>
+      </div>
+
+      <nav id="primary-nav" class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="/emr/kid/">Dashboard</a>
+        <a class="nav-link active" href="/emr/kid/search">Enter Clinic</a>
+        <a class="nav-link" href="/emr/kid/pending-approvals">Approvals</a>
+        <a class="nav-link" href="/emr/kid/settings">Settings</a>
+      </nav>
+
+      
+
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <section class="content-panel">
+      <div class="preview-workbar">
+        <div id="preview-status" class="status-chip" role="status" aria-live="polite">
+          <span class="status-dot"></span>Preparing preview...
+        </div>
+        <div class="preview-actions">
+            <a id="enter-clinic-link" class="nav-link nav-enter-clinic" href="/emr/kid/search" aria-disabled="true">Enter Clinic</a>
+          <button id="download-pdf-btn" class="btn-primary" type="button">Download PDF</button>
+          <button id="whatsapp-btn" class="btn-whatsapp" type="button">WhatsApp</button>
+          <span class="action-divider" aria-hidden="true"></span>
+          <div class="header-mode-toggle" aria-label="Prescription header mode">
+            <button id="with-header-btn" class="header-mode-btn" type="button">With Header</button>
+            <button id="without-header-btn" class="header-mode-btn" type="button">Without Header</button>
+          </div>
+          <button id="print-pdf-btn" class="btn-ghost" type="button">Print</button>
+          <button id="add-payment-btn" class="btn-ghost" type="button">Add Payment</button>
+          <button id="edit-prescription-btn" class="btn-ghost" type="button" hidden>Edit Prescription</button>
+        </div>
+      </div>
+      <div id="save-state-banner" class="save-state-banner" role="status" aria-live="polite" hidden>
+        <span id="save-state-text"></span>
+        <button id="save-retry-btn" class="save-state-retry" type="button" hidden>Retry save</button>
+      </div>
+      <div class="document-stage">
+        <article id="rx-sheet" class="rx-sheet"></article>
+      </div>
+    </section>
+  </div>
+
+  <div id="bill-modal" class="billing-modal" aria-hidden="true">
+    <div class="billing-dialog" role="dialog" aria-modal="true" aria-labelledby="bill-modal-title">
+      <div class="billing-modal-head">
+        <strong id="bill-modal-title">Add Bill / Payment</strong>
+        <button id="bill-modal-close" class="billing-modal-close" type="button" aria-label="Close bill form">x</button>
+      </div>
+      <div class="billing-modal-body">
+        <div>
+          <div class="billing-section-label">Itemized Bill</div>
+          <div id="bill-items-container"></div>
+          <button id="bill-item-add-btn" class="bill-item-add-btn" type="button">+ Add Bill Item</button>
+        </div>
+
+        <div class="bill-totals-row">
+          <span>Total</span>
+          <span id="bill-total-display">₹0</span>
+        </div>
+
+        <div>
+          <div class="billing-section-label">Payment</div>
+          <select id="bill-payment-method"></select>
+        </div>
+
+        <div>
+          <div class="billing-section-label">Amount Paid</div>
+          <input id="bill-amount-paid" type="number" min="0" step="0.01" value="0">
+        </div>
+
+        <div class="bill-totals-row">
+          <span>Due</span>
+          <span id="bill-due-display">₹0</span>
+        </div>
+
+        <div id="bill-error" class="billing-error"></div>
+      </div>
+      <div class="billing-modal-foot">
+        <button id="bill-save-exit-btn" class="btn-secondary" type="button">Save &amp; Exit</button>
+        <button id="bill-save-print-btn" class="btn-primary" type="button">Save &amp; Print</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="receipt-sheet-holder" aria-hidden="true">
+    <div id="receipt-sheet">
+      <div class="receipt-clinic-header">
+        <strong id="receipt-clinic-name">The Better Health Clinic</strong>
+        <span id="receipt-clinic-address"></span>
+        <span id="receipt-doctor-name"></span>
+      </div>
+      <div class="receipt-title">Payment Receipt</div>
+      <div class="receipt-meta-row">
+        <span>Receipt No: <strong id="receipt-no-value"></strong></span>
+        <span>Date: <strong id="receipt-date-value"></strong></span>
+      </div>
+      <div class="receipt-meta-row">
+        <span>Bill No: <strong id="receipt-bill-no-value"></strong></span>
+      </div>
+      <div class="receipt-patient-info">
+        Patient: <strong id="receipt-patient-name"></strong><br>
+        Patient ID: <strong id="receipt-patient-id"></strong>
+      </div>
+      <table class="receipt-items-table">
+        <thead>
+          <tr><th>Description</th><th>Amount</th></tr>
+        </thead>
+        <tbody id="receipt-items-body"></tbody>
+      </table>
+      <div class="receipt-totals">
+        <div>Total: <span id="receipt-total-value"></span></div>
+        <div>Payment Method: <span id="receipt-payment-method-value"></span></div>
+        <div>Amount Paid: <span id="receipt-paid-value"></span></div>
+        <div class="is-total">Due: <span id="receipt-due-value"></span></div>
+      </div>
+      <div class="receipt-footer">Thank you for visiting us.</div>
+    </div>
+  </div>
+
+  <script type="module">
+    import html2canvas from 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/+esm';
+    import { jsPDF } from 'https://cdn.jsdelivr.net/npm/jspdf@3.0.3/+esm';
+    import { arrayUnion, collection, doc, getDoc, getDocs, increment, query, serverTimestamp, setDoc, where, writeBatch } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js';
+    import { getDownloadURL, getMetadata, ref, uploadBytes } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-storage.js';
+    import { db, storage } from './lib/firebase-init.js';
+    import { isMeasurementEntryCancelled } from './lib/cancelled-visits.js';
+    import {
+      ITEM_PRESET_OPTIONS,
+      PAYMENT_METHOD_OPTIONS,
+      computeBillDue,
+      computeItemsTotal,
+      getBillingItemDefaultAmounts,
+      saveBill,
+      saveBillingItemDefaultAmount
+    } from './lib/billing.js';
+    const CLINIC_FIREBASE_NAMESPACE = 'clinics/kid';
+    const FIREBASE_COLLECTIONS = {
+      patients: `${CLINIC_FIREBASE_NAMESPACE}/patients`,
+      pendingPatients: `${CLINIC_FIREBASE_NAMESPACE}/pendingPatients`,
+      history: `${CLINIC_FIREBASE_NAMESPACE}/history`,
+      prescription: `${CLINIC_FIREBASE_NAMESPACE}/prescription`
+    };
+    const CLINIC_STORAGE_PREFIX = CLINIC_FIREBASE_NAMESPACE;
+    const CLINIC_LOCAL_STORAGE_PREFIX = CLINIC_FIREBASE_NAMESPACE.replace(/\//g, ':');
+    const clinicStorageKey = (key) => `${CLINIC_LOCAL_STORAGE_PREFIX}:${key}`;
+    const PRESCRIPTION_EDIT_WINDOW_MS = 2 * 60 * 60 * 1000;
+    const STORAGE_STATS_DOC_PATH = [CLINIC_FIREBASE_NAMESPACE, 'clinicSettings', 'storageStats'];
+
+    async function getExistingPdfSize(storageRef) {
+      try {
+        const metadata = await getMetadata(storageRef);
+        return Number(metadata.size) || 0;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    // Editing and re-saving a prescription overwrites the same storagePath.
+    // Firebase mints a fresh download token on every upload unless told to
+    // keep the old one — without this, any URL already handed out (search's
+    // prescription preview, a cached history record) breaks the moment the
+    // edit is saved, since Storage now requires auth and an unrecognized
+    // token no longer falls through to an open bucket the way it used to.
+    async function getExistingDownloadToken(storageRef) {
+      try {
+        const metadata = await getMetadata(storageRef);
+        return String(metadata?.customMetadata?.firebaseStorageDownloadTokens || '').split(',')[0].trim();
+      } catch (error) {
+        return '';
+      }
+    }
+
+    function recordPdfStorageStat(oldSize, newBytes) {
+      if (!db) {
+        return;
+      }
+      const isNewFile = oldSize === null;
+      const byteDelta = Number(newBytes || 0) - (isNewFile ? 0 : oldSize);
+      setDoc(doc(db, ...STORAGE_STATS_DOC_PATH), {
+        ...(isNewFile ? { pdfCount: increment(1) } : {}),
+        totalBytes: increment(byteDelta),
+        updatedAt: serverTimestamp()
+      }, { merge: true }).catch((error) => {
+        console.warn(`Unable to update storage stats: ${error.message}`);
+      });
+    }
+
+    const primaryNav = document.getElementById('primary-nav');
+    const rxSheet = document.getElementById('rx-sheet');
+    const downloadPdfBtn = document.getElementById('download-pdf-btn');
+    const printPdfBtn = document.getElementById('print-pdf-btn');
+    const addPaymentBtn = document.getElementById('add-payment-btn');
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    const editPrescriptionBtn = document.getElementById('edit-prescription-btn');
+    const enterClinicLink = document.getElementById('enter-clinic-link');
+
+    const saveStateBanner = document.getElementById('save-state-banner');
+    const saveStateText = document.getElementById('save-state-text');
+    const saveRetryBtn = document.getElementById('save-retry-btn');
+
+    function setEnterClinicEnabled(enabled) {
+      if (!enterClinicLink) {
+        return;
+      }
+      enterClinicLink.setAttribute('aria-disabled', String(!enabled));
+    }
+
+    // Leaving for the patient list is the point the consult is actually over,
+    // so that is where the working data is cleared - not on save, which the
+    // doctor may well want to go back and revise.
+    enterClinicLink?.addEventListener('click', () => {
+      const patientId = getPatientIdFromUrl();
+      clearPrescriptionLocalData(patientId);
+    });
+
+    // The save runs in the background off several different buttons, so its
+    // state needs one home the doctor can actually see - the status chip alone
+    // is easy to miss, especially once printing has opened the PDF in a new tab.
+    function setSaveState(state, message) {
+      if (!saveStateBanner || !saveStateText || !saveRetryBtn) {
+        return;
+      }
+
+      saveStateBanner.hidden = false;
+      saveStateBanner.classList.toggle('is-saved', state === 'saved');
+      saveStateBanner.classList.toggle('is-failed', state === 'failed');
+      saveStateText.textContent = message;
+      saveRetryBtn.hidden = state !== 'failed';
+    }
+
+    saveRetryBtn?.addEventListener('click', async () => {
+      saveRetryBtn.disabled = true;
+      saveRetryBtn.textContent = 'Retrying...';
+
+      try {
+        await ensurePrescriptionSaved();
+      } catch (error) {
+        console.warn(`Prescription save retry failed: ${error.message}`);
+      } finally {
+        saveRetryBtn.disabled = false;
+        saveRetryBtn.textContent = 'Retry save';
+      }
+    });
+    const billModal = document.getElementById('bill-modal');
+    const billModalClose = document.getElementById('bill-modal-close');
+    const billItemsContainer = document.getElementById('bill-items-container');
+    const billItemAddBtn = document.getElementById('bill-item-add-btn');
+    const billTotalDisplay = document.getElementById('bill-total-display');
+    const billDueDisplay = document.getElementById('bill-due-display');
+    const billPaymentMethodSelect = document.getElementById('bill-payment-method');
+    const billAmountPaidInput = document.getElementById('bill-amount-paid');
+    const billErrorEl = document.getElementById('bill-error');
+    const billSaveExitBtn = document.getElementById('bill-save-exit-btn');
+    const billSavePrintBtn = document.getElementById('bill-save-print-btn');
+    let billItems = [{ description: ITEM_PRESET_OPTIONS[0], amount: '' }];
+    let lastSavedBill = null;
+    let billItemDefaultAmounts = {};
+    let billItemDefaultsLoaded = false;
+
+    async function ensureBillItemDefaultsLoaded() {
+      if (billItemDefaultsLoaded) {
+        return;
+      }
+      billItemDefaultsLoaded = true;
+      billItemDefaultAmounts = await getBillingItemDefaultAmounts().catch(() => ({}));
+    }
+
+    function getBillItemDefaultKey(item) {
+      return item.description === 'Other'
+        ? (item.customDescription || '').trim()
+        : item.description;
+    }
+
+    function applyDefaultAmountIfBlank(item) {
+      const key = getBillItemDefaultKey(item);
+      if (key && !item.amount && billItemDefaultAmounts[key]) {
+        item.amount = String(billItemDefaultAmounts[key]);
+      }
+    }
+    const withHeaderBtn = document.getElementById('with-header-btn');
+    const withoutHeaderBtn = document.getElementById('without-header-btn');
+    const PRESCRIPTION_DRAFT_STORAGE_KEY = clinicStorageKey('prescriptionDraft');
+    const CHART_RECORD_STORAGE_KEY = clinicStorageKey('growthChartRecentRecords');
+    const LOCAL_PRESCRIPTION_HISTORY_KEY = clinicStorageKey('savedPrescriptionHistory');
+    const PRINT_HEADER_MODE_STORAGE_KEY = clinicStorageKey('previewPrintWithHeader');
+    const PRESCRIPTION_BRANDING_STORAGE_KEY = clinicStorageKey('prescriptionBrandingSettings');
+    // Per-patient, matching how prescription.html writes it.
+    const MEDICINE_DETAIL_STORAGE_PREFIX = clinicStorageKey('prescriptionMedicineDetails');
+    const PRESCRIPTION_BRANDING_DOC_PATH = [CLINIC_FIREBASE_NAMESPACE, 'clinicSettings', 'prescriptionBranding'];
+    const CLINIC_SETTINGS_DOC_PATH = [CLINIC_FIREBASE_NAMESPACE, 'clinicSettings', 'settings'];
+    // Printed point sizes for the clinical rows. Keep in step with the Font Size
+    // options in settings.html.
+    const PRESCRIPTION_FONT_SIZES = [8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 25];
+    // Keep in step with the #rx-ui-font-family options in settings.html and
+    // the matching whitelist there.
+    const PRESCRIPTION_FONT_FAMILIES = ['Arial', 'Outfit', 'Times New Roman', 'Georgia', 'Verdana', 'Poppins', 'Lato', 'Roboto', 'Open Sans', 'Merriweather'];
+    const DEFAULT_BRANDING = {
+      sectionTitle: 'Prescription Header, Footer & Signature',
+      sectionDescription: 'Set the clinic text and doctor signature used on prescription preview, print, and saved PDF.',
+      clinicTitle: 'The Better Health Clinic',
+      clinicAddress: 'The Better Health Clinic - Paediatrician #118, 5th Cross, Omkar Nagar Akere, Bannerghatta road 560076 Bengaluru Karnataka',
+      doctorName: 'Dr. Gunda Srinivas',
+      doctorDetails: 'MBBS, DCH, DNB - Paediatrics, PGDDN, FPEM\n71826',
+      footerText: 'The Better Health Clinic - Paediatrician #118, 5th Cross, Omkar Nagar Akere,\nBannerghatta road 560076 Bengaluru Karnataka',
+      prescriptionLanguage: 'English',
+      prescriptionFontFamily: 'Arial',
+      // 8pt is what the old 14 setting actually printed at, so a clinic that
+      // never picked a size keeps the prescription it has always had.
+      prescriptionFontSize: 8,
+      prescriptionFooterAlignment: 'left',
+      prescriptionFrequencyFormat: 'text',
+      prescriptionMarginsCm: {
+        top: 1,
+        bottom: 0.7,
+        left: 0,
+        right: 0.6
+      },
+      signatureDataUrl: ''
+    };
+    const statusChip = document.querySelector('.status-chip');
+    let prescriptionSavePromise = null;
+    let savedPrescriptionRecord = null;
+    let prescriptionBuildPromise = null;
+    let builtPrescriptionRecord = null;
+    let preparedChartRecord = null;
+    let activePrescriptionBranding = null;
+    const patientMeasurementHistoryCache = new Map();
+    const patientDocCache = new Map();
+
+    async function getCachedPatientSnapshot(patientId) {
+      const normalizedPatientId = String(patientId || '').trim().toUpperCase();
+      if (!normalizedPatientId || !db) {
+        return null;
+      }
+
+      if (!patientDocCache.has(normalizedPatientId)) {
+        patientDocCache.set(
+          normalizedPatientId,
+          getDoc(doc(db, FIREBASE_COLLECTIONS.patients, normalizedPatientId)).catch(() => null)
+        );
+      }
+
+      return patientDocCache.get(normalizedPatientId);
+    }
+    const CHART_ASSET_VERSION = '2026-07-15-who-0to5-curves-added';
+    const CHART_PREVIEW_VERSION = 'preview-rebuilt-2026-06-white-bg-bold-line';
+    const CHART_RENDER_MAX_WIDTH = 1600;
+    const CHART_RENDER_SCALE = 6;
+    const CHART_POINT_RADIUS = 7;
+    const GROWTH_CHART_DEBUG = new URLSearchParams(window.location.search).has('growthDebug')
+      || localStorage.getItem('growthChartDebug') === '1';
+    const chartMiniCrop = {
+      left: 0.05,
+      top: 0.055,
+      right: 0.965,
+      bottom: 0.985
+    };
+    const chartTemplateAxis = {
+      xStart: 0.1731,
+      xEnd: 0.8269,
+      yStart: 0.8617,
+      yEnd: 0.117
+    };
+    const chartTemplatePaths = {
+      girlsHeight0to5: 'assets/iap-official-png/girls-height-0-5-minimal.png',
+      boysHeight0to5: 'assets/iap-official-png/boys-height-0-5-minimal.png',
+      girlsWeight0to5: 'assets/iap-official-png/girls-weight-0-5-minimal.png',
+      boysWeight0to5: 'assets/iap-official-png/boys-weight-0-5-minimal.png',
+      girlsHead0to5: 'assets/iap-official-png/girls-head-0-5-minimal.png',
+      boysHead0to5: 'assets/iap-official-png/boys-head-0-5-minimal.png',
+      girlsBmi0to5: 'assets/iap-official-png/girls-bmi-0-5-minimal.png',
+      boysBmi0to5: 'assets/iap-official-png/boys-bmi-0-5-minimal.png',
+      girlsHeight5to18: 'assets/iap-official-png/girls-height-5-18-minimal.png',
+      boysHeight5to18: 'assets/iap-official-png/boys-height-5-18-minimal.png',
+      girlsWeight5to18: 'assets/iap-official-png/girls-weight-5-18-minimal.png',
+      boysWeight5to18: 'assets/iap-official-png/boys-weight-5-18-minimal.png',
+      girlsBmi5to18: 'assets/iap-official-png/girls-bmi-5-18-minimal.png',
+      boysBmi5to18: 'assets/iap-official-png/boys-bmi-5-18-minimal.png'
+    };
+    const sharedGrowthChartConfig = await loadSharedGrowthChartConfig();
+    const sharedGrowthCharts = sharedGrowthChartConfig.charts || [];
+
+    function versionedChartAssetPath(path) {
+      return `${path}${path.includes('?') ? '&' : '?'}v=${CHART_ASSET_VERSION}`;
+    }
+
+    async function loadSharedGrowthChartConfig() {
+      try {
+        const response = await fetch(versionedChartAssetPath('growth_chart_config.json'), { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        return await response.json();
+      } catch (error) {
+        console.warn(`Using embedded chart config fallback: ${error.message}`);
+        return { charts: [] };
+      }
+    }
+
+    function setPreviewStatus(message) {
+      if (!statusChip) {
+        return;
+      }
+
+      statusChip.innerHTML = `<span class="status-dot"></span>${escapeHtml(message)}`;
+    }
+
+    function closeMobileMenu() {
+      primaryNav.classList.remove('is-open');
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function formatMultiline(value) {
+      return escapeHtml(value).replace(/\r?\n/g, '<br>');
+    }
+
+    function readJson(key, fallback) {
+      try {
+        return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback));
+      } catch (error) {
+        return fallback;
+      }
+    }
+
+    function normalizePrescriptionMargin(value, fallbackValue) {
+      const parsedValue = Number.parseFloat(String(value ?? ''));
+      if (!Number.isFinite(parsedValue) || parsedValue < 0) {
+        return fallbackValue;
+      }
+      return Math.min(parsedValue, 10);
+    }
+
+    function normalizePrescriptionLayout(settings = {}) {
+      settings = settings && typeof settings === 'object' ? settings : {};
+      const savedMargins = settings.prescriptionMarginsCm && typeof settings.prescriptionMarginsCm === 'object'
+        ? settings.prescriptionMarginsCm
+        : {};
+      const defaultMargins = DEFAULT_BRANDING.prescriptionMarginsCm;
+      const fontSize = Number.parseInt(settings.prescriptionFontSize, 10);
+
+      return {
+        prescriptionLanguage: settings.prescriptionLanguage || DEFAULT_BRANDING.prescriptionLanguage,
+        prescriptionFontFamily: PRESCRIPTION_FONT_FAMILIES.includes(settings.prescriptionFontFamily)
+          ? settings.prescriptionFontFamily
+          : DEFAULT_BRANDING.prescriptionFontFamily,
+        prescriptionFontSize: PRESCRIPTION_FONT_SIZES.includes(fontSize) ? fontSize : DEFAULT_BRANDING.prescriptionFontSize,
+        prescriptionFooterAlignment: settings.prescriptionFooterAlignment === 'right' ? 'right' : 'left',
+        prescriptionFrequencyFormat: settings.prescriptionFrequencyFormat === 'numeric' ? 'numeric' : 'text',
+        prescriptionMarginsCm: {
+          top: normalizePrescriptionMargin(savedMargins.top, defaultMargins.top),
+          bottom: normalizePrescriptionMargin(savedMargins.bottom, defaultMargins.bottom),
+          left: normalizePrescriptionMargin(savedMargins.left, defaultMargins.left),
+          right: normalizePrescriptionMargin(savedMargins.right, defaultMargins.right)
+        }
+      };
+    }
+
+    const PRESCRIPTION_FONT_STACKS = {
+      Outfit: "'Outfit', Arial, Helvetica, sans-serif",
+      'Times New Roman': "'Times New Roman', Times, serif",
+      Georgia: "Georgia, 'Times New Roman', serif",
+      Verdana: "Verdana, Geneva, sans-serif",
+      Poppins: "'Poppins', Arial, Helvetica, sans-serif",
+      Lato: "'Lato', Arial, Helvetica, sans-serif",
+      Roboto: "'Roboto', Arial, Helvetica, sans-serif",
+      'Open Sans': "'Open Sans', Arial, Helvetica, sans-serif",
+      Merriweather: "'Merriweather', Georgia, serif"
+    };
+
+    function getPrescriptionFontStack(fontFamily) {
+      return PRESCRIPTION_FONT_STACKS[fontFamily] || 'Arial, Helvetica, sans-serif';
+    }
+
+    function applyPrescriptionLayoutStyles(settings = getPrescriptionBranding()) {
+      const layout = normalizePrescriptionLayout(settings);
+      rxSheet.style.setProperty('--rx-font-family', getPrescriptionFontStack(layout.prescriptionFontFamily));
+      rxSheet.style.setProperty('--rx-font-size', `${layout.prescriptionFontSize}px`);
+      rxSheet.style.setProperty('--rx-margin-top', `${layout.prescriptionMarginsCm.top}cm`);
+      rxSheet.style.setProperty('--rx-margin-bottom', `${layout.prescriptionMarginsCm.bottom}cm`);
+      rxSheet.style.setProperty('--rx-margin-left', `${layout.prescriptionMarginsCm.left}cm`);
+      rxSheet.style.setProperty('--rx-margin-right', `${layout.prescriptionMarginsCm.right}cm`);
+      applyPrintPageRule(layout);
+    }
+
+    // Browser printing takes its margins from the @page rule, not from the
+    // sheet's padding, and @page cannot read CSS custom properties reliably.
+    // So the configured margins are written into a real stylesheet whenever
+    // the layout changes - the same approach Docon uses.
+    function applyPrintPageRule(layout) {
+      const margins = layout.prescriptionMarginsCm;
+      let styleEl = document.getElementById('rx-print-page-rule');
+
+      if (!styleEl) {
+        styleEl = document.createElement('style');
+        styleEl.id = 'rx-print-page-rule';
+        document.head.appendChild(styleEl);
+      }
+
+      styleEl.textContent = `@page { size: A4 portrait; margin: ${margins.top}cm ${margins.right}cm ${margins.bottom}cm ${margins.left}cm; }`;
+    }
+
+    function getPrescriptionBranding() {
+      if (activePrescriptionBranding) {
+        return activePrescriptionBranding;
+      }
+
+      const saved = readJson(PRESCRIPTION_BRANDING_STORAGE_KEY, {});
+      return {
+        ...DEFAULT_BRANDING,
+        ...(saved && typeof saved === 'object' ? saved : {}),
+        ...normalizePrescriptionLayout(saved)
+      };
+    }
+
+    function cachePrescriptionBranding(settings) {
+      activePrescriptionBranding = {
+        ...DEFAULT_BRANDING,
+        ...(settings && typeof settings === 'object' ? settings : {}),
+        ...normalizePrescriptionLayout(settings)
+      };
+      localStorage.setItem(PRESCRIPTION_BRANDING_STORAGE_KEY, JSON.stringify(activePrescriptionBranding));
+      return activePrescriptionBranding;
+    }
+
+    async function loadPrescriptionBranding() {
+      const cachedBranding = cachePrescriptionBranding(readJson(PRESCRIPTION_BRANDING_STORAGE_KEY, {}));
+      // Opened from Settings' "Preview RX": show the choices the doctor is
+      // trying out. Reading the cloud here replaced them with the saved
+      // values, so every font looked like whatever was last saved.
+      if (!db || new URLSearchParams(window.location.search).has('settingsPreview')) {
+        return cachedBranding;
+      }
+
+      // No TTL on this read. The cache above is only a fallback for a failed or
+      // offline fetch - the cloud copy is always consulted before a prescription
+      // is drawn. A 24h TTL used to sit here, and it meant a margin or font
+      // changed in Settings on one machine kept printing at the old value on
+      // every other machine in the clinic for up to a day, with nothing on
+      // screen to say so. One document read per preview is worth more than that.
+      try {
+        let snapshot = await getDoc(doc(db, ...CLINIC_SETTINGS_DOC_PATH));
+        if (!snapshot.exists()) {
+          snapshot = await getDoc(doc(db, ...PRESCRIPTION_BRANDING_DOC_PATH));
+        }
+        if (!snapshot.exists()) {
+          return cachedBranding;
+        }
+        return cachePrescriptionBranding({
+          ...snapshot.data(),
+          signatureDataUrl: snapshot.data().signatureDataUrl || cachedBranding.signatureDataUrl || ''
+        });
+      } catch (error) {
+        console.warn(`Unable to load prescription branding from cloud records: ${error.message}`);
+        return cachedBranding;
+      }
+    }
+
+    function stripChartPageData(record) {
+      return {
+        ...record,
+        chartPages: Array.isArray(record?.chartPages)
+          ? record.chartPages.slice(0, 4).map((page) => ({
+            label: page?.label || '',
+            width: page?.width || 0,
+            height: page?.height || 0,
+            chartFormatVersion: page?.chartFormatVersion || record.chartFormatVersion || CHART_PREVIEW_VERSION
+          }))
+          : []
+      };
+    }
+
+    function writeChartRecords(records) {
+      const compactRecords = records
+        .map(stripChartPageData)
+        .sort((left, right) => new Date(right.savedAt || 0) - new Date(left.savedAt || 0))
+        .slice(0, 8);
+
+      if (compactRecords.length) {
+        localStorage.setItem(CHART_RECORD_STORAGE_KEY, JSON.stringify(compactRecords));
+      } else {
+        localStorage.removeItem(CHART_RECORD_STORAGE_KEY);
+      }
+    }
+
+    function persistLocalPrescriptionRecord(record) {
+      const existingRecords = readJson(LOCAL_PRESCRIPTION_HISTORY_KEY, []);
+      const filteredRecords = existingRecords.filter((entry) => entry?.prescriptionSaveId !== record?.prescriptionSaveId);
+      filteredRecords.push({
+        ...record,
+        patientId: String(record?.patientId || '').trim().toUpperCase(),
+        savedAt: record?.savedAt || new Date().toISOString()
+      });
+      localStorage.setItem(LOCAL_PRESCRIPTION_HISTORY_KEY, JSON.stringify(filteredRecords));
+    }
+
+    function getPatientIdFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return (params.get('patientId') || '').trim().toUpperCase();
+    }
+
+    function getEditIdFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return (params.get('editId') || '').trim();
+    }
+
+    function normalizePatientId(value) {
+      return String(value || '').trim().toUpperCase();
+    }
+
+    function isValidPatientId(value) {
+      const patientId = normalizePatientId(value);
+      return Boolean(patientId)
+        && patientId !== '-'
+        && patientId !== 'UNKNOWN'
+        && patientId !== 'ID NOT SAVED';
+    }
+
+    function getValidatedPrescriptionPatientId(draft, chartRecord) {
+      const patientId = normalizePatientId(draft?.patientId || chartRecord?.patientId || getPatientIdFromUrl());
+      return isValidPatientId(patientId) ? patientId : '';
+    }
+
+    function getPrescriptionDraftStorageKey(patientId) {
+      const normalizedPatientId = normalizePatientId(patientId);
+      return isValidPatientId(normalizedPatientId)
+        ? `${PRESCRIPTION_DRAFT_STORAGE_KEY}:${normalizedPatientId}`
+        : PRESCRIPTION_DRAFT_STORAGE_KEY;
+    }
+
+    function getMedicineDetailStorageKey(patientId) {
+      const normalizedPatientId = normalizePatientId(patientId);
+      return isValidPatientId(normalizedPatientId)
+        ? `${MEDICINE_DETAIL_STORAGE_PREFIX}:${normalizedPatientId}`
+        : MEDICINE_DETAIL_STORAGE_PREFIX;
+    }
+
+    let lastLoadedPrescriptionDraft = null;
+
+    function getActivePrescriptionDraft() {
+      const draft = readJson(getPrescriptionDraftStorageKey(getPatientIdFromUrl()), null);
+      if (draft) {
+        lastLoadedPrescriptionDraft = draft;
+        return draft;
+      }
+      // The draft is wiped from localStorage as soon as the first save lands, so
+      // anything that re-renders the sheet afterwards (header toggle, branding
+      // change) has to fall back to the copy we already read or the whole
+      // prescription redraws blank.
+      return lastLoadedPrescriptionDraft;
+    }
+
+    function getActiveChartRecord() {
+      const patientId = getPatientIdFromUrl();
+      const activeRecords = readJson(CHART_RECORD_STORAGE_KEY, [])
+        .filter((record) => record.keepUntilPrescription || Number(record.expiresAt) > Date.now());
+      const records = activeRecords
+        .filter((record) => !patientId || (record.patientId || '').toUpperCase() === patientId)
+        .sort((a, b) => new Date(b.savedAt) - new Date(a.savedAt));
+
+      writeChartRecords(activeRecords);
+
+      return records[0] || null;
+    }
+
+    // The patient band used to be filled only from the growth-chart record,
+    // which exists only when vitals were captured this visit. Going straight to
+    // the prescription left Name, Age/Sex, Mobile, Weight and Height printing
+    // as "-" even though the patient is known. The stored patient record is
+    // loaded once and used to fill whatever the chart record does not supply.
+    let activePatientRecord = null;
+
+    async function loadPatientRecordForPreview(patientId) {
+      const normalizedId = normalizePatientId(patientId);
+
+      if (!db || !isValidPatientId(normalizedId)) {
+        return null;
+      }
+
+      if (activePatientRecord && activePatientRecord.patientId === normalizedId) {
+        return activePatientRecord;
+      }
+
+      try {
+        const snapshot = await getDoc(doc(db, FIREBASE_COLLECTIONS.patients, normalizedId));
+
+        if (!snapshot.exists()) {
+          return null;
+        }
+
+        activePatientRecord = { patientId: normalizedId, ...snapshot.data() };
+        return activePatientRecord;
+      } catch (error) {
+        console.warn(`Unable to load patient details for the prescription: ${error.message}`);
+        return null;
+      }
+    }
+
+    function buildAgeFromDob(dobValue) {
+      const dob = new Date(dobValue);
+
+      if (!dobValue || Number.isNaN(dob.getTime())) {
+        return '';
+      }
+
+      const now = new Date();
+      let years = now.getFullYear() - dob.getFullYear();
+      let months = now.getMonth() - dob.getMonth();
+
+      if (now.getDate() < dob.getDate()) {
+        months -= 1;
+      }
+
+      if (months < 0) {
+        years -= 1;
+        months += 12;
+      }
+
+      if (years < 0) {
+        return '';
+      }
+
+      return years > 0 ? `${years}y ${months}m` : `${months}m`;
+    }
+
+    function isMeasuredToday(value) {
+      if (!value) {
+        return false;
+      }
+
+      const measured = new Date(value);
+
+      if (Number.isNaN(measured.getTime())) {
+        return false;
+      }
+
+      const now = new Date();
+      return measured.getFullYear() === now.getFullYear()
+        && measured.getMonth() === now.getMonth()
+        && measured.getDate() === now.getDate();
+    }
+
+    function withPatientFallback(chartRecord) {
+      const patient = activePatientRecord;
+
+      if (!patient) {
+        return chartRecord;
+      }
+
+      const merged = { ...(chartRecord || {}) };
+      const pick = (...values) => values.find((value) => String(value ?? '').trim()) || '';
+
+      // Never fall back to the parent's name. On a child's prescription the
+      // parent's name in the Name field reads as the patient, so an empty
+      // childName is left to the office ID rather than quietly substituted.
+      merged.childName = pick(
+        merged.childName,
+        patient.childName,
+        [patient.firstName, patient.middleName, patient.lastName].filter(Boolean).join(' ').trim()
+      );
+      merged.parentName = pick(merged.parentName, patient.parentName);
+      merged.gender = pick(merged.gender, patient.gender);
+      merged.dob = pick(merged.dob, patient.dob);
+      merged.phone = pick(merged.phone, patient.phone, patient.mobileNumber);
+      merged.age = pick(merged.age, patient.age, buildAgeFromDob(merged.dob));
+
+      // Weight and height are only borrowed from the last recorded measurement
+      // when it was taken today. An older reading printed in the vitals band
+      // looks like today's, and a stale weight is what a dose gets checked
+      // against - better to leave it blank than to state it wrongly.
+      const lastMeasurement = patient.lastMeasurementRecord || {};
+      if (isMeasuredToday(lastMeasurement.measuredAt || lastMeasurement.createdAtIso)) {
+        merged.weight = pick(merged.weight, lastMeasurement.weight);
+        merged.height = pick(merged.height, lastMeasurement.height, lastMeasurement.lengthHeight);
+      }
+
+      return merged;
+    }
+
+    function getCurrentChartRecord() {
+      return withPatientFallback(preparedChartRecord || getActiveChartRecord());
+    }
+
+    function parseMetricValue(value) {
+      const parsed = Number.parseFloat(value);
+      return Number.isFinite(parsed) ? parsed : NaN;
+    }
+
+    function getRecordTimestamp(record = {}) {
+      const candidates = [
+        record.measuredAt,
+        record.visitDate,
+        record.createdAtIso,
+        record.savedAt,
+        record.createdAtDisplay,
+        record.updatedAt
+      ];
+
+      for (const value of candidates) {
+        if (!value) continue;
+        if (typeof value?.toDate === 'function') {
+          const time = value.toDate().getTime();
+          if (Number.isFinite(time)) return time;
+        }
+        const parsed = new Date(value).getTime();
+        if (Number.isFinite(parsed)) return parsed;
+      }
+
+      return 0;
+    }
+
+    function getRecordDate(record = {}) {
+      const timestamp = getRecordTimestamp(record);
+      return timestamp ? new Date(timestamp) : new Date();
+    }
+
+    function calculateAgeYearsAt(dobValue, atDate = new Date()) {
+      if (!dobValue) {
+        return NaN;
+      }
+
+      const dob = new Date(dobValue);
+      const targetDate = atDate instanceof Date ? atDate : new Date(atDate);
+      if (Number.isNaN(dob.getTime()) || Number.isNaN(targetDate.getTime()) || dob > targetDate) {
+        return NaN;
+      }
+
+      return (targetDate - dob) / (365.25 * 24 * 60 * 60 * 1000);
+    }
+
+    function calculateAgeYears(dobValue) {
+      return calculateAgeYearsAt(dobValue, new Date());
+    }
+
+    function getChartPatientData(record, measuredAt = getRecordDate(record)) {
+      const ageYears = calculateAgeYearsAt(record?.dob || '', measuredAt);
+      const height = parseMetricValue(record?.height);
+      const weight = parseMetricValue(record?.weight);
+
+      return {
+        ageYears,
+        ageMonths: Number.isFinite(ageYears) ? ageYears * 12 : NaN,
+        height,
+        weight,
+        head: parseMetricValue(record?.head),
+        bmi: Number.isFinite(weight) && Number.isFinite(height) && height > 0 ? weight / ((height / 100) ** 2) : NaN,
+        sourceRecord: record
+      };
+    }
+
+    function normalizeMetricEntry(entry = {}, baseRecord = {}) {
+      const measuredAt = entry.measuredAt || entry.visitDate || entry.createdAtIso || entry.savedAt || entry.createdAtDisplay || '';
+      return {
+        measuredAt,
+        visitDate: entry.visitDate || '',
+        createdAtIso: entry.createdAtIso || '',
+        savedAt: entry.savedAt || '',
+        weight: entry.weight || '',
+        height: entry.height || '',
+        head: entry.head || entry.ofc || '',
+        dob: entry.dob || baseRecord.dob || '',
+        gender: entry.gender || baseRecord.gender || '',
+        patientId: entry.patientId || baseRecord.patientId || ''
+      };
+    }
+
+    function getMetricValue(entry, metricKey) {
+      if (metricKey === 'bmi') {
+        const weight = parseMetricValue(entry.weight);
+        const height = parseMetricValue(entry.height);
+        return Number.isFinite(weight) && Number.isFinite(height) && height > 0 ? weight / ((height / 100) ** 2) : NaN;
+      }
+      return parseMetricValue(entry[metricKey]);
+    }
+
+    function getMetricSeries(record, metricKey) {
+      const combined = [
+        normalizeMetricEntry(record, record),
+        ...(Array.isArray(record?.measurementHistory) ? record.measurementHistory.map((entry) => normalizeMetricEntry(entry, record)) : []),
+        ...(Array.isArray(record?.plotSeries?.[metricKey]) ? record.plotSeries[metricKey].map((entry) => normalizeMetricEntry(entry, record)) : [])
+      ];
+      const byDay = new Map();
+
+      combined.forEach((entry) => {
+        const timestamp = getRecordTimestamp(entry);
+        if (!timestamp || !Number.isFinite(getMetricValue(entry, metricKey))) return;
+        const dayKey = new Date(timestamp).toISOString().slice(0, 10);
+        const existing = byDay.get(dayKey);
+        if (!existing || getRecordTimestamp(entry) >= getRecordTimestamp(existing)) {
+          byDay.set(dayKey, entry);
+        }
+      });
+
+      return [...byDay.values()]
+        .filter((entry) => Number.isFinite(getMetricValue(entry, metricKey)))
+        .sort((left, right) => getRecordTimestamp(left) - getRecordTimestamp(right))
+        .slice(-30);
+    }
+
+    function hasMeasurementValue(entry = {}) {
+      return ['weight', 'height', 'head', 'ofc'].some((key) => String(entry?.[key] ?? '').trim());
+    }
+
+    function getMeasurementEntryKey(entry = {}) {
+      const day = getRecordTimestamp(entry)
+        ? new Date(getRecordTimestamp(entry)).toISOString().slice(0, 10)
+        : '';
+      return [
+        day,
+        String(entry.weight ?? '').trim(),
+        String(entry.height ?? '').trim(),
+        String(entry.head ?? entry.ofc ?? '').trim()
+      ].join('|');
+    }
+
+    async function loadPatientMeasurementHistory(patientId) {
+      const normalizedPatientId = String(patientId || '').trim().toUpperCase();
+      if (!normalizedPatientId || !db) {
+        return [];
+      }
+
+      if (patientMeasurementHistoryCache.has(normalizedPatientId)) {
+        return patientMeasurementHistoryCache.get(normalizedPatientId);
+      }
+
+      const loadPromise = (async () => {
+        const [patientSnapshot, historySnapshot] = await Promise.all([
+          getCachedPatientSnapshot(normalizedPatientId),
+          getDocs(query(collection(db, FIREBASE_COLLECTIONS.history), where('patientId', '==', normalizedPatientId))).catch(() => null)
+        ]);
+        const entries = [];
+        let cancelledVisits = null;
+
+        if (patientSnapshot?.exists?.()) {
+          const patientRecord = patientSnapshot.data();
+          cancelledVisits = patientRecord.cancelledVisits || null;
+          if (Array.isArray(patientRecord.measurementHistory)) {
+            entries.push(...patientRecord.measurementHistory);
+          }
+          if (patientRecord.lastMeasurementRecord) {
+            entries.push(patientRecord.lastMeasurementRecord);
+          }
+        }
+
+        historySnapshot?.forEach?.((entrySnapshot) => {
+          entries.push({ id: entrySnapshot.id, ...entrySnapshot.data() });
+        });
+
+        const deduped = new Map();
+        entries
+          .filter(hasMeasurementValue)
+          // Leave out vitals from visits staff deleted (lib/cancelled-visits.js).
+          .filter((entry) => entry?.cancelled !== true && !isMeasurementEntryCancelled({ cancelledVisits }, entry))
+          .forEach((entry) => {
+            const normalizedEntry = normalizeMetricEntry(entry, { patientId: normalizedPatientId });
+            const key = getMeasurementEntryKey(normalizedEntry);
+            if (key && !deduped.has(key)) {
+              deduped.set(key, normalizedEntry);
+            }
+          });
+
+        return Object.assign([...deduped.values()].sort((left, right) => getRecordTimestamp(right) - getRecordTimestamp(left)), { cancelledVisits });
+      })();
+
+      patientMeasurementHistoryCache.set(normalizedPatientId, loadPromise);
+      return loadPromise;
+    }
+
+    async function enrichChartRecordWithHistory(record) {
+      if (!record) {
+        return record;
+      }
+
+      const patientId = (record.patientId || getPatientIdFromUrl() || '').trim().toUpperCase();
+      const remoteHistory = await loadPatientMeasurementHistory(patientId).catch((error) => {
+        console.warn(`Unable to load past vitals for prescription charts: ${error.message}`);
+        return [];
+      });
+      // The chart record may carry vitals copied in before a visit was deleted.
+      const existingHistory = (Array.isArray(record.measurementHistory) ? record.measurementHistory : [])
+        .filter((entry) => !isMeasurementEntryCancelled({ cancelledVisits: remoteHistory.cancelledVisits }, entry));
+      const byKey = new Map();
+
+      [...existingHistory, ...remoteHistory].forEach((entry) => {
+        if (!hasMeasurementValue(entry)) return;
+        const normalizedEntry = normalizeMetricEntry(entry, record);
+        const key = getMeasurementEntryKey(normalizedEntry);
+        if (key && !byKey.has(key)) {
+          byKey.set(key, normalizedEntry);
+        }
+      });
+
+      return {
+        ...record,
+        patientId: patientId || record.patientId,
+        measurementHistory: [...byKey.values()].sort((left, right) => getRecordTimestamp(right) - getRecordTimestamp(left))
+      };
+    }
+
+    function getChartYRange(metricKey, sexPrefix, ageBand) {
+      if (metricKey === 'height' && ageBand === '0to5') return { min: 45, max: 130 };
+      if (metricKey === 'height') return sexPrefix === 'boys' ? { min: 85, max: 190 } : { min: 80, max: 180 };
+      if (metricKey === 'weight' && ageBand === '0to5') return { min: 0, max: 25 };
+      if (metricKey === 'weight') return sexPrefix === 'boys' ? { min: 0, max: 90 } : { min: 0, max: 75 };
+      if (metricKey === 'head' && ageBand === '0to5') return { min: 35, max: 55 };
+      if (metricKey === 'head') return { min: 45, max: 57 };
+      if (metricKey === 'bmi' && ageBand === '0to5') return { min: 10, max: 22 };
+      return { min: 10, max: 35 };
+    }
+
+    function buildFreshChartRequests(record) {
+      const patientData = getChartPatientData(record);
+      const sexPrefix = record?.gender === 'Male' ? 'boys' : 'girls';
+      const ageBand = patientData.ageYears < 5 ? '0to5' : patientData.ageYears <= 18 ? '5to18' : '';
+
+      if (!ageBand || !Number.isFinite(patientData.ageYears)) {
+        return [];
+      }
+
+      const selected = Array.isArray(record?.charts) ? record.charts : [];
+      const hasSelected = (name) => selected.includes(name) || selected.length === 0;
+      const metricConfigs = [
+        { selectedName: 'Height', metricKey: 'height', label: 'Height vs Age', value: patientData.height },
+        { selectedName: 'Weight', metricKey: 'weight', label: 'Weight vs Age', value: patientData.weight },
+        { selectedName: 'Head Circumference-for-Age', metricKey: 'head', label: 'OFC vs Age', value: patientData.head },
+        { selectedName: 'BMI', metricKey: 'bmi', label: 'BMI vs Age', value: patientData.bmi }
+      ];
+
+      return metricConfigs
+        .filter((config) => {
+          if (ageBand === '5to18' && config.metricKey === 'bmi') {
+            return Number.isFinite(config.value);
+          }
+          if (ageBand === '5to18' && config.metricKey === 'head') {
+            return false;
+          }
+          return hasSelected(config.selectedName) && Number.isFinite(config.value);
+        })
+        .map((config) => {
+          const templateKey = `${sexPrefix}${config.metricKey.charAt(0).toUpperCase()}${config.metricKey.slice(1)}${ageBand}`;
+          const sharedChart = sharedGrowthCharts.find((chart) => chart.templateKey === templateKey);
+          const yRange = sharedChart
+            ? { min: sharedChart.yMin, max: sharedChart.yMax }
+            : getChartYRange(config.metricKey, sexPrefix, ageBand);
+          const plotArea = sharedChart?.plotArea || {
+            left: chartTemplateAxis.xStart,
+            top: chartTemplateAxis.yEnd,
+            right: chartTemplateAxis.xEnd,
+            bottom: chartTemplateAxis.yStart
+          };
+          return {
+            ...config,
+            chartId: sharedChart?.chartId || templateKey,
+            referenceSource: sharedChart?.referenceSource || (ageBand === '0to5' ? 'WHO' : 'IAP'),
+            path: sharedChart?.backgroundImage || chartTemplatePaths[templateKey],
+            x: {
+              source: ageBand === '0to5' ? 'ageMonths' : 'ageYears',
+              min: sharedChart?.xMin ?? (ageBand === '0to5' ? 0 : 5),
+              max: sharedChart?.xMax ?? (ageBand === '0to5' ? 60 : 18)
+            },
+            y: yRange,
+            plotArea
+          };
+        })
+        .filter((request) => request.path);
+    }
+
+    function loadChartImage(path) {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.addEventListener('load', () => resolve(image), { once: true });
+        image.addEventListener('error', () => reject(new Error(`Unable to load ${path}`)), { once: true });
+        image.src = encodeURI(versionedChartAssetPath(path));
+      });
+    }
+
+    function loadChartImageFromSource(source) {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.addEventListener('load', () => resolve(image), { once: true });
+        image.addEventListener('error', () => reject(new Error('Unable to prepare chart preview image.')), { once: true });
+        image.src = source;
+      });
+    }
+
+    function clampRatio(value) {
+      return Math.min(1, Math.max(0, value));
+    }
+
+    function getMiniChartCropRect(width, height) {
+      const left = Math.round(width * chartMiniCrop.left);
+      const top = Math.round(height * chartMiniCrop.top);
+      const right = Math.round(width * chartMiniCrop.right);
+      const bottom = Math.round(height * chartMiniCrop.bottom);
+      return {
+        left,
+        top,
+        width: Math.max(1, right - left),
+        height: Math.max(1, bottom - top)
+      };
+    }
+
+    async function buildMiniChartDataUrl(dataUrl) {
+      if (!dataUrl) {
+        return '';
+      }
+
+      const image = await loadChartImageFromSource(dataUrl);
+      const crop = getMiniChartCropRect(image.naturalWidth || image.width || 1, image.naturalHeight || image.height || 1);
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      canvas.width = crop.width;
+      canvas.height = crop.height;
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = 'high';
+      context.fillStyle = '#ffffff';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(
+        image,
+        crop.left,
+        crop.top,
+        crop.width,
+        crop.height,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+      return canvas.toDataURL('image/png');
+    }
+
+    async function prepareMiniChartPage(page) {
+      if (!page?.dataUrl) {
+        return page;
+      }
+
+      if (page.miniDataUrl && page.chartFormatVersion === CHART_PREVIEW_VERSION) {
+        return page;
+      }
+
+      return {
+        ...page,
+        miniDataUrl: await buildMiniChartDataUrl(page.dataUrl),
+        chartFormatVersion: CHART_PREVIEW_VERSION
+      };
+    }
+
+    async function renderFreshChartPage(request, patientData) {
+      const image = await loadChartImage(request.path);
+      const sourceWidth = image.naturalWidth || 260;
+      const sourceHeight = image.naturalHeight || 188;
+      const renderScale = Math.max(1, Math.min(CHART_RENDER_SCALE, CHART_RENDER_MAX_WIDTH / sourceWidth));
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      canvas.width = Math.round(sourceWidth * renderScale);
+      canvas.height = Math.round(sourceHeight * renderScale);
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = 'high';
+      context.fillStyle = '#ffffff';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+      const plotArea = request.plotArea || {
+        left: chartTemplateAxis.xStart,
+        top: chartTemplateAxis.yEnd,
+        right: chartTemplateAxis.xEnd,
+        bottom: chartTemplateAxis.yStart
+      };
+      const plotLeft = plotArea.left * canvas.width;
+      const plotTop = plotArea.top * canvas.height;
+      const plotRight = plotArea.right * canvas.width;
+      const plotBottom = plotArea.bottom * canvas.height;
+      const metricSeries = getMetricSeries(patientData.sourceRecord || {}, request.metricKey);
+      const seriesRecords = metricSeries.length
+        ? metricSeries
+        : [patientData.sourceRecord || {}];
+      const mappedPoints = seriesRecords
+        .map((entry) => {
+          const measuredAt = getRecordDate(entry);
+          const entryData = getChartPatientData({ ...(patientData.sourceRecord || {}), ...entry }, measuredAt);
+          const xValue = entryData[request.x.source];
+          const yValue = entryData[request.metricKey];
+          if (!Number.isFinite(xValue) || !Number.isFinite(yValue)) {
+            return null;
+          }
+
+          const rawXRatio = (xValue - request.x.min) / (request.x.max - request.x.min);
+          const rawYRatio = (yValue - request.y.min) / (request.y.max - request.y.min);
+          const xRatio = clampRatio(rawXRatio);
+          const yRatio = clampRatio(rawYRatio);
+          const x = plotLeft + xRatio * (plotRight - plotLeft);
+          const y = plotBottom - yRatio * (plotBottom - plotTop);
+
+          if (GROWTH_CHART_DEBUG) {
+            console.log({
+              chartId: request.chartId,
+              referenceSource: request.referenceSource,
+              totalEntries: seriesRecords.length,
+              sex: request.chartId?.startsWith('boys') ? 'male' : request.chartId?.startsWith('girls') ? 'female' : '',
+              ageGroup: request.chartId?.includes('0-5') ? '0-5' : request.chartId?.includes('5-18') ? '5-18' : '',
+              ageMonths: entryData.ageMonths,
+              ageYears: entryData.ageYears,
+              metric: request.metricKey === 'head' ? 'ofc' : request.metricKey,
+              value: yValue,
+              bmi: entryData.bmi,
+              xMin: request.x.min,
+              xMax: request.x.max,
+              yMin: request.y.min,
+              yMax: request.y.max,
+              plotLeft,
+              plotTop,
+              plotRight,
+              plotBottom,
+              xPixel: x,
+              yPixel: y,
+              visitDate: measuredAt.toISOString(),
+              backgroundImage: request.path
+            });
+          }
+
+          if (rawXRatio < 0 || rawXRatio > 1 || rawYRatio < 0 || rawYRatio > 1) {
+            console.warn('Growth chart measurement outside chart range; plotting at nearest chart edge.', {
+              metric: request.metricKey,
+              xValue,
+              yValue,
+              xMin: request.x.min,
+              xMax: request.x.max,
+              yMin: request.y.min,
+              yMax: request.y.max
+            });
+          }
+
+          return { x, y };
+        })
+        .filter(Boolean);
+
+      context.save();
+      context.beginPath();
+      context.rect(plotLeft, plotTop, plotRight - plotLeft, plotBottom - plotTop);
+      context.clip();
+      // The background template image already has the reference percentile
+      // curves baked in, so only the patient's own data line/markers are
+      // drawn here on top of it.
+
+      if (mappedPoints.length > 1) {
+        context.beginPath();
+        context.moveTo(mappedPoints[0].x, mappedPoints[0].y);
+        mappedPoints.slice(1).forEach((point) => context.lineTo(point.x, point.y));
+        context.lineWidth = Math.max(2, renderScale * 1.35);
+        context.strokeStyle = '#0f172a';
+        context.lineJoin = 'round';
+        context.lineCap = 'round';
+        context.stroke();
+      }
+
+      mappedPoints.forEach((point) => {
+        context.beginPath();
+        context.arc(point.x, point.y, (CHART_POINT_RADIUS + 0.8) * renderScale, 0, Math.PI * 2);
+        context.fillStyle = '#0f172a';
+        context.fill();
+      });
+      context.restore();
+
+      return {
+        label: request.label,
+        dataUrl: canvas.toDataURL('image/png'),
+        width: canvas.width,
+        height: canvas.height,
+        chartFormatVersion: CHART_PREVIEW_VERSION
+      };
+    }
+
+    async function rebuildChartPages(record) {
+      if (!record) {
+        return null;
+      }
+
+      record = await enrichChartRecordWithHistory(record);
+      const hasChartPages = Array.isArray(record.chartPages) && record.chartPages.some((page) => page?.dataUrl);
+      const isCurrentChartFormat = record.chartFormatVersion === CHART_PREVIEW_VERSION
+        && record.chartPages?.every((page) => !page?.dataUrl || page.chartFormatVersion === CHART_PREVIEW_VERSION);
+
+      if (hasChartPages && isCurrentChartFormat) {
+        try {
+          const chartPages = [];
+          for (const page of record.chartPages.slice(0, 4)) {
+            chartPages.push(await prepareMiniChartPage(page));
+          }
+
+          return {
+            ...record,
+            chartPages,
+            chartFormatVersion: CHART_PREVIEW_VERSION
+          };
+        } catch (error) {
+          console.warn(`Unable to refresh existing chart previews: ${error.message}`);
+          return record;
+        }
+      }
+
+      const patientData = getChartPatientData(record);
+      const requests = buildFreshChartRequests(record);
+      if (!requests.length && hasChartPages) {
+        console.warn('Unable to rebuild chart previews because no matching chart requests could be inferred; using stored chart pages.');
+        return record;
+      }
+
+      if (!requests.length) {
+        return record;
+      }
+
+      try {
+        const chartPages = [];
+        for (const request of requests.slice(0, 4)) {
+          chartPages.push(await prepareMiniChartPage(await renderFreshChartPage(request, patientData)));
+        }
+
+        return {
+          ...record,
+          chartPages,
+          chartFormatVersion: CHART_PREVIEW_VERSION
+        };
+      } catch (error) {
+        console.warn(`Unable to rebuild chart previews: ${error.message}`);
+        return record;
+      }
+    }
+
+    function persistPreparedChartRecord(record) {
+      if (!record) {
+        return;
+      }
+
+      const activeRecords = readJson(CHART_RECORD_STORAGE_KEY, []);
+      const recordPatientId = (record.patientId || '').toUpperCase();
+      let didReplace = false;
+      const updatedRecords = activeRecords.map((item) => {
+        const samePatient = (item.patientId || '').toUpperCase() === recordPatientId;
+        const sameSource = item.source === record.source;
+        if (samePatient && sameSource) {
+          didReplace = true;
+          return { ...item, ...record };
+        }
+
+        return item;
+      });
+
+      if (!didReplace) {
+        updatedRecords.push(record);
+      }
+
+      writeChartRecords(updatedRecords);
+    }
+
+    function formatDate(value) {
+      const date = value ? new Date(value) : new Date();
+      if (Number.isNaN(date.getTime())) {
+        return value || '';
+      }
+      return date.toLocaleString('en-IN', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit'
+      });
+    }
+
+    function formatShortDate(value) {
+      const date = value ? new Date(value) : new Date();
+      if (Number.isNaN(date.getTime())) {
+        return value || '';
+      }
+      return date.toLocaleString('en-IN', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit'
+      });
+    }
+
+    function listText(values) {
+      return values?.length ? values.join(', ') : '-';
+    }
+
+    function formatDetailedSelections(values, detailMap = {}, sectionName = '') {
+      if (!values?.length) {
+        return '-';
+      }
+
+      return values.map((value) => {
+        const detail = detailMap?.[value] || {};
+        const parts = [];
+
+        if (sectionName === 'Symptoms') {
+          if (detail.days) parts.push(`${detail.days}`);
+          if (detail.severity) parts.push(detail.severity);
+        }
+
+        if (detail.note) {
+          parts.push(detail.note);
+        }
+
+        return parts.length ? `${value} (${parts.join(', ')})` : value;
+      }).join(', ');
+    }
+
+    function formatInstructionLines(values) {
+      if (!Array.isArray(values) || !values.length) {
+        return [];
+      }
+
+      return values
+        .map((value) => String(value || '').trim())
+        .filter(Boolean)
+        .map((value) => value);
+    }
+
+    function formatInstructionText(values) {
+      return formatInstructionLines(values).join(' | ');
+    }
+
+    function renderTextRow(label, values, detailMap = {}, sectionName = '') {
+      const text = formatDetailedSelections(values, detailMap, sectionName);
+
+      // An empty section prints nothing at all rather than a bare "Label: -".
+      // A sheet full of dash-only labels is harder to read at a glance, and
+      // the doctor gains nothing from being told a section was left blank.
+      if (!text || text === '-') {
+        return '';
+      }
+
+      return `<p class="text-row"><strong>${escapeHtml(label)}:</strong> ${escapeHtml(text)}</p>`;
+    }
+
+    function renderAllergyRow(allergy) {
+      const text = formatAllergyText(allergy);
+      if (!text || text === '-') {
+        return '';
+      }
+      return `<p class="text-row"><strong>Allergy:</strong> ${escapeHtml(text)}</p>`;
+    }
+
+    function renderNotesRow(notesText) {
+      if (!String(notesText || '').trim()) {
+        return '';
+      }
+      return `<p class="text-row"><strong>Notes:</strong> ${formatMultiline(notesText)}</p>`;
+    }
+
+    function formatAllergyText(allergy) {
+      const status = String(allergy?.status || '').trim();
+      const details = String(allergy?.details || '').trim();
+      if (!status && !details) {
+        return '-';
+      }
+      return [status, details].filter(Boolean).join(' - ');
+    }
+
+    function formatDuration(value) {
+      const rawValue = String(value || '').trim();
+      const match = rawValue.match(/^(\d+)(d|w|m|y)$/i);
+
+      if (!match) {
+        return rawValue;
+      }
+
+      const count = Number(match[1]);
+      const unitMap = {
+        d: 'Day',
+        w: 'Week',
+        m: 'Month',
+        y: 'Year'
+      };
+      const unit = unitMap[match[2].toLowerCase()];
+      return `${count} ${unit}${count === 1 ? '' : 's'}`;
+    }
+
+    function formatCompactAge(value) {
+      const rawValue = String(value || '').trim();
+      if (!rawValue || rawValue === '-') {
+        return rawValue || '-';
+      }
+
+      const replaced = rawValue
+        .replace(/\byears?\b/gi, 'y')
+        .replace(/\bmonths?\b/gi, 'm')
+        .replace(/\bdays?\b/gi, 'd')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      return replaced
+        .replace(/\s*y\b/g, 'y')
+        .replace(/\s*m\b/g, 'm')
+        .replace(/\s*d\b/g, 'd');
+    }
+
+    function splitImportedMedicineDose(value) {
+      const rawValue = String(value || '').trim();
+      const match = rawValue.match(/\s*\(([^()]*(?:\d+(?:\.\d+)?)\s*(?:mg|mcg|g|kg|ml|l|iu|units?|drops?|tabs?|tablets?|caps?|capsules?|puffs?|spoons?|tsp|%)\b[^()]*)\)\s*$/i);
+      if (!match) {
+        return { name: rawValue, dose: '' };
+      }
+
+      return {
+        name: rawValue.slice(0, match.index).trim() || rawValue,
+        dose: match[1].replace(/\s+/g, ' ').trim()
+      };
+    }
+
+    // Splits the medicine label into the two lines the printed row uses:
+    // the brand line (form + brand + strength) and the generic line
+    // underneath it, so the dispensing chemist can read either one.
+    function splitMedicineName(medicine, detail = {}, importedName = '') {
+      const brandName = detail.name || detail.displayName || importedName || medicine;
+      const type = String(detail.type || '').trim();
+      const composition = String(detail.composition || '').trim();
+      const strength = String(detail.strength || '').trim();
+      const lowerBrand = String(brandName || '').toLowerCase();
+      const lowerType = type.toLowerCase();
+      const nameWithType = type && !lowerBrand.startsWith(`${lowerType} `)
+        ? `${type} ${brandName}`
+        : brandName;
+      const brandLine = strength && !lowerBrand.includes(strength.toLowerCase())
+        ? `${nameWithType} (${strength})`
+        : nameWithType;
+
+      // The printed row sets the dosage form in normal weight and the brand in
+      // bold, so they are returned separately as well as joined.
+      const formPrefix = type && !lowerBrand.startsWith(`${lowerType} `) ? type : '';
+      const brandText = formPrefix
+        ? brandLine.slice(formPrefix.length + 1)
+        : brandLine;
+
+      return { brandLine, formPrefix, brandText, compositionLine: composition };
+    }
+
+    function formatMedicineName(medicine, detail = {}, importedName = '') {
+      const { brandLine, compositionLine } = splitMedicineName(medicine, detail, importedName);
+      return compositionLine ? `${brandLine} (${compositionLine})` : brandLine;
+    }
+
+    const DAILY_TIMING_LABELS = { M: 'Morning', A: 'Afternoon', E: 'Evening', N: 'Night' };
+    const DAILY_TIMING_ORDER = ['M', 'A', 'E', 'N'];
+    const FREQUENCY_PHRASE_WORDS = new Set(['Once', 'Twice', 'Thrice', 'Times']);
+    const INTERVAL_HOUR_PATTERN = /^(\d+)h$/;
+    const MEAL_TIMING_PATTERN = /^(Breakfast|Lunch|Dinner) (Before|After)$/;
+
+    function joinReadable(parts) {
+      const filtered = parts.filter(Boolean);
+      if (filtered.length <= 1) {
+        return filtered.join('');
+      }
+      return `${filtered.slice(0, -1).join(', ')} & ${filtered[filtered.length - 1]}`;
+    }
+
+    function inferTimingMode(timings) {
+      if (timings.some((value) => INTERVAL_HOUR_PATTERN.test(value) || FREQUENCY_PHRASE_WORDS.has(value) || value === 'a day')) {
+        return 'interval';
+      }
+      if (timings.some((value) => MEAL_TIMING_PATTERN.test(value))) {
+        return 'meal';
+      }
+      return 'daily';
+    }
+
+    // Raw chip codes (e.g. "M, N" or "Twice, a day") are how the editor stores
+    // timing, but they read poorly on a printed prescription. This turns them
+    // into plain English for the PDF without changing how they're stored.
+    function humanizeFrequency(rawTimings, timingMode, frequencyFormat = 'text', timingCounts = null) {
+      const timings = Array.isArray(rawTimings) ? rawTimings.filter(Boolean) : [];
+      if (!timings.length) {
+        return '';
+      }
+
+      const mode = timingMode || inferTimingMode(timings);
+
+      // The 1-0-1-0 slot format only maps cleanly onto the
+      // Morning/Afternoon/Evening/Night schedule - interval and meal timings
+      // stay as text either way. Two things can ask for it: the medicine's own
+      // "1-0-1-0" timing mode, which always prints this way, or the clinic's
+      // Frequency Format setting applied to a plain M/A/E/N medicine. A saved
+      // per-slot count prints as its actual number ("2" at night prints as 2,
+      // same as Docon's dosage-schedule boxes), falling back to a 1/0 flag for
+      // medicines that only ever used the checkboxes.
+      if (mode === 'numeric' || (frequencyFormat === 'numeric' && mode === 'daily')) {
+        return DAILY_TIMING_ORDER.map((code) => {
+          const savedCount = timingCounts && timingCounts[code];
+          const parsedCount = Number.parseFloat(savedCount);
+          if (Number.isFinite(parsedCount) && parsedCount > 0) {
+            return String(parsedCount);
+          }
+          return timings.includes(code) ? '1' : '0';
+        }).join('-');
+      }
+
+      if (mode === 'meal') {
+        return joinReadable(timings.map((value) => {
+          const match = MEAL_TIMING_PATTERN.exec(value);
+          return match ? `${match[2]} ${match[1]}` : value;
+        }));
+      }
+
+      if (mode === 'interval') {
+        const hourParts = timings
+          .filter((value) => INTERVAL_HOUR_PATTERN.test(value))
+          .map((value) => `Every ${value.replace('h', '')} hours`);
+        const hasADay = timings.includes('a day');
+        const phraseParts = timings
+          .filter((value) => FREQUENCY_PHRASE_WORDS.has(value))
+          .map((value) => (hasADay ? `${value} a day` : value));
+        const otherParts = timings.filter((value) => (
+          !INTERVAL_HOUR_PATTERN.test(value) && !FREQUENCY_PHRASE_WORDS.has(value) && value !== 'a day'
+        ));
+        return joinReadable([...hourParts, ...phraseParts, ...otherParts]);
+      }
+
+      // daily (M/A/E/N), and the fallback for anything unrecognized.
+      return joinReadable(timings.map((code) => DAILY_TIMING_LABELS[code] || code));
+    }
+
+    function getMedicineRows(draft, frequencyFormat = 'text') {
+      const medicines = draft?.sections?.Medication || draft?.sections?.Medicens || [];
+      const details = draft?.medicineDetails || {};
+      return medicines.map((medicine) => {
+        const detail = details[medicine] || {};
+        const importedDose = splitImportedMedicineDose(medicine);
+        const medicineName = formatMedicineName(medicine, detail, importedDose.name);
+        const nameParts = splitMedicineName(medicine, detail, importedDose.name);
+        return {
+          medicine,
+          medicineName,
+          brandLine: nameParts.brandLine,
+          formPrefix: nameParts.formPrefix,
+          brandText: nameParts.brandText,
+          compositionLine: nameParts.compositionLine,
+          medicineType: detail.type || '',
+          dose: detail.dose || detail.doseChip || importedDose.dose || '',
+          timing: humanizeFrequency(detail.timings, detail.timingMode, frequencyFormat, detail.timingCounts),
+          food: detail.food || '',
+          duration: formatDuration(detail.duration),
+          note: detail.note || ''
+        };
+      });
+    }
+
+    function renderMedicineTable(rows) {
+      if (!rows.length) {
+        return '';
+      }
+
+      // Column set and cell layout follow the printed reference: the dosage
+      // form sits in normal weight ahead of the bold brand, the composition
+      // runs underneath in small italic capitals, and the food instruction
+      // hangs under Frequency in a small font below the timing.
+      return `
+        <div class="medicine-table-wrap">
+        <table class="medicine-table">
+          <thead>
+            <tr>
+              <th style="width: 6%"></th>
+              <th style="width: 28%">Medicines</th>
+              <th style="width: 14%">Quantity</th>
+              <th style="width: 15%">Frequency</th>
+              <th style="width: 13%">Duration</th>
+              <th style="width: 24%">Remark</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((row, index) => `
+              <tr>
+                <td class="medicine-index"><strong>${index + 1}</strong></td>
+                <td class="medicine-name">
+                  ${row.formPrefix ? `<span class="medicine-form">${escapeHtml(row.formPrefix)}</span> ` : ''}<strong>${escapeHtml(row.brandText || row.medicineName || row.medicine)}</strong>
+                  ${row.compositionLine
+                    ? `<span class="medicine-composition">${escapeHtml(row.compositionLine)}</span>`
+                    : ''}
+                </td>
+                <td class="medicine-quantity">
+                  <strong>${escapeHtml(row.dose || '-')}</strong>
+                </td>
+                <td>
+                  <strong>${escapeHtml(row.timing || '-')}</strong>
+                  ${row.food ? `<span class="medicine-sub">${escapeHtml(row.food)}</span>` : ''}
+                </td>
+                <td><strong>${escapeHtml(row.duration || '-')}</strong></td>
+                <td class="medicine-remark">${escapeHtml(row.note || '-')}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+        </div>
+      `;
+    }
+
+    function chartTitle(label) {
+      return label || 'Growth Chart';
+    }
+
+    function renderMiniCharts(record) {
+      const pages = record?.chartPages || [];
+      if (!pages.length) {
+        return '<p class="empty-note">Growth chart preview is not available. Generate charts again, then continue to prescription.</p>';
+      }
+
+      return `
+        <div class="mini-chart-grid">
+          ${pages.slice(0, 4).map((page, index) => `
+            <div class="mini-chart-card">
+              <strong>${escapeHtml(chartTitle(page.label))}</strong>
+              <img data-chart-index="${index}" src="${escapeHtml(page.miniDataUrl || page.dataUrl)}" alt="${escapeHtml(page.label)} chart">
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function buildPreviewHtml() {
+      const draft = getActivePrescriptionDraft();
+      const chartRecord = getCurrentChartRecord();
+      const sections = draft?.sections || {};
+      const sectionDetails = draft?.sectionDetails || {};
+      const branding = getPrescriptionBranding();
+      const medicineRows = getMedicineRows(draft, normalizePrescriptionLayout(branding).prescriptionFrequencyFormat);
+      const patientId = getValidatedPrescriptionPatientId(draft, chartRecord) || '-';
+      const now = new Date().toISOString();
+      const instructions = sections.Instruction || [];
+      const notesText = typeof draft?.notes === 'string' && draft.notes.trim()
+        ? draft.notes.trim()
+        : (Array.isArray(sections.Notes) ? sections.Notes.join(', ') : '');
+      applyPrescriptionLayoutStyles(branding);
+      const signatureHtml = branding.signatureDataUrl
+        ? `<img class="signature-image" src="${escapeHtml(branding.signatureDataUrl)}" alt="Doctor signature">`
+        : '<div class="signature-line"></div>';
+
+      rxSheet.innerHTML = `
+        <header class="rx-sheet-header">
+          <div>
+            <h1 class="clinic-title">${escapeHtml(branding.clinicTitle)}</h1>
+            <p class="clinic-address">${formatMultiline(branding.clinicAddress)}</p>
+          </div>
+          <div class="doctor-block">
+            <strong>${escapeHtml(branding.doctorName)}</strong>
+            ${formatMultiline(branding.doctorDetails)}
+          </div>
+        </header>
+
+        <section class="patient-band">
+          <div>
+            <div><strong>Name:</strong> ${escapeHtml(chartRecord?.childName || '-')}</div>
+            <div><strong>Age/Sex:</strong> ${escapeHtml(formatCompactAge(chartRecord?.age || '-'))} / ${escapeHtml(chartRecord?.gender || '-')}</div>
+            <div><strong>Office ID:</strong> ${escapeHtml(patientId)}</div>
+          </div>
+          <div>
+            <div><strong>Date:</strong> ${escapeHtml(formatShortDate(now))}</div>
+            <div><strong>Mobile:</strong> ${escapeHtml(chartRecord?.phone || '-')}</div>
+          </div>
+          <div>
+            <div><strong>Weight:</strong> ${escapeHtml(chartRecord?.weight || '-')} kg</div>
+            <div><strong>Height:</strong> ${escapeHtml(chartRecord?.height || '-')} cm</div>
+          </div>
+        </section>
+
+        ${renderAllergyRow(draft?.allergy)}
+        ${renderTextRow('Symptoms', sections.Symptoms, sectionDetails.Symptoms, 'Symptoms')}
+        ${renderTextRow('Past Medical History', sections['Past Medical History'])}
+        ${renderTextRow('Finding', sections.Finding, sectionDetails.Finding, 'Finding')}
+        ${renderNotesRow(notesText)}
+        ${renderTextRow('Diagnosis', sections.Diagnosis)}
+        ${renderTextRow('Investigation', sections.Investigation)}
+
+        ${renderMedicineTable(medicineRows)}
+
+        ${instructions.length
+          ? `<section class="instructions-block">
+          <strong>Instruction:</strong>
+          <p>${escapeHtml(formatInstructionText(instructions))}</p>
+        </section>`
+          : ''}
+
+        ${renderMiniCharts(chartRecord)}
+
+        <footer class="rx-footer ${branding.prescriptionFooterAlignment === 'right' ? 'is-footer-right' : ''}">
+          <div>
+            ${signatureHtml}
+            <strong>${escapeHtml(branding.doctorName)}</strong><br>
+            ${formatMultiline(branding.doctorDetails)}
+          </div>
+          <div class="footer-address">
+            ${formatMultiline(branding.footerText)}
+          </div>
+        </footer>
+      `;
+    }
+
+    function waitForAnimationFrame() {
+      return new Promise((resolve) => window.requestAnimationFrame(() => resolve()));
+    }
+
+    async function waitForPrescriptionSheetAssets() {
+      if (document.fonts?.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (error) {
+          console.warn(`Unable to wait for prescription fonts: ${error.message}`);
+        }
+      }
+
+      const images = [...rxSheet.querySelectorAll('img')];
+      await Promise.all(images.map((image) => new Promise((resolve) => {
+        if (image.complete) {
+          resolve();
+          return;
+        }
+
+        image.addEventListener('load', resolve, { once: true });
+        image.addEventListener('error', resolve, { once: true });
+      })));
+
+      await waitForAnimationFrame();
+      await waitForAnimationFrame();
+    }
+
+    function applyPrescriptionCaptureLayout() {
+      const previousStyle = rxSheet.getAttribute('style') || '';
+      const previousScrollX = window.scrollX;
+      const previousScrollY = window.scrollY;
+
+      rxSheet.style.width = '794px';
+      rxSheet.style.minWidth = '794px';
+      rxSheet.style.maxWidth = '794px';
+      rxSheet.style.minHeight = '1123px';
+      rxSheet.style.transform = 'none';
+      rxSheet.style.margin = '0';
+      rxSheet.style.border = '0';
+      rxSheet.style.borderRadius = '0';
+      rxSheet.style.boxShadow = 'none';
+
+      return () => {
+        if (previousStyle) {
+          rxSheet.setAttribute('style', previousStyle);
+        } else {
+          rxSheet.removeAttribute('style');
+        }
+        window.scrollTo(previousScrollX, previousScrollY);
+      };
+    }
+
+    function applyPrescriptionCaptureHeaderMode(forceHeader = false) {
+      if (!forceHeader) {
+        return () => {};
+      }
+
+      const hadPreviewWithoutHeader = document.body.classList.contains('preview-without-header');
+      const hadPrintWithHeader = document.body.classList.contains('print-with-header');
+
+      document.body.classList.remove('preview-without-header');
+      document.body.classList.add('print-with-header');
+
+      return () => {
+        document.body.classList.toggle('preview-without-header', hadPreviewWithoutHeader);
+        document.body.classList.toggle('print-with-header', hadPrintWithHeader);
+      };
+    }
+
+    // This capture now only feeds the small preview image shown in the
+    // patient's prescription history - the stored PDF is drawn as vector text
+    // and the doctor's printout comes from the browser. 300dpi was needed when
+    // the PDF was a screenshot of this canvas; for a thumbnail it is waste, and
+    // it made every save slower and hungrier for memory.
+    const PRESCRIPTION_CAPTURE_SCALE = 2;
+
+    async function renderPrescriptionSheetCanvas(options = {}) {
+      const { forceHeader = false } = options;
+      document.body.classList.add('rendering-prescription-download');
+      const restoreHeaderMode = applyPrescriptionCaptureHeaderMode(forceHeader);
+      const restoreCaptureLayout = applyPrescriptionCaptureLayout();
+
+      try {
+        await waitForPrescriptionSheetAssets();
+        await waitForAnimationFrame();
+        const captureHeight = Math.max(1123, rxSheet.scrollHeight);
+
+        return await html2canvas(rxSheet, {
+          backgroundColor: '#ffffff',
+          scale: PRESCRIPTION_CAPTURE_SCALE,
+          useCORS: true,
+          logging: false,
+          width: 794,
+          height: captureHeight,
+          windowWidth: 794,
+          windowHeight: captureHeight
+        });
+      } finally {
+        restoreCaptureLayout();
+        restoreHeaderMode();
+        document.body.classList.remove('rendering-prescription-download');
+      }
+    }
+
+    function canvasToBlob(canvas, type = 'image/jpeg', quality = 0.92) {
+      return new Promise((resolve, reject) => {
+        canvas.toBlob((blob) => {
+          if (blob) {
+            resolve(blob);
+            return;
+          }
+
+          reject(new Error('Unable to create preview image.'));
+        }, type, quality);
+      });
+    }
+
+    // jsPDF ships Helvetica, Times and Courier. Arial is metrically compatible
+    // with Helvetica and Georgia with Times, and Georgia/Verdana are system
+    // fonts that cannot be redistributed, so those use the built-ins. The
+    // webfonts are embedded from public/fonts (jsPDF subsets them to the glyphs
+    // used); without this every webfont choice printed as plain Helvetica.
+    const PDF_FONT_BY_FAMILY = {
+      'Times New Roman': 'times',
+      Georgia: 'times'
+    };
+
+    const PDF_EMBEDDED_FONT_FILES = {
+      Outfit: { normal: 'Outfit-Regular.ttf', bold: 'Outfit-Bold.ttf', italic: 'Outfit-Regular.ttf' },
+      Poppins: { normal: 'Poppins-Regular.ttf', bold: 'Poppins-Bold.ttf', italic: 'Poppins-Italic.ttf' },
+      Lato: { normal: 'Lato-Regular.ttf', bold: 'Lato-Bold.ttf', italic: 'Lato-Italic.ttf' },
+      Roboto: { normal: 'Roboto-Regular.ttf', bold: 'Roboto-Bold.ttf', italic: 'Roboto-Italic.ttf' },
+      'Open Sans': { normal: 'OpenSans-Regular.ttf', bold: 'OpenSans-Bold.ttf', italic: 'OpenSans-Italic.ttf' },
+      Merriweather: { normal: 'Merriweather-Regular.ttf', bold: 'Merriweather-Bold.ttf', italic: 'Merriweather-Italic.ttf' }
+    };
+
+    const PDF_FONT_BASE_URL = '/emr/kid/fonts/';
+    const pdfFontFileLoads = new Map();
+
+    function loadPdfFontFile(fileName) {
+      if (!pdfFontFileLoads.has(fileName)) {
+        const load = fetch(`${PDF_FONT_BASE_URL}${fileName}`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP ${response.status}`);
+            }
+            return response.arrayBuffer();
+          })
+          .then((buffer) => {
+            const bytes = new Uint8Array(buffer);
+            // A TrueType file starts 00 01 00 00; anything else (an auth
+            // redirect page, say) would make jsPDF throw mid-save.
+            if (bytes.length < 4 || bytes[0] !== 0 || bytes[1] !== 1 || bytes[2] !== 0 || bytes[3] !== 0) {
+              throw new Error(`${fileName} is not a TrueType font`);
+            }
+            let binary = '';
+            for (let index = 0; index < bytes.length; index += 0x8000) {
+              binary += String.fromCharCode.apply(null, bytes.subarray(index, index + 0x8000));
+            }
+            return btoa(binary);
+          });
+        load.catch(() => pdfFontFileLoads.delete(fileName));
+        pdfFontFileLoads.set(fileName, load);
+      }
+      return pdfFontFileLoads.get(fileName);
+    }
+
+    // Resolves to the TTF data for a webfont choice, or null for the families
+    // drawn with a built-in font. A failed download also returns null so the
+    // prescription still saves, in Helvetica, rather than not at all.
+    async function loadPdfEmbeddedFont(fontFamily) {
+      const files = PDF_EMBEDDED_FONT_FILES[fontFamily];
+      if (!files) {
+        return null;
+      }
+
+      try {
+        const styles = Object.keys(files);
+        const data = await Promise.all(styles.map((style) => loadPdfFontFile(files[style])));
+        return {
+          family: fontFamily,
+          files: Object.fromEntries(styles.map((style, index) => [style, { fileName: files[style], data: data[index] }]))
+        };
+      } catch (error) {
+        console.warn(`Unable to load ${fontFamily} for the PDF, using Helvetica: ${error.message}`);
+        return null;
+      }
+    }
+
+    function registerPdfEmbeddedFont(pdf, embeddedFont) {
+      Object.entries(embeddedFont.files).forEach(([style, { fileName, data }]) => {
+        pdf.addFileToVFS(fileName, data);
+        pdf.addFont(fileName, embeddedFont.family, style);
+      });
+      return embeddedFont.family;
+    }
+
+    function getPdfFontName(fontFamily) {
+      return PDF_FONT_BY_FAMILY[fontFamily] || 'helvetica';
+    }
+
+    // Draws the prescription with jsPDF's own text and vector primitives rather
+    // than pasting a rasterised screenshot of the sheet. Text stays selectable
+    // and searchable, the file drops by an order of magnitude, and page breaks
+    // land between blocks instead of slicing a table row in half. Growth charts
+    // and the signature stay images because that is what produces them.
+    function buildVectorPdf({ draft, chartRecord, branding, patientId, forceHeader = false, embeddedFont = null }) {
+      const layout = normalizePrescriptionLayout(branding);
+      const base = layout.prescriptionFontSize;
+      const margins = layout.prescriptionMarginsCm;
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+      const font = embeddedFont
+        ? registerPdfEmbeddedFont(pdf, embeddedFont)
+        : getPdfFontName(layout.prescriptionFontFamily);
+
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const left = margins.left * 10;
+      const top = margins.top * 10;
+      const contentWidth = pageWidth - left - (margins.right * 10);
+      const pageBottom = pageHeight - (margins.bottom * 10);
+
+      // The same proportions the sheet's CSS uses, restated against the base
+      // point size so the PDF and the screen agree at any Font Size setting.
+      const SIZE = {
+        clinicTitle: base * 1.3613,
+        clinicAddress: base * 0.9542,
+        doctorName: base,
+        doctorDetails: base * 0.9542,
+        row: base,
+        table: base * 0.9542,
+        tableHead: base * 0.85,
+        composition: base * 0.7723,
+        sub: base * 0.7265,
+        chartCaption: base * 0.8639,
+        footer: base * 0.9084,
+        footerAddress: base * 0.818
+      };
+
+      const PT_TO_MM = 25.4 / 72;
+      const lh = (size) => size * PT_TO_MM * 1.3;
+      let y = top;
+
+      const setFont = (size, style = 'normal') => {
+        pdf.setFont(font, style);
+        pdf.setFontSize(size);
+      };
+
+      const ensureSpace = (needed) => {
+        if (y + needed > pageBottom) {
+          pdf.addPage('a4', 'portrait');
+          y = top;
+        }
+      };
+
+      const baseline = (size) => y + size * PT_TO_MM;
+
+      const drawParagraph = (text, x, size, style, width, align) => {
+        const clean = String(text || '').replace(/<br\s*\/?>/gi, '\n').trim();
+        if (!clean) {
+          return;
+        }
+        setFont(size, style);
+        const lines = pdf.splitTextToSize(clean, width);
+        lines.forEach((line) => {
+          ensureSpace(lh(size));
+          setFont(size, style);
+          pdf.text(line, x, baseline(size), align ? { align } : undefined);
+          y += lh(size);
+        });
+      };
+
+      const drawLabelledRow = (label, value) => {
+        const text = String(value || '').trim();
+        if (!text || text === '-') {
+          return;
+        }
+        const labelText = label + ': ';
+        setFont(SIZE.row, 'bold');
+        const labelWidth = pdf.getTextWidth(labelText);
+        setFont(SIZE.row, 'normal');
+        const lines = pdf.splitTextToSize(text, Math.max(20, contentWidth - labelWidth));
+
+        lines.forEach((line, index) => {
+          ensureSpace(lh(SIZE.row));
+          if (index === 0) {
+            setFont(SIZE.row, 'bold');
+            pdf.text(labelText, left, baseline(SIZE.row));
+          }
+          setFont(SIZE.row, 'normal');
+          pdf.text(line, left + labelWidth, baseline(SIZE.row));
+          y += lh(SIZE.row);
+        });
+      };
+
+      // ---- header ---------------------------------------------------------
+      const showHeader = forceHeader || printWithHeaderEnabled;
+      if (showHeader) {
+        const colWidth = contentWidth * 0.55;
+        const headerTop = y;
+
+        drawParagraph(branding.clinicTitle, left, SIZE.clinicTitle, 'bold', colWidth);
+        drawParagraph(branding.clinicAddress, left, SIZE.clinicAddress, 'normal', colWidth);
+        const leftBottom = y;
+
+        // Start the right column so its first baseline matches the clinic
+        // title's. Both columns share headerTop, but the larger title sits on
+        // a lower baseline, which left the two blocks visibly out of line.
+        y = headerTop + (SIZE.clinicTitle - SIZE.doctorName) * PT_TO_MM;
+        const rightX = left + contentWidth;
+        drawParagraph(branding.doctorName, rightX, SIZE.doctorName, 'bold', contentWidth * 0.42, 'right');
+        drawParagraph(branding.doctorDetails, rightX, SIZE.doctorDetails, 'normal', contentWidth * 0.42, 'right');
+
+        y = Math.max(leftBottom, y) + 2;
+        pdf.setDrawColor(119);
+        pdf.setLineWidth(0.3);
+        pdf.line(left, y, left + contentWidth, y);
+        y += 4;
+      }
+
+      // ---- patient band ----------------------------------------------------
+      const bandCols = [
+        [
+          ['Name', chartRecord?.childName || '-'],
+          ['Age/Sex', formatCompactAge(chartRecord?.age || '-') + ' / ' + (chartRecord?.gender || '-')],
+          ['Office ID', patientId]
+        ],
+        [
+          ['Date', formatShortDate(new Date().toISOString())],
+          ['Mobile', chartRecord?.phone || '-']
+        ],
+        [
+          ['Weight', (chartRecord?.weight || '-') + ' kg'],
+          ['Height', (chartRecord?.height || '-') + ' cm']
+        ]
+      ];
+      const bandRows = Math.max.apply(null, bandCols.map((col) => col.length));
+      const bandHeight = bandRows * lh(SIZE.row) + 4;
+      ensureSpace(bandHeight);
+      pdf.setDrawColor(200);
+      pdf.setLineWidth(0.2);
+      pdf.rect(left, y, contentWidth, bandHeight);
+
+      const bandColWidth = contentWidth / 3;
+      bandCols.forEach((col, colIndex) => {
+        let cellY = y + 2;
+        const cellX = left + colIndex * bandColWidth + 2;
+        col.forEach((entry) => {
+          const labelText = entry[0] + ': ';
+          setFont(SIZE.row, 'bold');
+          pdf.text(labelText, cellX, cellY + SIZE.row * PT_TO_MM);
+          const labelWidth = pdf.getTextWidth(labelText);
+          setFont(SIZE.row, 'normal');
+          const valueLine = pdf.splitTextToSize(String(entry[1]), Math.max(10, bandColWidth - labelWidth - 4))[0] || '';
+          pdf.text(valueLine, cellX + labelWidth, cellY + SIZE.row * PT_TO_MM);
+          cellY += lh(SIZE.row);
+        });
+      });
+      y += bandHeight + 3;
+
+      // ---- clinical rows ---------------------------------------------------
+      const sections = draft?.sections || {};
+      const sectionDetails = draft?.sectionDetails || {};
+      const notesText = typeof draft?.notes === 'string' && draft.notes.trim()
+        ? draft.notes.trim()
+        : (Array.isArray(sections.Notes) ? sections.Notes.join(', ') : '');
+
+      drawLabelledRow('Allergy', formatAllergyText(draft?.allergy));
+      drawLabelledRow('Symptoms', formatDetailedSelections(sections.Symptoms, sectionDetails.Symptoms, 'Symptoms'));
+      drawLabelledRow('Past Medical History', formatDetailedSelections(sections['Past Medical History']));
+      drawLabelledRow('Finding', formatDetailedSelections(sections.Finding, sectionDetails.Finding, 'Finding'));
+      drawLabelledRow('Notes', notesText);
+      drawLabelledRow('Diagnosis', formatDetailedSelections(sections.Diagnosis));
+      drawLabelledRow('Investigation', formatDetailedSelections(sections.Investigation));
+
+      // ---- medicine table ---------------------------------------------------
+      const medicineRows = getMedicineRows(draft, layout.prescriptionFrequencyFormat);
+      if (medicineRows.length) {
+        y += 2;
+        const COLS = [0.06, 0.28, 0.14, 0.15, 0.13, 0.24].map((fraction) => contentWidth * fraction);
+        const colX = [];
+        COLS.reduce((acc, width, index) => {
+          colX[index] = left + acc;
+          return acc + width;
+        }, 0);
+        const headerHeight = lh(SIZE.tableHead) + 2;
+
+        const drawTableHead = () => {
+          ensureSpace(headerHeight + lh(SIZE.table) * 2);
+          pdf.setFillColor(243, 244, 246);
+          pdf.setDrawColor(150);
+          pdf.setLineWidth(0.2);
+          pdf.rect(left, y, contentWidth, headerHeight, 'FD');
+          setFont(SIZE.tableHead, 'normal');
+          ['', 'Medicines', 'Quantity', 'Frequency', 'Duration', 'Remark'].forEach((label, index) => {
+            if (!label) {
+              return;
+            }
+            pdf.text(label, colX[index] + COLS[index] / 2, y + headerHeight - 1.4, { align: 'center' });
+          });
+          y += headerHeight;
+        };
+
+        drawTableHead();
+
+        medicineRows.forEach((row, index) => {
+          const formPrefix = String(row.formPrefix || '').trim();
+          const brandText = String(row.brandText || row.medicineName || row.medicine || '').trim();
+
+          setFont(SIZE.table, 'bold');
+          const brandWidth = COLS[1] - 4 - (formPrefix ? pdf.getTextWidth(formPrefix + ' ') : 0);
+          const brandLines = pdf.splitTextToSize(brandText, Math.max(10, brandWidth));
+          setFont(SIZE.composition, 'italic');
+          const compLines = row.compositionLine
+            ? pdf.splitTextToSize(String(row.compositionLine).toUpperCase(), COLS[1] - 4)
+            : [];
+          setFont(SIZE.table, 'bold');
+          const doseLines = pdf.splitTextToSize(String(row.dose || '-'), COLS[2] - 3);
+          const freqLines = pdf.splitTextToSize(String(row.timing || '-'), COLS[3] - 3);
+          const durLines = pdf.splitTextToSize(String(row.duration || '-'), COLS[4] - 3);
+          setFont(SIZE.table, 'normal');
+          const remarkLines = row.note ? pdf.splitTextToSize(String(row.note).trim(), COLS[5] - 4) : [];
+          setFont(SIZE.sub, 'italic');
+          const foodLines = row.food ? pdf.splitTextToSize(String(row.food), COLS[3] - 3) : [];
+
+          const nameHeight = brandLines.length * lh(SIZE.table) + compLines.length * lh(SIZE.composition);
+          const qtyHeight = doseLines.length * lh(SIZE.table);
+          const freqHeight = freqLines.length * lh(SIZE.table) + foodLines.length * lh(SIZE.sub);
+          const otherHeight = Math.max(freqHeight, durLines.length * lh(SIZE.table), remarkLines.length * lh(SIZE.table));
+          const rowHeight = Math.max(nameHeight, qtyHeight, otherHeight) + 2.6;
+
+          // Keep the row whole: start a new page and repeat the head rather
+          // than splitting a medicine across the break.
+          if (y + rowHeight > pageBottom) {
+            pdf.addPage('a4', 'portrait');
+            y = top;
+            drawTableHead();
+          }
+
+          pdf.setDrawColor(150);
+          pdf.setLineWidth(0.2);
+          COLS.forEach((width, colIndex) => {
+            pdf.rect(colX[colIndex], y, width, rowHeight);
+          });
+
+          setFont(SIZE.table, 'bold');
+          pdf.text(String(index + 1), colX[0] + COLS[0] / 2, y + lh(SIZE.table), { align: 'center' });
+
+          // Medicines: form in normal weight, brand in bold, composition under.
+          let cellY = y + 1;
+          let nameX = colX[1] + 2;
+          if (formPrefix) {
+            setFont(SIZE.table, 'normal');
+            pdf.text(formPrefix + ' ', nameX, cellY + SIZE.table * PT_TO_MM);
+            nameX += pdf.getTextWidth(formPrefix + ' ');
+          }
+          brandLines.forEach((line, lineIndex) => {
+            setFont(SIZE.table, 'bold');
+            pdf.text(line, lineIndex === 0 ? nameX : colX[1] + 2, cellY + SIZE.table * PT_TO_MM);
+            cellY += lh(SIZE.table);
+          });
+          compLines.forEach((line) => {
+            setFont(SIZE.composition, 'italic');
+            pdf.text(line, colX[1] + 2, cellY + SIZE.composition * PT_TO_MM);
+            cellY += lh(SIZE.composition);
+          });
+
+          // Quantity: dose centred.
+          cellY = y + 1;
+          doseLines.forEach((line) => {
+            setFont(SIZE.table, 'bold');
+            pdf.text(line, colX[2] + COLS[2] / 2, cellY + SIZE.table * PT_TO_MM, { align: 'center' });
+            cellY += lh(SIZE.table);
+          });
+
+          // Frequency and Duration: bold, centred.
+          [[freqLines, 3], [durLines, 4]].forEach((entry) => {
+            let entryY = y + 1;
+            entry[0].forEach((line) => {
+              setFont(SIZE.table, 'bold');
+              pdf.text(line, colX[entry[1]] + COLS[entry[1]] / 2, entryY + SIZE.table * PT_TO_MM, { align: 'center' });
+              entryY += lh(SIZE.table);
+            });
+          });
+
+          // Food instruction: small italic, centred beneath the frequency.
+          let foodY = y + 1 + freqLines.length * lh(SIZE.table);
+          foodLines.forEach((line) => {
+            setFont(SIZE.sub, 'italic');
+            pdf.text(line, colX[3] + COLS[3] / 2, foodY + SIZE.sub * PT_TO_MM, { align: 'center' });
+            foodY += lh(SIZE.sub);
+          });
+
+          // Remark: normal weight, left-aligned, unlike the centred bold cells.
+          let remarkY = y + 1;
+          remarkLines.forEach((line) => {
+            setFont(SIZE.table, 'normal');
+            pdf.text(line, colX[5] + 2, remarkY + SIZE.table * PT_TO_MM);
+            remarkY += lh(SIZE.table);
+          });
+
+          y += rowHeight;
+        });
+        y += 3;
+      }
+
+      // ---- instructions ------------------------------------------------------
+      const instructions = sections.Instruction || [];
+      if (instructions.length) {
+        drawLabelledRow('Instruction', formatInstructionText(instructions));
+        y += 2;
+      }
+
+      // ---- growth charts -----------------------------------------------------
+      const chartPages = (chartRecord?.chartPages || [])
+        .slice(0, 4)
+        .filter((page) => page && (page.miniDataUrl || page.dataUrl));
+      if (chartPages.length) {
+        const gap = 2;
+        // Always lay the charts out on a four-column grid, exactly as the
+        // sheet's CSS does. Dividing by the number of charts instead meant a
+        // single chart stretched to the full page width - about half a page
+        // tall - and pushed the footer onto a second sheet.
+        const CHART_COLUMNS = 4;
+        const chartWidth = (contentWidth - gap * (CHART_COLUMNS - 1)) / CHART_COLUMNS;
+        const chartHeight = chartWidth / 1.38;
+        const blockHeight = chartHeight + lh(SIZE.chartCaption) + 2;
+        ensureSpace(blockHeight);
+
+        chartPages.forEach((page, index) => {
+          const x = left + index * (chartWidth + gap);
+          setFont(SIZE.chartCaption, 'bold');
+          pdf.text(chartTitle(page.label), x + chartWidth / 2, y + SIZE.chartCaption * PT_TO_MM, { align: 'center' });
+          try {
+            pdf.addImage(page.miniDataUrl || page.dataUrl, 'PNG', x, y + lh(SIZE.chartCaption), chartWidth, chartHeight, undefined, 'FAST');
+          } catch (error) {
+            console.warn('Unable to place growth chart in PDF: ' + error.message);
+          }
+        });
+        y += blockHeight + 3;
+      }
+
+      // ---- footer -------------------------------------------------------------
+      y += 6;
+      const signatureWidth = 34;
+      const signatureHeight = 12;
+      if (branding.signatureDataUrl) {
+        ensureSpace(signatureHeight + lh(SIZE.footer) * 3);
+        try {
+          pdf.addImage(branding.signatureDataUrl, 'PNG', left, y, signatureWidth, signatureHeight, undefined, 'FAST');
+        } catch (error) {
+          console.warn('Unable to place signature in PDF: ' + error.message);
+        }
+        y += signatureHeight + 1;
+      } else {
+        ensureSpace(lh(SIZE.footer) * 3 + 6);
+        y += 6;
+        pdf.setDrawColor(17);
+        pdf.setLineWidth(0.3);
+        pdf.line(left, y, left + signatureWidth + 6, y);
+        y += 1.5;
+      }
+
+      // Both footer columns start here - level with the doctor's name. The
+      // address used to start above the signature, so it printed
+      // a line and a half higher than the block it sits beside.
+      const footerTextTop = y;
+      drawParagraph(branding.doctorName, left, SIZE.footer, 'bold', contentWidth * 0.5);
+      drawParagraph(branding.doctorDetails, left, SIZE.footer, 'normal', contentWidth * 0.5);
+
+      const footerLeftBottom = y;
+      y = footerTextTop + (SIZE.footer - SIZE.footerAddress) * PT_TO_MM;
+      drawParagraph(branding.footerText, left + contentWidth, SIZE.footerAddress, 'normal', contentWidth * 0.45, 'right');
+      y = Math.max(footerLeftBottom, y);
+
+      return pdf;
+    }
+
+    function buildPdfFromCanvas(canvas) {
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+
+      // Always scale to the page width and let anything taller than A4 run on
+      // to the next page. Fitting the height as well shrank long prescriptions
+      // down to unreadable text with wide empty margins.
+      const imageWidthMm = pageWidth;
+      const imageHeightMm = (canvas.height / canvas.width) * pageWidth;
+
+      // PNG, not JPEG: the sheet is text and hairlines, and JPEG blocking
+      // shows up as fuzzy letters and halos once it is printed.
+      const imageData = canvas.toDataURL('image/png');
+
+      // Sub-millimetre overhang is rounding from the capture size, not content.
+      const PAGE_BREAK_TOLERANCE_MM = 1;
+      let renderedMm = 0;
+
+      while (renderedMm === 0 || imageHeightMm - renderedMm > PAGE_BREAK_TOLERANCE_MM) {
+        if (renderedMm > 0) {
+          pdf.addPage('a4', 'portrait');
+        }
+
+        // Shift the full-height image up so the next slice lands on this page.
+        pdf.addImage(imageData, 'PNG', 0, -renderedMm, imageWidthMm, imageHeightMm, undefined, 'FAST');
+        renderedMm += pageHeight;
+      }
+
+      return pdf;
+    }
+
+    async function buildPdf(options = {}) {
+      const { forceHeader = false } = options;
+      const draft = getActivePrescriptionDraft();
+      const activeChartRecord = getCurrentChartRecord();
+      const chartRecord = await rebuildChartPages(activeChartRecord);
+      if (chartRecord) {
+        preparedChartRecord = chartRecord;
+        persistPreparedChartRecord(chartRecord);
+      }
+      const patientId = getValidatedPrescriptionPatientId(draft, chartRecord);
+      if (!patientId) {
+        throw new Error('Select a valid patient before saving a prescription.');
+      }
+      buildPreviewHtml();
+      const branding = getPrescriptionBranding();
+      // The stored PDF is drawn as vector text; the canvas is still rendered
+      // because the history list shows a preview image of the sheet.
+      const embeddedFont = await loadPdfEmbeddedFont(normalizePrescriptionLayout(branding).prescriptionFontFamily);
+      const pdf = buildVectorPdf({ draft, chartRecord, branding, patientId, forceHeader, embeddedFont });
+      const sheetCanvas = await renderPrescriptionSheetCanvas({ forceHeader });
+      // 0.85 is indistinguishable at thumbnail size and roughly a quarter
+      // smaller than 0.95, which made the history list slow on tablets.
+      const previewBlob = await canvasToBlob(sheetCanvas, 'image/jpeg', 0.85);
+
+      return {
+        pdf,
+        previewBlob,
+        draftId: draft?.draftId || '',
+        editId: draft?.editId || getEditIdFromUrl() || '',
+        patientId,
+        childName: chartRecord?.childName || '',
+        parentName: chartRecord?.parentName || '',
+        phone: chartRecord?.phone || '',
+        gender: chartRecord?.gender || '',
+        dob: chartRecord?.dob || '',
+        age: chartRecord?.age || '',
+        charts: chartRecord?.charts || chartRecord?.selectedCharts || [],
+        weight: chartRecord?.weight || '',
+        height: chartRecord?.height || '',
+        head: chartRecord?.head || '',
+        spo2: chartRecord?.spo2 || '',
+        pulse: chartRecord?.pulse || '',
+        systolic: chartRecord?.systolic || '',
+        diastolic: chartRecord?.diastolic || '',
+        temp: chartRecord?.temp || '',
+        sections: draft?.sections || {},
+        sectionDetails: draft?.sectionDetails || {},
+        medicineDetails: draft?.medicineDetails || {},
+        notes: draft?.notes || ''
+      };
+    }
+
+    async function savePrescriptionPdfToCloudStorage(fileName, details, saveId) {
+      if (!db) {
+        return { ok: false, reason: 'Online records are not configured.' };
+      }
+
+      const patientId = normalizePatientId(details.patientId);
+      if (!isValidPatientId(patientId)) {
+        return { ok: false, reason: 'Select a valid patient before saving a prescription.' };
+      }
+
+      let isEditingExisting = Boolean(details.editId && details.editId === saveId);
+      let originalCreatedAt = null;
+      let originalCreatedAtIso = '';
+      let originalCreatedAtDisplay = '';
+      let filteredPatientPrescriptionHistory = null;
+
+      if (isEditingExisting) {
+        try {
+          const existingSnapshot = await getDoc(doc(db, FIREBASE_COLLECTIONS.history, saveId));
+          const existingData = existingSnapshot.exists() ? existingSnapshot.data() : null;
+          const existingPatientId = existingData ? normalizePatientId(existingData.patientId || '') : '';
+
+          if (!existingData || (existingPatientId && existingPatientId !== patientId)) {
+            // A stale/leaked editId (e.g. from another browser tab or an abandoned edit
+            // session for a different patient) must not block a brand-new prescription
+            // from saving - fall back to a fresh save instead of failing outright.
+            isEditingExisting = false;
+            const fallbackSaveId = window.crypto?.randomUUID
+              ? `rx-${patientId}-${window.crypto.randomUUID()}`
+              : `rx-${patientId}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+            saveId = fallbackSaveId;
+            fileName = `${saveId}.pdf`;
+          } else {
+            const existingCreatedAtMs = existingData.createdAtIso
+              ? new Date(existingData.createdAtIso).getTime()
+              : (typeof existingData.createdAt?.toMillis === 'function' ? existingData.createdAt.toMillis() : 0);
+
+            if (!existingCreatedAtMs || Date.now() - existingCreatedAtMs > PRESCRIPTION_EDIT_WINDOW_MS) {
+              return { ok: false, reason: 'The 2-hour edit window for this prescription has expired.' };
+            }
+
+            originalCreatedAt = existingData.createdAt || null;
+            originalCreatedAtIso = existingData.createdAtIso || '';
+            originalCreatedAtDisplay = existingData.createdAtDisplay || '';
+          }
+        } catch (error) {
+          return { ok: false, reason: error.message || 'Unable to verify the original prescription.' };
+        }
+
+        if (isEditingExisting) {
+          try {
+            const patientSnapshot = await getDoc(doc(db, FIREBASE_COLLECTIONS.patients, patientId));
+            const existingHistoryList = Array.isArray(patientSnapshot.data()?.prescriptionHistory) ? patientSnapshot.data().prescriptionHistory : [];
+            filteredPatientPrescriptionHistory = existingHistoryList.filter((item) => (item?.id || item?.prescriptionSaveId) !== saveId);
+          } catch (error) {
+            console.warn(`Unable to load patient prescription history for edit: ${error.message}`);
+            filteredPatientPrescriptionHistory = [];
+          }
+        }
+      }
+
+      const storagePath = `${CLINIC_STORAGE_PREFIX}/prescriptions/${patientId}/${fileName}`;
+      const previewPath = `${CLINIC_STORAGE_PREFIX}/prescription-previews/${patientId}/${saveId}.jpg`;
+      let persistedStoragePath = '';
+      let previewImageURL = '';
+      let previewImagePath = '';
+      let downloadURL = '';
+      let warning = '';
+
+      if (!storage) {
+        return { ok: false, reason: 'Firebase Storage is not configured.' };
+      }
+
+      if (storage) {
+        try {
+          const pdfBlob = details.pdf?.output('blob');
+          if (!pdfBlob) {
+            throw new Error('Headered prescription PDF is not available.');
+          }
+          const storageRef = ref(storage, storagePath);
+          const [existingSize, existingToken] = await Promise.all([
+            getExistingPdfSize(storageRef),
+            getExistingDownloadToken(storageRef)
+          ]);
+          await uploadBytes(storageRef, pdfBlob, {
+            contentType: 'application/pdf',
+            contentDisposition: 'inline',
+            ...(existingToken ? { customMetadata: { firebaseStorageDownloadTokens: existingToken } } : {})
+          });
+          downloadURL = await getDownloadURL(storageRef);
+          persistedStoragePath = storagePath;
+          recordPdfStorageStat(existingSize, pdfBlob.size);
+        } catch (error) {
+          warning = error.message;
+          console.warn(`Prescription PDF upload skipped: ${error.message}`);
+        }
+
+        if (details.previewBlob) {
+          try {
+            const previewRef = ref(storage, previewPath);
+            const existingPreviewToken = await getExistingDownloadToken(previewRef);
+            await uploadBytes(previewRef, details.previewBlob, {
+              contentType: 'image/jpeg',
+              contentDisposition: 'inline',
+              ...(existingPreviewToken ? { customMetadata: { firebaseStorageDownloadTokens: existingPreviewToken } } : {})
+            });
+            previewImageURL = await getDownloadURL(previewRef);
+            previewImagePath = previewPath;
+          } catch (error) {
+            const previewWarning = `Preview image upload skipped: ${error.message}`;
+            warning = warning ? `${warning} ${previewWarning}` : previewWarning;
+            console.warn(previewWarning);
+          }
+        }
+      }
+
+      if (!downloadURL) {
+        return { ok: false, reason: warning || 'Unable to upload prescription PDF to Firebase Storage.' };
+      }
+
+      const historyRecord = {
+        prescriptionSaveId: saveId,
+        patientId,
+        childName: details.childName || '',
+        parentName: details.parentName || '',
+        phone: details.phone || '',
+        gender: details.gender || '',
+        dob: details.dob || '',
+        age: details.age || '',
+        charts: details.charts || [],
+        weight: details.weight || '',
+        height: details.height || '',
+        head: details.head || '',
+        spo2: details.spo2 || '',
+        pulse: details.pulse || '',
+        systolic: details.systolic || '',
+        diastolic: details.diastolic || '',
+        temp: details.temp || '',
+        sections: details.sections || {},
+        sectionDetails: details.sectionDetails || {},
+        medicineDetails: details.medicineDetails || {},
+        notes: details.notes || '',
+        fileName,
+        storagePath: persistedStoragePath,
+        previewImagePath,
+        previewImageURL,
+        downloadURL,
+        source: 'prescription-pdf',
+        type: 'prescription',
+        createdAt: originalCreatedAt || serverTimestamp(),
+        createdAtIso: originalCreatedAtIso || new Date().toISOString(),
+        createdAtDisplay: originalCreatedAtDisplay || new Date().toLocaleString('en-IN'),
+        ...(isEditingExisting ? {
+          updatedAt: serverTimestamp(),
+          updatedAtIso: new Date().toISOString(),
+          isEdited: true
+        } : {})
+      };
+
+      const hasVitalsForSummary = [historyRecord.weight, historyRecord.height, historyRecord.head, historyRecord.spo2, historyRecord.pulse, historyRecord.systolic, historyRecord.diastolic, historyRecord.temp]
+        .some((value) => String(value || '').trim());
+      const lastMeasurementRecord = {
+        createdAtIso: historyRecord.createdAtIso,
+        createdAtDisplay: historyRecord.createdAtDisplay,
+        charts: historyRecord.charts,
+        weight: historyRecord.weight,
+        height: historyRecord.height,
+        head: historyRecord.head,
+        temp: historyRecord.temp,
+        pulse: historyRecord.pulse,
+        spo2: historyRecord.spo2,
+        systolic: historyRecord.systolic,
+        diastolic: historyRecord.diastolic,
+        age: historyRecord.age,
+        source: 'prescription-pdf'
+      };
+
+      const prescriptionHistoryEntry = {
+        id: saveId,
+        prescriptionSaveId: historyRecord.prescriptionSaveId,
+        patientId,
+        fileName,
+        storagePath: historyRecord.storagePath,
+        previewImagePath: historyRecord.previewImagePath,
+        previewImageURL: historyRecord.previewImageURL,
+        downloadURL: historyRecord.downloadURL,
+        source: historyRecord.source,
+        type: historyRecord.type,
+        createdAtIso: historyRecord.createdAtIso,
+        createdAtDisplay: historyRecord.createdAtDisplay,
+        ...(isEditingExisting ? { isEdited: true } : {})
+      };
+
+      const saveBatch = writeBatch(db);
+      saveBatch.set(doc(db, FIREBASE_COLLECTIONS.history, saveId), historyRecord, { merge: true });
+      saveBatch.set(doc(db, FIREBASE_COLLECTIONS.patients, patientId), {
+        patientId,
+        childName: historyRecord.childName,
+        ...(hasVitalsForSummary ? { lastMeasurementRecord } : {}),
+        prescriptionHistory: isEditingExisting
+          ? [...(filteredPatientPrescriptionHistory || []), prescriptionHistoryEntry]
+          : arrayUnion(prescriptionHistoryEntry),
+        updatedAt: serverTimestamp()
+      }, { merge: true });
+      await saveBatch.commit();
+      persistLocalPrescriptionRecord(historyRecord);
+
+      return { ok: true, downloadURL, storagePath: persistedStoragePath, previewImageURL, previewImagePath, warning };
+    }
+
+    async function ensurePrescriptionPdfBuilt() {
+      if (builtPrescriptionRecord) {
+        return builtPrescriptionRecord;
+      }
+
+      if (prescriptionBuildPromise) {
+        return prescriptionBuildPromise;
+      }
+
+      prescriptionBuildPromise = (async () => {
+        const details = await buildPdf({ forceHeader: true });
+        const { pdf, patientId, childName, phone, previewBlob } = details;
+        if (!isValidPatientId(patientId)) {
+          throw new Error('Select a valid patient before saving a prescription.');
+        }
+        const fallbackSaveId = window.crypto?.randomUUID
+          ? `rx-${patientId}-${window.crypto.randomUUID()}`
+          : `rx-${patientId}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+        const saveId = details.editId || details.draftId || fallbackSaveId;
+        const fileName = `${saveId}.pdf`;
+        const pdfBlob = pdf.output('blob');
+        builtPrescriptionRecord = { ...details, patientId, childName, phone, previewBlob, saveId, fileName, pdfBlob };
+        return builtPrescriptionRecord;
+      })().catch((error) => {
+        prescriptionBuildPromise = null;
+        throw error;
+      });
+
+      return prescriptionBuildPromise;
+    }
+
+    function buildShortPrescriptionLink(saveId) {
+      if (!saveId) {
+        return '';
+      }
+
+      const url = new URL('rx', window.location.href);
+      url.searchParams.set('i', saveId);
+      return url.toString();
+    }
+
+    function buildPortalLink() {
+      const url = new URL('portal', window.location.href);
+      return url.toString().replace(/^https?:\/\//, '');
+    }
+
+    async function ensurePrescriptionSaved() {
+      if (savedPrescriptionRecord) {
+        return savedPrescriptionRecord;
+      }
+
+      if (prescriptionSavePromise) {
+        return prescriptionSavePromise;
+      }
+
+      prescriptionSavePromise = (async () => {
+        setPreviewStatus('Saving prescription...');
+        setSaveState('saving', 'Saving this prescription to the patient record...');
+        const built = await ensurePrescriptionPdfBuilt();
+        const { pdf, patientId, childName, phone, previewBlob, saveId, fileName, pdfBlob } = built;
+        const saveResult = await savePrescriptionPdfToCloudStorage(fileName, {
+          ...built,
+          patientId,
+          childName,
+          phone,
+          pdf,
+          previewBlob
+        }, saveId);
+
+        if (!saveResult.ok) {
+          throw new Error(saveResult.reason || 'Unable to save prescription.');
+        }
+
+        savedPrescriptionRecord = {
+          pdf,
+          patientId,
+          childName,
+          phone,
+          saveId,
+          fileName,
+          pdfBlob,
+          ...saveResult
+        };
+        setPreviewStatus(saveResult.warning ? `Prescription saved. ${saveResult.warning}` : 'Prescription saved');
+        setSaveState('saved', saveResult.warning
+          ? `Saved to the patient record. ${saveResult.warning}`
+          : 'Saved to the patient record. No further action needed before printing.');
+        setEnterClinicEnabled(true);
+        markPrescriptionDraftSaved(patientId, saveId);
+        clearSavedVitalsDraft(patientId).catch((error) => {
+          console.warn(`Unable to clear saved vitals draft: ${error.message}`);
+        });
+
+        if (editPrescriptionBtn) {
+          editPrescriptionBtn.hidden = false;
+          editPrescriptionBtn.dataset.editUrl = `prescription-growth-chart-dashboard.html?editId=${encodeURIComponent(saveId)}&patientId=${encodeURIComponent(patientId)}`;
+        }
+
+        return savedPrescriptionRecord;
+      })().catch((error) => {
+        prescriptionSavePromise = null;
+        setPreviewStatus(`Save failed: ${error.message}. Enter Clinic unlocked so you are not stuck here - please retry the save.`);
+        setSaveState('failed', `NOT saved to the patient record: ${error.message}`);
+        setEnterClinicEnabled(true);
+        throw error;
+      });
+
+      return prescriptionSavePromise;
+    }
+
+    async function openPdfForPrinting(pdf) {
+      const pdfBlob = pdf.output('blob');
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+      const printWindow = window.open(pdfUrl, '_blank');
+
+      if (!printWindow) {
+        URL.revokeObjectURL(pdfUrl);
+        throw new Error('Popup blocked while opening the PDF for printing.');
+      }
+
+      window.setTimeout(() => {
+        try {
+          printWindow.focus();
+          printWindow.print();
+        } catch (error) {
+          console.warn(`Unable to start print dialog: ${error.message}`);
+        }
+      }, 1200);
+
+      window.setTimeout(() => URL.revokeObjectURL(pdfUrl), 30_000);
+    }
+
+    // Saving no longer throws the doctor's working data away. The preview auto-
+    // saves as soon as it loads, so wiping the draft here meant pressing Back
+    // landed on an empty prescription form with every chip deselected. The
+    // draft is kept and stamped with the id of the record it produced, so
+    // going back restores the selections and continuing forward again updates
+    // that same prescription instead of creating a duplicate.
+    function markPrescriptionDraftSaved(patientId = '', saveId = '') {
+      try {
+        const draftKey = getPrescriptionDraftStorageKey(patientId);
+        const draft = readJson(draftKey, null);
+        if (!draft) {
+          return;
+        }
+
+        draft.editId = saveId || draft.editId || '';
+        draft.savedPrescriptionAt = Date.now();
+        draft.expiresAt = Date.now() + PRESCRIPTION_EDIT_WINDOW_MS;
+        localStorage.setItem(draftKey, JSON.stringify(draft));
+      } catch (error) {
+        console.warn(`Unable to mark prescription draft as saved: ${error.message}`);
+      }
+    }
+
+    function clearPrescriptionLocalData(patientId = '') {
+      localStorage.removeItem(getPrescriptionDraftStorageKey(patientId));
+      localStorage.removeItem(CHART_RECORD_STORAGE_KEY);
+      localStorage.removeItem(getMedicineDetailStorageKey(patientId));
+      localStorage.removeItem(LOCAL_PRESCRIPTION_HISTORY_KEY);
+    }
+
+    async function clearSavedVitalsDraft(patientId) {
+      const normalizedPatientId = String(patientId || '').trim().toUpperCase();
+      if (!normalizedPatientId) {
+        return;
+      }
+
+      try {
+        localStorage.removeItem(clinicStorageKey(`consultVitalsDraft:${normalizedPatientId}`));
+      } catch (error) {
+        console.warn(`Unable to remove vitals draft locally: ${error.message}`);
+      }
+
+      if (!db) {
+        return;
+      }
+
+      try {
+        const patientRef = doc(db, FIREBASE_COLLECTIONS.patients, normalizedPatientId);
+        const patientSnapshot = await getCachedPatientSnapshot(normalizedPatientId);
+        const existingDraft = patientSnapshot?.exists?.() ? patientSnapshot.data()?.activeConsultVitalsDraft : null;
+
+        if (!existingDraft) {
+          return;
+        }
+
+        // Keep the draft data (don't delete it) - just mark it consumed so the
+        // growth-chart dashboard stops showing/pre-filling it for this patient
+        // now that the visit has been prescribed. A later fresh draft save fully
+        // replaces this map and naturally drops the consumedAt marker.
+        await setDoc(patientRef, {
+          activeConsultVitalsDraft: { ...existingDraft, consumedAt: new Date().toISOString() },
+          updatedAt: serverTimestamp()
+        }, { merge: true });
+      } catch (error) {
+        console.warn(`Unable to mark vitals draft consumed on patient record: ${error.message}`);
+      }
+    }
+
+    function normalizeWhatsAppPhone(phone) {
+      const digits = String(phone || '').replace(/\D/g, '');
+      if (digits.length === 10) {
+        return `91${digits}`;
+      }
+      return digits;
+    }
+
+    function openWhatsAppChat(phone, message) {
+      const normalizedPhone = normalizeWhatsAppPhone(phone);
+      const encodedMessage = encodeURIComponent(message);
+      const targetUrl = normalizedPhone
+        ? `https://wa.me/${normalizedPhone}?text=${encodedMessage}`
+        : `https://wa.me/?text=${encodedMessage}`;
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    function formatCurrency(amount) {
+      const value = Number(amount) || 0;
+      return `₹${value.toLocaleString('en-IN', { maximumFractionDigits: 2 })}`;
+    }
+
+    function getBillingPatientId() {
+      const chartRecord = getCurrentChartRecord();
+      return normalizePatientId(chartRecord?.patientId || getPatientIdFromUrl());
+    }
+
+    function renderBillItems() {
+      billItemsContainer.innerHTML = billItems.map((item, index) => `
+        <div class="bill-item-row" data-item-index="${index}">
+          <select data-field="description" data-item-index="${index}">
+            ${ITEM_PRESET_OPTIONS.map((option) => `<option value="${escapeHtml(option)}" ${item.description === option ? 'selected' : ''}>${escapeHtml(option === 'Other' ? 'Add New' : option)}</option>`).join('')}
+          </select>
+          <input type="number" min="0" step="0.01" placeholder="0.00" value="${item.amount}" data-field="amount" data-item-index="${index}">
+          <button type="button" class="bill-item-remove" data-remove-item-index="${index}" aria-label="Remove item">x</button>
+          ${item.description === 'Other' ? `<input type="text" class="bill-item-custom-input" placeholder="Enter custom item name" value="${escapeHtml(item.customDescription || '')}" data-field="customDescription" data-item-index="${index}">` : ''}
+        </div>
+      `).join('');
+    }
+
+    function updateBillTotals() {
+      const total = computeItemsTotal(billItems);
+      const amountPaid = Math.max(0, Number(billAmountPaidInput.value) || 0);
+      const due = Math.max(0, total - amountPaid);
+      billTotalDisplay.textContent = formatCurrency(total);
+      billDueDisplay.textContent = formatCurrency(due);
+    }
+
+    function resetBillForm() {
+      billItems = [{ description: ITEM_PRESET_OPTIONS[0], amount: '' }];
+      billItems.forEach(applyDefaultAmountIfBlank);
+      billPaymentMethodSelect.innerHTML = PAYMENT_METHOD_OPTIONS.map((method) => `<option value="${escapeHtml(method)}">${escapeHtml(method)}</option>`).join('');
+      billAmountPaidInput.value = '0';
+      billErrorEl.textContent = '';
+      billErrorEl.classList.remove('is-visible');
+      renderBillItems();
+      updateBillTotals();
+    }
+
+    async function openBillModal() {
+      await ensureBillItemDefaultsLoaded();
+      resetBillForm();
+      billModal.classList.add('is-open');
+      billModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBillModal() {
+      billModal.classList.remove('is-open');
+      billModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    async function buildReceiptPdf(bill, patientId, patientName) {
+      const branding = getPrescriptionBranding();
+      document.getElementById('receipt-clinic-name').textContent = branding.clinicTitle || DEFAULT_BRANDING.clinicTitle;
+      document.getElementById('receipt-clinic-address').textContent = branding.clinicAddress || DEFAULT_BRANDING.clinicAddress;
+      document.getElementById('receipt-doctor-name').textContent = branding.doctorName || DEFAULT_BRANDING.doctorName;
+      document.getElementById('receipt-no-value').textContent = bill.receiptNo || '-';
+      document.getElementById('receipt-date-value').textContent = new Date(bill.createdAtIso || Date.now()).toLocaleDateString('en-IN');
+      document.getElementById('receipt-bill-no-value').textContent = bill.billNo || '-';
+      document.getElementById('receipt-patient-name').textContent = patientName || patientId;
+      document.getElementById('receipt-patient-id').textContent = patientId;
+      document.getElementById('receipt-items-body').innerHTML = bill.items.map((item) => `
+        <tr><td>${escapeHtml(item.description || 'Item')}</td><td>${formatCurrency(item.amount)}</td></tr>
+      `).join('');
+      document.getElementById('receipt-total-value').textContent = formatCurrency(bill.total);
+      document.getElementById('receipt-payment-method-value').textContent = bill.paymentMethod || '-';
+      document.getElementById('receipt-paid-value').textContent = formatCurrency(bill.amountPaid);
+      document.getElementById('receipt-due-value').textContent = formatCurrency(computeBillDue(bill));
+
+      await new Promise((resolve) => requestAnimationFrame(resolve));
+
+      const sheet = document.getElementById('receipt-sheet');
+      const scale = Math.max(2, Math.min(window.devicePixelRatio || 1, 3));
+      const canvas = await html2canvas(sheet, {
+        backgroundColor: '#ffffff',
+        scale,
+        useCORS: true,
+        logging: false
+      });
+
+      const PX_TO_MM = 25.4 / 96;
+      const pageWidthMm = sheet.offsetWidth * PX_TO_MM;
+      const pageHeightMm = sheet.offsetHeight * PX_TO_MM;
+      const pdf = new jsPDF({
+        orientation: pageHeightMm >= pageWidthMm ? 'portrait' : 'landscape',
+        unit: 'mm',
+        format: [pageWidthMm, pageHeightMm]
+      });
+      pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, pageWidthMm, pageHeightMm, undefined, 'FAST');
+
+      const fileName = `receipt-${bill.receiptNo || bill.id}.pdf`;
+      return { pdf, fileName };
+    }
+
+    async function uploadBillReceiptLink(bill, patientId, patientName) {
+      if (!storage) {
+        return '';
+      }
+      try {
+        const { pdf, fileName } = await buildReceiptPdf(bill, patientId, patientName);
+        const pdfBlob = pdf.output('blob');
+        const storagePath = `${CLINIC_STORAGE_PREFIX}/billReceipts/${patientId}/${fileName}`;
+        const storageRef = ref(storage, storagePath);
+        const existingReceiptToken = await getExistingDownloadToken(storageRef);
+        await uploadBytes(storageRef, pdfBlob, {
+          contentType: 'application/pdf',
+          contentDisposition: 'inline',
+          ...(existingReceiptToken ? { customMetadata: { firebaseStorageDownloadTokens: existingReceiptToken } } : {})
+        });
+        return await getDownloadURL(storageRef);
+      } catch (error) {
+        console.warn(`Bill receipt PDF upload skipped: ${error.message}`);
+        return '';
+      }
+    }
+
+    async function submitBill({ print = false } = {}) {
+      billErrorEl.textContent = '';
+      billErrorEl.classList.remove('is-visible');
+
+      const hasValidItem = billItems.some((item) => (Number(item.amount) || 0) > 0);
+      if (!hasValidItem) {
+        billErrorEl.textContent = 'Add at least one bill item with an amount.';
+        billErrorEl.classList.add('is-visible');
+        return;
+      }
+
+      const patientId = getBillingPatientId();
+      if (!isValidPatientId(patientId)) {
+        billErrorEl.textContent = 'Select a valid patient before adding a bill.';
+        billErrorEl.classList.add('is-visible');
+        return;
+      }
+
+      const finalItems = billItems.map((item) => ({
+        description: item.description === 'Other'
+          ? (item.customDescription || '').trim() || 'Other'
+          : item.description,
+        amount: item.amount
+      }));
+
+      billSaveExitBtn.disabled = true;
+      billSavePrintBtn.disabled = true;
+
+      try {
+        const bill = await saveBill(
+          patientId,
+          finalItems,
+          billPaymentMethodSelect.value,
+          billAmountPaidInput.value
+        );
+        lastSavedBill = bill;
+
+        closeBillModal();
+
+        if (print) {
+          const chartRecord = getCurrentChartRecord();
+          const patientName = chartRecord?.patientName || chartRecord?.childName || patientId;
+          const { pdf } = await buildReceiptPdf(bill, patientId, patientName);
+          await openPdfForPrinting(pdf);
+        }
+      } catch (error) {
+        billErrorEl.textContent = error?.message || 'Unable to save this bill right now.';
+        billErrorEl.classList.add('is-visible');
+      } finally {
+        billSaveExitBtn.disabled = false;
+        billSavePrintBtn.disabled = false;
+      }
+    }
+
+    addPaymentBtn.addEventListener('click', () => {
+      openBillModal();
+    });
+
+    billModalClose.addEventListener('click', closeBillModal);
+    billModal.addEventListener('click', (event) => {
+      if (event.target === billModal) {
+        closeBillModal();
+      }
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && billModal.classList.contains('is-open')) {
+        closeBillModal();
+      }
+    });
+
+    billItemAddBtn.addEventListener('click', () => {
+      const newItem = { description: ITEM_PRESET_OPTIONS[0], amount: '' };
+      applyDefaultAmountIfBlank(newItem);
+      billItems.push(newItem);
+      renderBillItems();
+      updateBillTotals();
+    });
+
+    billItemsContainer.addEventListener('input', (event) => {
+      const target = event.target;
+      const index = Number(target.getAttribute('data-item-index'));
+      const field = target.getAttribute('data-field');
+      if (!Number.isInteger(index) || !billItems[index] || target.tagName === 'SELECT') {
+        return;
+      }
+      billItems[index][field] = target.value;
+      updateBillTotals();
+    });
+
+    billItemsContainer.addEventListener('change', (event) => {
+      const target = event.target;
+      const index = Number(target.getAttribute('data-item-index'));
+      const field = target.getAttribute('data-field');
+      if (!Number.isInteger(index) || !billItems[index] || !field) {
+        return;
+      }
+      billItems[index][field] = target.value;
+      if (field === 'description') {
+        billItems[index].amount = '';
+        applyDefaultAmountIfBlank(billItems[index]);
+        renderBillItems();
+      } else if (field === 'customDescription') {
+        applyDefaultAmountIfBlank(billItems[index]);
+        renderBillItems();
+      } else if (field === 'amount') {
+        const key = getBillItemDefaultKey(billItems[index]);
+        const amountValue = Number(target.value) || 0;
+        if (key && amountValue > 0) {
+          billItemDefaultAmounts[key] = amountValue;
+          saveBillingItemDefaultAmount(key, amountValue).catch(() => {});
+        }
+      }
+      updateBillTotals();
+    });
+
+    billItemsContainer.addEventListener('click', (event) => {
+      const removeIndex = event.target.getAttribute('data-remove-item-index');
+      if (removeIndex === null) {
+        return;
+      }
+      if (billItems.length <= 1) {
+        billItems = [{ description: ITEM_PRESET_OPTIONS[0], amount: '' }];
+      } else {
+        billItems.splice(Number(removeIndex), 1);
+      }
+      renderBillItems();
+      updateBillTotals();
+    });
+
+    billAmountPaidInput.addEventListener('input', updateBillTotals);
+    billSaveExitBtn.addEventListener('click', () => submitBill({ print: false }));
+    billSavePrintBtn.addEventListener('click', () => submitBill({ print: true }));
+
+    downloadPdfBtn.addEventListener('click', async () => {
+      downloadPdfBtn.disabled = true;
+      downloadPdfBtn.textContent = 'Preparing...';
+
+      try {
+        const builtRecord = await ensurePrescriptionPdfBuilt();
+        if (printWithHeaderEnabled) {
+          builtRecord.pdf.save(builtRecord.fileName);
+        } else {
+          const downloadDetails = await buildPdf();
+          downloadDetails.pdf.save(builtRecord.fileName);
+        }
+        ensurePrescriptionSaved().catch((error) => {
+          console.warn(`Prescription background save failed: ${error.message}`);
+        });
+      } catch (error) {
+        console.warn(`Unable to save prescription PDF: ${error.message}`);
+      } finally {
+        downloadPdfBtn.disabled = false;
+        downloadPdfBtn.textContent = 'Download PDF';
+      }
+    });
+
+    printPdfBtn.addEventListener('click', async () => {
+      printPdfBtn.disabled = true;
+      printPdfBtn.textContent = 'Opening print...';
+
+      try {
+        // Print the live sheet rather than a rasterised PDF of it. The browser
+        // lays out real text and the SVG-free chart images at printer
+        // resolution, so glyphs stay sharp, the text stays selectable, and page
+        // breaks land between elements instead of slicing through a table row.
+        // The stored/WhatsApp copy is still a generated PDF - see
+        // ensurePrescriptionSaved() - because Storage needs an actual file.
+        window.print();
+        ensurePrescriptionSaved().catch((error) => {
+          console.warn(`Prescription background save failed: ${error.message}`);
+        });
+      } catch (error) {
+        console.warn(`Unable to print prescription: ${error.message}`);
+      } finally {
+        printPdfBtn.disabled = false;
+        printPdfBtn.textContent = 'Print';
+      }
+    });
+
+    whatsappBtn.addEventListener('click', async () => {
+      whatsappBtn.disabled = true;
+      whatsappBtn.textContent = 'Opening...';
+
+      try {
+        const builtRecord = await ensurePrescriptionPdfBuilt();
+        const chartRecord = getCurrentChartRecord();
+        const branding = getPrescriptionBranding();
+        const prescriptionLink = buildShortPrescriptionLink(builtRecord.saveId);
+        const portalLink = buildPortalLink();
+        const patientId = builtRecord.patientId || chartRecord?.patientId || '-';
+        const patientName = chartRecord?.patientName || chartRecord?.childName || 'Patient';
+        const salutation = chartRecord?.gender === 'Female' ? 'Miss' : 'Master';
+
+        let billReceiptLink = '';
+        if (lastSavedBill) {
+          billReceiptLink = await uploadBillReceiptLink(lastSavedBill, patientId, patientName);
+        }
+
+        const message = [
+          `Prescription for ${salutation} ${patientName}`,
+          '',
+          `Go through the link to check your ward's latest prescription:`,
+          prescriptionLink,
+          '',
+          ...(billReceiptLink ? ['You can see your bill/payment receipt here:', billReceiptLink, ''] : []),
+          `Also visit the patient portal for all past prescriptions:`,
+          portalLink,
+          '',
+          `The Better Kids Clinic`,
+          `${branding.doctorName || DEFAULT_BRANDING.doctorName}`
+        ].join('\n');
+        openWhatsAppChat(chartRecord?.phone || builtRecord.phone || '', message);
+        ensurePrescriptionSaved().catch((error) => {
+          console.warn(`Prescription background save failed: ${error.message}`);
+        });
+      } catch (error) {
+        console.warn(`Unable to prepare WhatsApp prescription link: ${error.message}`);
+      } finally {
+        whatsappBtn.disabled = false;
+        whatsappBtn.textContent = 'WhatsApp';
+      }
+    });
+
+    if (editPrescriptionBtn) {
+      editPrescriptionBtn.addEventListener('click', () => {
+        const url = editPrescriptionBtn.dataset.editUrl;
+        if (url) {
+          window.location.href = url;
+        }
+      });
+    }
+
+    async function initializePreview() {
+      setPreviewStatus('Preparing preview...');
+      await loadPrescriptionBranding();
+      await loadPatientRecordForPreview(getPatientIdFromUrl());
+      const activeRecord = getActiveChartRecord();
+      preparedChartRecord = await rebuildChartPages(activeRecord);
+      persistPreparedChartRecord(preparedChartRecord);
+      buildPreviewHtml();
+      ensurePrescriptionSaved().catch((error) => {
+        console.warn(`Prescription auto-save failed: ${error.message}`);
+      });
+    }
+
+    let printWithHeaderEnabled = true;
+
+    function getSavedHeaderMode() {
+      const rawValue = localStorage.getItem(PRINT_HEADER_MODE_STORAGE_KEY);
+      return rawValue !== 'false';
+    }
+
+    function invalidateSavedPrescriptionCache() {
+      prescriptionSavePromise = null;
+      savedPrescriptionRecord = null;
+      prescriptionBuildPromise = null;
+      builtPrescriptionRecord = null;
+    }
+
+    function updateHeaderModeButtons() {
+      withHeaderBtn?.classList.toggle('is-active', printWithHeaderEnabled);
+      withoutHeaderBtn?.classList.toggle('is-active', !printWithHeaderEnabled);
+      withHeaderBtn?.setAttribute('aria-pressed', String(printWithHeaderEnabled));
+      withoutHeaderBtn?.setAttribute('aria-pressed', String(!printWithHeaderEnabled));
+    }
+
+    // Header mode only affects what is shown on screen and what the printer
+    // lays down - the stored PDF is always captured with the header forced
+    // on. Re-saving on every toggle just risked overwriting a good
+    // prescription with a re-render, so this setting applies locally only.
+    function applySavedPreviewSettings() {
+      printWithHeaderEnabled = getSavedHeaderMode();
+      document.body.classList.toggle('preview-without-header', !printWithHeaderEnabled);
+      document.body.classList.toggle('print-with-header', printWithHeaderEnabled);
+      updateHeaderModeButtons();
+    }
+
+    function setHeaderMode(enabled) {
+      localStorage.setItem(PRINT_HEADER_MODE_STORAGE_KEY, String(Boolean(enabled)));
+      applySavedPreviewSettings();
+    }
+
+    withHeaderBtn?.addEventListener('click', () => {
+      setHeaderMode(true);
+    });
+
+    withoutHeaderBtn?.addEventListener('click', () => {
+      setHeaderMode(false);
+    });
+
+    applySavedPreviewSettings();
+    window.addEventListener('storage', (event) => {
+      if (event.key === PRINT_HEADER_MODE_STORAGE_KEY) {
+        applySavedPreviewSettings();
+      }
+      if (event.key === PRESCRIPTION_BRANDING_STORAGE_KEY) {
+        activePrescriptionBranding = null;
+        buildPreviewHtml();
+        invalidateSavedPrescriptionCache();
+        ensurePrescriptionSaved().catch((error) => {
+          console.warn(`Unable to refresh prescription after branding change: ${error.message}`);
+        });
+      }
+    });
+    initializePreview().catch((error) => {
+      console.warn(`Unable to initialize prescription preview: ${error.message}`);
+      buildPreviewHtml();
+      ensurePrescriptionSaved().catch((saveError) => {
+        console.warn(`Prescription auto-save failed: ${saveError.message}`);
+      });
+    });
+  </script>
+  <style>
+    @media (max-width: 640px) {
+      .mini-chart-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>

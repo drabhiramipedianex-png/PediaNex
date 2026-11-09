@@ -1,0 +1,33 @@
+rules_version = '2';
+
+// Both clinics are now gated the same way — see the note in firestore.rules.
+//
+// Note on existing links: getDownloadURL() tokens already handed out (the
+// ?alt=media&token=... prescription links sent to parents over WhatsApp) keep
+// working after this change, because that token bypasses rules. What stops
+// working for unauthenticated callers is listAll(), getMetadata() and fresh
+// getDownloadURL() calls — which is exactly the bucket enumeration this
+// closes. New links issued via /api/kid/prescriptions/<id> and
+// /api/lungs/prescriptions/<id> are short-lived signed URLs instead.
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // ---- kid: authenticated only -------------------------------------------
+    match /clinics/kid/{allPaths=**} {
+      allow read, write: if isSignedIn();
+    }
+
+    // ---- lungs: authenticated only ------------------------------------------
+    match /clinics/lungs/{allPaths=**} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

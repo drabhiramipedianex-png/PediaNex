@@ -1,0 +1,24 @@
+[
+  {
+    "origin": [
+      "https://www.thebetterhealth.clinic",
+      "https://thebetterhealth.clinic",
+      "https://aadityabhatnagar.online",
+      "http://localhost:5173",
+      "http://127.0.0.1:5173"
+    ],
+    "method": ["GET", "HEAD", "OPTIONS"],
+    "responseHeader": [
+      "Accept-Ranges",
+      "Cache-Control",
+      "Content-Disposition",
+      "Content-Length",
+      "Content-Range",
+      "Content-Type",
+      "ETag",
+      "x-goog-generation",
+      "x-goog-metageneration"
+    ],
+    "maxAgeSeconds": 3600
+  }
+]

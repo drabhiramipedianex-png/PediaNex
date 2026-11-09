@@ -1,0 +1,72 @@
+rules_version = '2';
+
+// Both clinics are now gated the same way:
+//   1. Each app signs in to Firebase Auth with a custom token minted
+//      server-side (api/kid/auth/login.js, api/lungs/auth/login.js) only
+//      after the clinic password is verified.
+//   2. Each clinic's public-facing pages (intake, rx/prescriptions, portal)
+//      go through API routes on admin credentials instead of touching
+//      Firestore directly, so gating the rules doesn't break them.
+//
+// Previously every clinic was readable on the clinic id alone, with no auth
+// condition. Verified live: an unauthenticated read of clinics/kid/... returned
+// HTTP 200. clinics/lungs carried the identical exposure until this change.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Each clinic signs in with a custom token minted server-side, only
+    // after the clinic password is verified. Server-side routes use the
+    // admin SDK and bypass these rules entirely.
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // ---- kid: authenticated only -------------------------------------------
+    // settings.html writes the clinics/kid document itself, which matches this
+    // rule rather than the {document=**} one below, so both need the condition.
+    match /clinics/kid {
+      allow read, write: if isSignedIn();
+    }
+
+    // Prescription section docs (clinics/kid/prescription/{section}) must keep
+    // `items` as a list and `medicineCatalog` as a map, so a bad write can't
+    // break the picker for every doctor.
+    function isValidPrescriptionSection() {
+      let data = request.resource.data;
+      return (!('items' in data) || data.items is list)
+        && (!('medicineCatalog' in data) || data.medicineCatalog is map);
+    }
+
+    match /clinics/kid/{collection}/{docId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn()
+        && (collection != 'prescription' || isValidPrescriptionSection());
+      // The app never deletes patients or visit records from the browser
+      // (merges and cleanups run server-side on admin credentials, which
+      // bypass these rules), so a browser session can't wipe them either.
+      allow delete: if isSignedIn() && !(collection in ['patients', 'history']);
+    }
+
+    match /clinics/kid/{collection}/{docId}/{rest=**} {
+      allow read, write: if isSignedIn();
+    }
+
+    // ---- lungs: authenticated only ------------------------------------------
+    match /clinics/lungs {
+      allow read, write: if isSignedIn();
+    }
+
+    match /clinics/lungs/{document=**} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /clinicSettings/{settingId} {
+      allow read, write: if (settingId == 'kid' || settingId == 'lungs') && isSignedIn();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

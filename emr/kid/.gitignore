@@ -1,0 +1,14 @@
+.env
+.env.vercel
+.env.local
+.env.*.local
+node_modules/
+dist/
+.vercel/
+*.log
+Thumbs.db
+.DS_Store
+__pycache__/
+
+improvement needed.md
+public/portal-shared.css
